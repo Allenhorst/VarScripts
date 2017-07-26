@@ -1,8 +1,9 @@
 #name or ip of target esxi hosts
-$hosts = "srv1114"
+$hosts = "srv1164.paragon-software.com,srv054.paragon-software.com,srv044.paragon-software.com,sb023.paragon-software.com"
+$hostsList = $hosts.Split(",")
 
-Foreach ($chost in $hosts) {
-	$ip_host = Connect-ViServer -Server $chost -User autotester -Password asdF5hh
+Foreach ($chost in $hostsList) {
+	$ip_host = Connect-ViServer -Server $chost -User root -Password Ghbdtn123
 	
 	$get_host = Get-VMHost -Server $ip_host 
 	
