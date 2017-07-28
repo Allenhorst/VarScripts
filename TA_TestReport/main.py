@@ -1,0 +1,72 @@
+import Teamcity as TC
+import os
+allBuildIds = []
+allBuildNames = []
+allTestsProjectIds = ["Prm_Tests", "Prm_Tests_L1", "Prm_Tests_L2", "Prm_Tests_L3"]
+agentId = "ta-srv1162-f3"
+filename = "report_" + agentId +".html" 
+startHTML = "\r\n<html> <body> \r\n<table border=1 cellpadding=10 cellspacing=0> <tr><tr> \r\n"
+endHTML = "\r\n\r\n</html> </body>\r\n</tr> </table>\r\n"
+
+TC.Teamcity.__init__(TC.Teamcity,username="paragon\\tsypunov",
+                                 password="vbhjrkjp_5",
+                                 server="http://vmsk-tc-prm.paragon-software.com",
+                                 port=None
+                                 )
+
+#TC.Teamcity.getBuildById(TC.Teamcity, buildId="bt261")
+#TC.Teamcity.getLastSuccessfulBuildById(TC.Teamcity, buildId="bt261")
+#agentId = TC.Teamcity.getAgentIdByName(TC.Teamcity, "ta-srv1112-80")
+#TC.Teamcity.getProjectById(TC.Teamcity, "Prm_Tests_L1")
+
+#TC.Teamcity.getLastSuccessfulBuildByIdAndagent(TC.Teamcity, "Prm_Tests_970serviceTestsExecutor","ta-srv1162-f3")
+
+#for Pr_ids in allTestsProjectIds:
+#    buildids = TC.Teamcity.getAllBuildTypesForProject(TC.Teamcity, Pr_ids)
+#    buildnames = TC.Teamcity.getAllBuildTypesForProjectNames(TC.Teamcity, Pr_ids)
+#    allBuildIds+=buildids
+#    allBuildNames+=buildnames
+##print(allBuildIds)
+#
+##    print (v+ "=> " + k)
+
+#build = TC.Teamcity.getBuildById(TC.Teamcity, Id="2258989")
+#buildUrl, buildName, buildVer = TC.Teamcity.getInformationFromBuild(TC.Teamcity, build)
+#print("end")
+try:
+    f = open(filename,"w+")
+except OSError as e:
+    pass
+
+
+
+for Pr_ids in allTestsProjectIds:
+   buildids = TC.Teamcity.getAllBuildTypesForProject(TC.Teamcity, Pr_ids)
+   buildnames = TC.Teamcity.getAllBuildTypesForProjectNames(TC.Teamcity, Pr_ids)
+   allBuildIds += buildids
+   allBuildNames += buildnames
+
+print(agentId)
+#f = open(filename)
+f.write(startHTML)
+
+for buildID in allBuildIds:
+    lastBuild = TC.Teamcity.getLastSuccessfulBuildByIdAndagent(TC.Teamcity, buildID, agentId)
+    #print (lastBuild)
+
+    if lastBuild:
+        buildText = TC.Teamcity.getBuildById(TC.Teamcity, str(lastBuild))
+        buildUrl, buildName, buildVer = TC.Teamcity.getInformationFromBuild(TC.Teamcity, buildText)
+    else:
+        buildName = buildID
+        buildVer = "N\A "
+        buildUrl = "No builds of this kind"
+    output = "Build Name: " + buildName + " Version: " + buildVer + "URL: " +buildUrl
+    out = "<tr> <td valign=top>" + buildName + "</td> <td valign=top>  " + buildVer +"</td> <td valign=top> " +  buildUrl +  " \n"
+    #print(output)
+    f.write(out)
+
+f.write(endHTML)
+f.close()
+#buildID = "Prm_Tests_Sdkl3_Core_7093sdkStressTaskManagerDatabase"
+#lastBuild = TC.Teamcity.getLastSuccessfulBuildByIdAndagent(TC.Teamcity, buildID, agentId)
