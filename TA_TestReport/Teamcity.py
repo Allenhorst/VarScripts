@@ -172,3 +172,29 @@ class Teamcity:
         buildInf = json.loads(buildList.text)
         buildName = (buildInf['buildType'].pop())['name']
         return buildName
+
+    def getBuildRequirementsByBuildId(self, buildId):
+        buildUrl = self.server + "/" + "httpAuth/app/rest/buildTypes/id:" + buildId + "/agent-requirements/"
+        buildReq = self._prep_request(self, verb="GET", url=buildUrl)
+        buildList = self._send_request(self, buildReq)
+        buildInf = json.loads(buildList.text)
+        t1= (buildInf['properties'].pop())
+        return buildInf
+
+    def getCompatibleAgentsForBuild(self,buildId):
+        buildUrl = self.server + "/" +"httpAuth/app/rest/agents?locator=compatible:(buildType:(id:" + buildId + "))"
+        buildReq = self._prep_request(self, verb="GET", url=buildUrl)
+        buildList = self._send_request(self, buildReq)
+        agents = json.loads(buildList.text)
+        agentsList = []
+        if agents['count'] != 0:
+            count = agents['count']
+            while count:
+                agent = (agents['agent']).pop()['name']
+                agentsList.append(agent)
+                count -= 1
+
+        else:
+            agentsList = 0
+        return agentsList
+

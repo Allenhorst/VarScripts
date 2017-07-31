@@ -5,7 +5,7 @@ allBuildNames = []
 allTestsProjectIds = ["Prm_Tests_L1", "Prm_Tests_L2", "Prm_Tests_L3"]
 excludeProjectIds = ["Investigate", "Legacy"] #to do add real id
 agentId = "ta-srv1162-f3"
-filename = "report_" + agentId +".html"
+filename = "report_" + agentId + ".html"
 startHTML = "\r\n<html> <body> \r\n<table border=1 cellpadding=10 cellspacing=0> <tr><tr> \r\n"
 endHTML = "\r\n\r\n</html> </body>\r\n</tr> </table>\r\n"
 
@@ -72,7 +72,11 @@ for buildID in allBuildIds:
     else:
         buildName = TC.Teamcity.getBuildNameByBuildId(TC.Teamcity,buildID)
         buildVer = "N\A "
-        buildUrl = "No builds of this kind"
+        compatibleAgents = TC.Teamcity.getCompatibleAgentsForBuild(TC.Teamcity, buildID)
+        if agentId not in compatibleAgents:
+            buildUrl = "agent not compatible"
+        else:
+            buildUrl = "No builds of this kind"
         out = "<tr> <td valign=top>" + buildName + "</td> <td valign=top>  " + buildVer + "</td> <td valign=top> " +  buildUrl +  " \n"
     output = "Build Name: " + buildName + " Version: " + buildVer + "URL: " +buildUrl
 
@@ -81,5 +85,7 @@ for buildID in allBuildIds:
 
 f.write(endHTML)
 f.close()
+
+
 #buildID = "Prm_Tests_Sdkl3_Core_7093sdkStressTaskManagerDatabase"
 #lastBuild = TC.Teamcity.getLastSuccessfulBuildByIdAndagent(TC.Teamcity, buildID, agentId)
