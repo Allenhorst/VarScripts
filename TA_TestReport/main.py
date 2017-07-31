@@ -70,7 +70,7 @@ for buildID in allBuildIds:
         buildUrl, buildName, buildVer = TC.Teamcity.getInformationFromBuild(TC.Teamcity, buildText)
         out = "<tr> <td valign=top>" + buildName + "</td> <td valign=top>  " + buildVer + "</td> <td valign=top> " + "<a href=\"" + buildUrl + "\" style=color: #9ACD32>" + "SUCCESS" + "</a>" + " \n"
     else:
-        buildName = buildID
+        buildName = TC.Teamcity.getBuildNameByBuildId(TC.Teamcity,buildID)
         buildVer = "N\A "
         buildUrl = "No builds of this kind"
         out = "<tr> <td valign=top>" + buildName + "</td> <td valign=top>  " + buildVer + "</td> <td valign=top> " +  buildUrl +  " \n"

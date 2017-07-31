@@ -164,3 +164,11 @@ class Teamcity:
         #print(buildName)
         #print(buildVer)
         return buildWebUrl, buildName, buildVer
+
+    def getBuildNameByBuildId(self, buildId):
+        buildUrl = self.server + "/" + "httpAuth/app/rest/buildTypes/?locator=id:" + buildId
+        buildReq = self._prep_request(self, verb="GET", url=buildUrl)
+        buildList = self._send_request(self, buildReq)
+        buildInf = json.loads(buildList.text)
+        buildName = (buildInf['buildType'].pop())['name']
+        return buildName
