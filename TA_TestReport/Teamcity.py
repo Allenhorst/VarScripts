@@ -182,7 +182,7 @@ class Teamcity:
         return buildInf
 
     def getCompatibleAgentsForBuild(self,buildId):
-        buildUrl = self.server + "/" +"httpAuth/app/rest/agents?locator=compatible:(buildType:(id:" + buildId + "))"
+        buildUrl = self.server + "/" +"httpAuth/app/rest/agents?locator=compatible:(buildType:(id:" + buildId + ")),enabled:any"
         buildReq = self._prep_request(self, verb="GET", url=buildUrl)
         buildList = self._send_request(self, buildReq)
         agents = json.loads(buildList.text)
