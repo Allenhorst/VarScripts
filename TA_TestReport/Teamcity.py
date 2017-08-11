@@ -1,7 +1,7 @@
 import os
 import requests
 import json
-
+import datetime
 
 class Teamcity:
     username = None
@@ -33,6 +33,7 @@ class Teamcity:
         self.session = session or requests.Session()
         self._agent_cache = {}
 
+### requests past
     def _send_request(self, request):
         try:
             return self.session.send(request)
@@ -53,11 +54,47 @@ class Teamcity:
             headers=headers,
             **kwargs).prepare()
 
+### date converting part
+    def getTCDateFromDate(self, date):
+        TCNow = str(date.year)+str(date.month)+str(date.day)+"T"+str(date.hour)+str(date.minute)+str(date.second)+"%2B0300"
+        return TCNow
+
+    def getDateFromTCDate(self,TCDate):
+        now = datetime.datetime(year=TCDate[0:4], month=TCDate[5:6], day=TCDate[7:8], hour=TCDate[10:11], minute=TCDate[12:13], second=TCDate[14:15])
+        return now
+
+### rest api requests part
+  # builds related requests
     def getBuildByBuildId(self, buildId):
         buildUrl = self.server + "/" + "httpAuth/app/rest/builds/?locator=buildType:" + buildId
         buildReq = self._prep_request(self,verb="GET", url=buildUrl)
         buildsList = self._send_request(self, buildReq)
         print(buildsList.json())
+
+        return 0
+
+    # uses build id directly to get build
+    def getBuildById(self, Id):
+        buildUrl = self.server + "/" + "httpAuth/app/rest/builds/id:" + Id
+        buildReq = self._prep_request(self, verb="GET", url=buildUrl)
+        build = self._send_request(self, buildReq)
+        # print(buildsList.json())
+
+        return build.text
+
+    # uses build type to get last successful build of this type
+    def getLastSuccessfulBuildById(self, buildId):
+        buildUrl = self.server + "/" + "httpAuth/app/rest/builds/?locator=buildType:" + buildId + ",status:success,count:1"
+        buildReq = self._prep_request(self, verb="GET", url=buildUrl)
+        buildsList = self._send_request(self, buildReq)
+        buildDict = json.loads(buildsList.text)
+        # print(buildDict)
+        buildList = (buildDict['build']).pop()
+        buildWebUrl = buildList['webUrl']
+        buildId = buildList['id']
+        build = self.getBuildById(self, Id=str(buildId))
+        # print(buildWebUrl)
+        # print(build.json())
 
         return 0
 
@@ -70,55 +107,115 @@ class Teamcity:
 
         return agentId
 
-    #uses build id directly to get build
-    def getBuildById(self, Id):
-        buildUrl = self.server + "/" + "httpAuth/app/rest/builds/id:" + Id
-        buildReq = self._prep_request(self,verb="GET", url=buildUrl)
-        build = self._send_request(self, buildReq)
-        #print(buildsList.json())
+    def getInformationFromBuild(self, buildText):
+        buildInf = json.loads(buildText)
+        buildWebUrl = buildInf['webUrl'].split('&')[0]
+        buildName = buildInf['buildType']['name']
+        # buildName1 = buildName0['name']
+        buildVer = buildInf['number'].split('(')[1].split(')')[0]
+        # print(buildWebUrl)
+        # print(buildName)
+        # print(buildVer)
+        return buildWebUrl, buildName, buildVer
 
-        return build.text
+    def getBuildNameByBuildId(self, buildId):
+        buildUrl = self.server + "/" + "httpAuth/app/rest/buildTypes/?locator=id:" + buildId
+        buildReq = self._prep_request(self, verb="GET", url=buildUrl)
+        buildList = self._send_request(self, buildReq)
+        buildInf = json.loads(buildList.text)
+        buildName = (buildInf['buildType'].pop())['name']
+        return buildName
 
-    #uses build type to get last successful build of this type
-    def getLastSuccessfulBuildById(self, buildId):
-        buildUrl = self.server + "/" + "httpAuth/app/rest/builds/?locator=buildType:" + buildId + ",status:success,count:1"
+    def getBuildRequirementsByBuildId(self, buildId):
+        buildUrl = self.server + "/" + "httpAuth/app/rest/buildTypes/id:" + buildId + "/agent-requirements/"
+        buildReq = self._prep_request(self, verb="GET", url=buildUrl)
+        buildList = self._send_request(self, buildReq)
+        buildInf = json.loads(buildList.text)
+        t1 = (buildInf['properties'].pop())
+        return buildInf
+
+    def getCompatibleAgentsForBuild(self, buildId):
+        buildUrl = self.server + "/" + "httpAuth/app/rest/agents?locator=compatible:(buildType:(id:" + buildId + ")),enabled:any"
+        buildReq = self._prep_request(self, verb="GET", url=buildUrl)
+        buildList = self._send_request(self, buildReq)
+        agents = json.loads(buildList.text)
+        agentsList = []
+        if agents['count'] != 0:
+            count = agents['count']
+            while count:
+                agent = (agents['agent']).pop()['name']
+                agentsList.append(agent)
+                count -= 1
+
+        else:
+            agentsList = 0
+        return agentsList
+
+    def getArtifactsSizeById(self, buildId):
+        buildUrl = self.server + "/" + "httpAuth/app/rest/builds/id:" + buildId + "/statistics/ArtifactsSize"
+        buildReq = self._prep_request(self, verb="GET", url=buildUrl, headers={'Accept': 'text/plain'})
+        buildList = self._send_request(self, buildReq)
+
+        return buildList.text
+
+    def getLastBuildsByDate(self, buildId, tillDays, personal="no"):
+        buildUrl = self.server + "/" + "httpAuth/app/rest/builds/?locator=buildType:" + buildId + ",status:SUCCESS" + ",finishDate:(date:" + tillDays + ",condition:before),personal:" + personal
         buildReq = self._prep_request(self, verb="GET", url=buildUrl)
         buildsList = self._send_request(self, buildReq)
         buildDict = json.loads(buildsList.text)
-        #print(buildDict)
-        buildList = (buildDict['build']).pop()
-        buildWebUrl = buildList['webUrl']
-        buildId = buildList['id']
-        build = self.getBuildById(self, Id=str(buildId))
-        #print(buildWebUrl)
-        #print(build.json())
+        builds = []
+        for build in buildDict['build']:
+            buildId = build['id']
+            builds.append(buildId)
+        return builds
 
-        return 0
+    def getLastBuildsByCount(self, count, personal="no"):
+        buildUrl = self.server + "/" + "httpAuth/app/rest/builds/?locator=buildType:" + buildId + ",status:success,count:" + count + ",personal:" + personal
+        buildReq = self._prep_request(self, verb="GET", url=buildUrl)
+        buildsList = self._send_request(self, buildReq)
+        buildDict = json.loads(buildsList.text)
+        builds = []
+        for build in buildDict['build']:
+            buildId = build['id']
+            builds.append(buildId)
+        return builds
 
-    def getProjectById(self, projectId):
-        projectUrl = self.server + "/" + "httpAuth/app/rest/projects/id:" + projectId
-        projectReq = self._prep_request(self, verb="GET", url=projectUrl)
-        project = self._send_request(self, projectReq)
-        print(project.json())
-        return 0
-
-    def getAllBuildTypesForProject(self,projectId):
-        return 0
-
-    #by given buildId return ID of last successful build of this type on given agent
-    def getLastSuccessfulBuildByIdAndagent(self,buildId,agentName):
+    # by given buildId return ID of last successful build of this type on given agent
+    def getLastSuccessfulBuildByIdAndagent(self, buildId, agentName):
         buildUrl = self.server + "/" + "httpAuth/app/rest/builds/?locator=buildType:" + buildId + ",agentName:" + agentName + ",status:SUCCESS" + ",sinceDate:20170720T000000%2B0300"
         buildReq = self._prep_request(self, verb="GET", url=buildUrl)
         buildList = self._send_request(self, buildReq)
         buildDict = json.loads(buildList.text)
         if buildDict['count'] != 0:
 
-            buildList =(buildDict['build']).pop()
+            buildList = (buildDict['build']).pop()
             buildWebUrl = (buildList['webUrl']).split('&')[0]
             Id = buildList['id']
         else:
             Id = 0
         return Id
+
+    def getBuildsDirectlyFromProject(self, projectId):
+        projectUrl = self.server + "/" + "httpAuth/app/rest/projects/id:" + projectId
+        projectReq = self._prep_request(self, verb="GET", url=projectUrl)
+        projectList = self._send_request(self, projectReq)
+        projectDict = json.loads(projectList.text)
+        builds = []
+        if projectDict['buildTypes']['count'] == 0:
+            return 0
+        else:
+            for build in projectDict['projects']['project']:
+                buildId = build['id']
+                builds.append(projectId)
+            return builds
+
+  # project related requests
+    def getProjectById(self, projectId):
+        projectUrl = self.server + "/" + "httpAuth/app/rest/projects/id:" + projectId
+        projectReq = self._prep_request(self, verb="GET", url=projectUrl)
+        project = self._send_request(self, projectReq)
+        print(project.json())
+        return 0
 
     def getAllBuildTypesForProject(self,projectId):
         buildIds = []
@@ -154,47 +251,19 @@ class Teamcity:
 
         return buildIds
 
-    def getInformationFromBuild(self, buildText):
-        buildInf = json.loads(buildText)
-        buildWebUrl = buildInf['webUrl'].split('&')[0]
-        buildName = buildInf['buildType']['name']
-        #buildName1 = buildName0['name']
-        buildVer = buildInf['number'].split('(')[1].split(')')[0]
-        #print(buildWebUrl)
-        #print(buildName)
-        #print(buildVer)
-        return buildWebUrl, buildName, buildVer
-
-    def getBuildNameByBuildId(self, buildId):
-        buildUrl = self.server + "/" + "httpAuth/app/rest/buildTypes/?locator=id:" + buildId
-        buildReq = self._prep_request(self, verb="GET", url=buildUrl)
-        buildList = self._send_request(self, buildReq)
-        buildInf = json.loads(buildList.text)
-        buildName = (buildInf['buildType'].pop())['name']
-        return buildName
-
-    def getBuildRequirementsByBuildId(self, buildId):
-        buildUrl = self.server + "/" + "httpAuth/app/rest/buildTypes/id:" + buildId + "/agent-requirements/"
-        buildReq = self._prep_request(self, verb="GET", url=buildUrl)
-        buildList = self._send_request(self, buildReq)
-        buildInf = json.loads(buildList.text)
-        t1= (buildInf['properties'].pop())
-        return buildInf
-
-    def getCompatibleAgentsForBuild(self,buildId):
-        buildUrl = self.server + "/" +"httpAuth/app/rest/agents?locator=compatible:(buildType:(id:" + buildId + ")),enabled:any"
-        buildReq = self._prep_request(self, verb="GET", url=buildUrl)
-        buildList = self._send_request(self, buildReq)
-        agents = json.loads(buildList.text)
-        agentsList = []
-        if agents['count'] != 0:
-            count = agents['count']
-            while count:
-                agent = (agents['agent']).pop()['name']
-                agentsList.append(agent)
-                count -= 1
-
+    def getSubprojectsFromProject(self, projectId):
+        projectUrl = self.server + "/" + "httpAuth/app/rest/projects/id:" + projectId
+        projectReq = self._prep_request(self, verb="GET", url=projectUrl)
+        projectList = self._send_request(self, projectReq)
+        projectDict = json.loads(projectList.text)
+        projects = []
+        if projectDict['projects']['count'] == 0:
+            return 0
         else:
-            agentsList = 0
-        return agentsList
+            for project in projectDict['projects']['project']:
+                projectId = project['id']
+                projects.append(projectId)
+            return projects
+
+
 
