@@ -9,6 +9,7 @@ class Teamcity:
     server = "http://vmsk-tc-prm.paragon-software.com"
     port = None
     error_handler = None
+    auth = None
 
     def __init__(self, username=None, password=None, server=None, port=None,
                  session=None, protocol=None):
@@ -56,7 +57,7 @@ class Teamcity:
 
 ### date converting part
     def getTCDateFromDate(self, date):
-        TCNow = str(date.year)+str(date.month)+str(date.day)+"T"+str(date.hour)+str(date.minute)+str(date.second)+"%2B0300"
+        TCNow = str(date.year).zfill(2)+str(date.month).zfill(2)+str(date.day).zfill(2)+"T"+str(date.hour).zfill(2)+str(date.minute).zfill(2)+str(date.second).zfill(2)+"%2B0300"
         return TCNow
 
     def getDateFromTCDate(self,TCDate):
@@ -152,34 +153,63 @@ class Teamcity:
         return agentsList
 
     def getArtifactsSizeById(self, buildId):
-        buildUrl = self.server + "/" + "httpAuth/app/rest/builds/id:" + buildId + "/statistics/ArtifactsSize"
-        buildReq = self._prep_request(self, verb="GET", url=buildUrl, headers={'Accept': 'text/plain'})
+        buildUrl = self.server + "/" + "httpAuth/app/rest/builds/id:" + str(buildId) + "/artifacts"
+        buildReq = self._prep_request(self, verb="GET", url=buildUrl)
         buildList = self._send_request(self, buildReq)
+        files = json.loads(buildList.text)
+        if files['count'] != 0:
+            buildUrl = self.server + "/" + "httpAuth/app/rest/builds/id:" + str(buildId) + "/statistics/VisibleArtifactsSize"
+            buildReq = self._prep_request(self, verb="GET", url=buildUrl, headers={'Accept': 'text/plain'})
+            buildList = self._send_request(self, buildReq)
+            if buildList.status_code != 200:
+                #buildUrl = self.server + "/" + "httpAuth/app/rest/builds/id:" + str(buildId) + "/statistics/ArtifactsSize"
+                #buildReq = self._prep_request(self, verb="GET", url=buildUrl, headers={'Accept': 'text/plain'})
+                #buildList = self._send_request(self, buildReq)
+                return 0
+            return buildList.text
+        else:
+            return 0
 
-        return buildList.text
-
-    def getLastBuildsByDate(self, buildId, tillDays, personal="no"):
-        buildUrl = self.server + "/" + "httpAuth/app/rest/builds/?locator=buildType:" + buildId + ",status:SUCCESS" + ",finishDate:(date:" + tillDays + ",condition:before),personal:" + personal
+    #tillDays - number of days in past
+    def getLastBuildsByDate(self, buildId, tillDays, personal="false"):
+        now = datetime.datetime.now()
+        till = now - datetime.timedelta(tillDays)
+        tcTill = self.getTCDateFromDate(self,till)
+        buildUrl = self.server + "/" + "httpAuth/app/rest/builds/?locator=buildType:" + buildId + ",status:SUCCESS" + ",finishDate:(date:" + tcTill + ",condition:before),personal:" + personal
         buildReq = self._prep_request(self, verb="GET", url=buildUrl)
         buildsList = self._send_request(self, buildReq)
         buildDict = json.loads(buildsList.text)
         builds = []
-        for build in buildDict['build']:
-            buildId = build['id']
-            builds.append(buildId)
+        if buildDict['count'] !=0 :
+            for build in buildDict['build']:
+                buildId = build['id']
+                builds.append(buildId)
+
         return builds
 
-    def getLastBuildsByCount(self, count, personal="no"):
-        buildUrl = self.server + "/" + "httpAuth/app/rest/builds/?locator=buildType:" + buildId + ",status:success,count:" + count + ",personal:" + personal
+    def getLastBuildsByCount(self,buildId, count, personal="false"):
+        buildUrl = self.server + "/" + "httpAuth/app/rest/builds/?locator=buildType:" + buildId + ",status:success,count:" +str(count) + ",personal:" + personal
         buildReq = self._prep_request(self, verb="GET", url=buildUrl)
         buildsList = self._send_request(self, buildReq)
         buildDict = json.loads(buildsList.text)
         builds = []
-        for build in buildDict['build']:
-            buildId = build['id']
-            builds.append(buildId)
+        if buildDict['count'] != 0:
+            for build in buildDict['build']:
+                buildId = build['id']
+                builds.append(buildId)
         return builds
 
+    def getListOfBuildsByCountAndDate(self, buildId, count , date):
+        builds = []
+        b = self.getLastBuildsByDate(self,buildId, date, personal="false")
+        builds += b
+        b = self.getLastBuildsByDate(self,buildId, date, personal="true")
+        builds += b
+        b = self.getLastBuildsByCount(self,buildId, count, personal="false")
+        builds += b
+        b = self.getLastBuildsByCount(self,buildId, count, personal="true")
+        builds += b
+        return list(set(builds))
     # by given buildId return ID of last successful build of this type on given agent
     def getLastSuccessfulBuildByIdAndagent(self, buildId, agentName):
         buildUrl = self.server + "/" + "httpAuth/app/rest/builds/?locator=buildType:" + buildId + ",agentName:" + agentName + ",status:SUCCESS" + ",sinceDate:20170720T000000%2B0300"
@@ -204,12 +234,13 @@ class Teamcity:
         if projectDict['buildTypes']['count'] == 0:
             return 0
         else:
-            for build in projectDict['projects']['project']:
+            for build in projectDict['buildTypes']['buildType']:
                 buildId = build['id']
-                builds.append(projectId)
+                builds.append(buildId)
             return builds
 
   # project related requests
+
     def getProjectById(self, projectId):
         projectUrl = self.server + "/" + "httpAuth/app/rest/projects/id:" + projectId
         projectReq = self._prep_request(self, verb="GET", url=projectUrl)
@@ -265,5 +296,22 @@ class Teamcity:
                 projects.append(projectId)
             return projects
 
+    def summarizeArtifactSizeForProject(self, projectId):
 
+        return 0# buildsArtSize + projectsArtSize
 
+    def getParentProject(self, projectId):
+        projectUrl = self.server + "/" + "httpAuth/app/rest/projects/id:" + projectId
+        projectReq = self._prep_request(self, verb="GET", url=projectUrl)
+        projectList = self._send_request(self, projectReq)
+        projectDict = json.loads(projectList.text)
+
+        return projectDict['parentProjectId']
+
+    def getProjectNameById(self, projectId):
+        projectUrl = self.server + "/" + "httpAuth/app/rest/projects/id:" + projectId
+        projectReq = self._prep_request(self, verb="GET", url=projectUrl)
+        projectList = self._send_request(self, projectReq)
+        projectDict = json.loads(projectList.text)
+
+        return projectDict['name']
