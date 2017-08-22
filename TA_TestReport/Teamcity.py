@@ -10,6 +10,7 @@ class Teamcity:
     port = None
     error_handler = None
     auth = None
+    session = None
 
     def __init__(self, username=None, password=None, server=None, port=None,
                  session=None, protocol=None):
@@ -124,7 +125,10 @@ class Teamcity:
         buildReq = self._prep_request(self, verb="GET", url=buildUrl)
         buildList = self._send_request(self, buildReq)
         buildInf = json.loads(buildList.text)
-        buildName = (buildInf['buildType'].pop())['name']
+        try:
+            buildName = (buildInf['buildType'].pop())['name']
+        except:
+            buildName = None
         return buildName
 
     def getBuildRequirementsByBuildId(self, buildId):

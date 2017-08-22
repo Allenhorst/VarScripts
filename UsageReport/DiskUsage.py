@@ -3,16 +3,22 @@ import importlib.util
 import os
 import treelib
 import jsonpickle
+import joblib
 
-spec = importlib.util.spec_from_file_location("Teamcity", "..\TA_TestReport\Teamcity.py")
-TC = importlib.util.module_from_spec(spec)
-spec.loader.exec_module(TC)
+#spec = importlib.util.spec_from_file_location("Teamcity", "..\TA_TestReport\Teamcity.py")
+#TC = importlib.util.module_from_spec(spec)
+#spec.loader.exec_module(TC)
 
 
 filename = "tree2.txt"
 jsonname ="tree.json"
 
-#import Teamcity as TC
+try:
+    import Teamcity as TC
+except ModuleNotFoundError as e:
+    spec = importlib.util.spec_from_file_location("TC", "D:\\Scripts\\TA_TestReport\\Teamcity.py")
+    TC = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(TC)
 
 class BuildNode():
     name = None
@@ -100,9 +106,14 @@ class DiskUsage(TC.Teamcity):
                     if dBuild not in self.buildsArtSize.keys():
                         buildsSizeL = 0
                         builds = TC.Teamcity.getListOfBuildsByCountAndDate(TC.Teamcity,dBuild, count=16, date=8)
-                        for build in builds:
-                            size = TC.Teamcity.getArtifactsSizeById(TC.Teamcity,build)
-                            buildsSizeL += int(size)
+                        acc = 0
+                        build_s = ""
+                        with joblib.Parallel(n_jobs=8, backend="threading") as parallel:
+
+                            build_s = parallel(joblib.delayed(TC.Teamcity.getArtifactsSizeById)(TC.Teamcity,build) for build in builds)
+
+                            for i in build_s: acc += int(i)
+                            buildsSizeL += acc
                         self.buildsArtSize[dBuild] = buildsSizeL
                         buildsSize += buildsSizeL
                     else:
@@ -217,8 +228,13 @@ class DiskUsage(TC.Teamcity):
     def buildToJSON(self,buildID):
         bID = buildID.data.name
         bName = TC.Teamcity.getBuildNameByBuildId(TC.Teamcity, bID)
+
         size = (self.tree.get_node(bID)).data.artSize
-        print("{ \"Build Name\" : \"" + bName + "\",")
+        try:
+            print("{ \"Build Name\" : \"" + bName + "\",")
+        except:
+            bName = "None"
+            print("{ \"Build Name\" : \"" + bName + "\",")
         print("\"Build Id\" : \"" + bID + "\",")
         print("\"ArtSize\" : \"" + size + "\"}")
 
