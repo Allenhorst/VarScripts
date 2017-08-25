@@ -72,10 +72,20 @@ class DiskUsage(TC.Teamcity):
     buildsArtSize = {}
     projectsArtSize = {}
     tree = treelib.Tree()
-
+    jsonname = "tree.json"
+    jsonfile = None
     def __init__(self, username=None, password=None, server=None, port=None,session=None, protocol=None):
         super(DiskUsage, self).__init__(TC.Teamcity, username=username, password=password, server=server, port=port,
                  session=session, protocol=protocol)
+        try:
+            os.remove(jsonname)
+        except FileNotFoundError as e:
+            pass
+
+        try:
+            self.jsonfile = open(jsonname, "w+")
+        except OSError as e:
+            pass
 
     def getSubProjectsCount(self, subPs):
         try:
@@ -84,7 +94,13 @@ class DiskUsage(TC.Teamcity):
             count = 0
         return count
 
-
+    def getNodesDirectLeaves(self, tree, node):
+        leaves = tree.leaves(node)
+        dirleaves = []
+        for leaf in leaves:
+            if leaf.bpointer == node :
+                dirleaves.append(leaf)
+        return dirleaves
 
     def getAllBuildsArtsize(self, rootProjectID):
 
@@ -191,13 +207,13 @@ class DiskUsage(TC.Teamcity):
         subProjectsCount = DiskUsage.getSubProjectsCount(self, subProjects)
         self.tree = treelib.Tree()
         roottree = customProjectNode(rootProjectID, None, self.projectsArtSize[rootProjectID])
-        #tree.create_node(rootProjectID, rootProjectID, data=customProjectNode(rootProjectID, None, "%.3f" % (int(self.projectsArtSize[rootProjectID])/1048576)))
+
         self.tree.create_node(rootProjectID, rootProjectID, data=customProjectNode(rootProjectID, None,self.getFormattedSize(self,self.projectsArtSize[rootProjectID])))
         if directBuilds:
             for dB in directBuilds:
                 node = customProjectNode(dB, rootProjectID, self.buildsArtSize[dB])
                 self.tree.create_node(dB, dB, parent=rootProjectID,
-                                #data=customProjectNode(dB, rootProjectID, "%.3f" % (int(self.buildsArtSize[dB]/1048576))))
+
                                 data=customProjectNode(dB, rootProjectID, self.getFormattedSize(self,self.buildsArtSize[dB])  ))
         while subProjectsCount > 0:
             roots = subProjects
@@ -214,12 +230,12 @@ class DiskUsage(TC.Teamcity):
                 subProjectsCount += subPrsCount
                 parent = TC.Teamcity.getParentProject(TC.Teamcity, root)
                 node = customProjectNode(root, parent,  self.projectsArtSize[root])
-                #tree.create_node(root, root, parent=parent, data=customProjectNode(root, parent, "%.3f" % (int(self.projectsArtSize[root])/1048576)))
+
                 self.tree.create_node(root, root, parent=parent, data=customProjectNode(root, parent, self.getFormattedSize(self,self.projectsArtSize[root])))
                 if dirBuilds :
                     for dB in dirBuilds:
                         node = customProjectNode(dB, root, self.buildsArtSize[dB])
-                        #tree.create_node(dB, dB, parent=root, data=customProjectNode(dB, root, "%.3f" % (int(self.buildsArtSize[dB]/1048576))))
+
                         self.tree.create_node(dB, dB, parent=root, data=customProjectNode(dB, root, self.getFormattedSize(self,self.buildsArtSize[dB])))
                         # return tree #by this moment we can return out tree and work directly with it
         self.tree.save2file(filename=filename,data_property="data")
@@ -228,15 +244,14 @@ class DiskUsage(TC.Teamcity):
     def buildToJSON(self,buildID):
         bID = buildID.data.name
         bName = TC.Teamcity.getBuildNameByBuildId(TC.Teamcity, bID)
-
         size = (self.tree.get_node(bID)).data.artSize
         try:
-            print("{ \"Build Name\" : \"" + bName + "\",")
+            self.jsonfile.write("{ \"Build Name\" : \"" + bName.replace("\\", "\\\\") + "\"," + "\n")
         except:
             bName = "None"
-            print("{ \"Build Name\" : \"" + bName + "\",")
-        print("\"Build Id\" : \"" + bID + "\",")
-        print("\"ArtSize\" : \"" + size + "\"}")
+            self.jsonfile.write("{ \"Build Name\" : \"" + bName + "\"," + "\n")
+        self.jsonfile.write("\"Build Id\" : \"" + bID.replace("\\", "\\\\") + "\"," + "\n")
+        self.jsonfile.write("\"ArtSize\" : \"" + size + "\"}" + "\n")
 
 
 
@@ -244,29 +259,34 @@ class DiskUsage(TC.Teamcity):
         prID = rootProjectID
         prName = TC.Teamcity.getProjectNameById(TC.Teamcity, rootProjectID)
         subPR =TC.Teamcity.getSubprojectsFromProject(TC.Teamcity, rootProjectID)
-        dBuilds = self.tree.leaves(rootProjectID)
-        print("{ \"Project Name\" : \"" + prName + "\",")
-        print("\"Project Id\" : \"" + prID + "\",")
+
+        dBuilds = self.getNodesDirectLeaves(self, self.tree, rootProjectID)
+        ArtSize = (self.tree.get_node(rootProjectID)).data.artSize
+        self.jsonfile.write("{ \"Project Name\" : \"" + prName.replace("\\", "\\\\") + "\"," + "\n")
+        self.jsonfile.write("\"Project Id\" : \"" + prID.replace("\\", "\\\\") + "\"," + "\n")
+        self.jsonfile.write("\"ArtSize\" : \"" + ArtSize + "\"," + "\n")
+
         if subPR:
-            print("\"SubProjects\" : [")
+            self.jsonfile.write("\"SubProjects\" : [" + "\n")
             count = 0
             for sp in subPR:
                 count +=1
                 self.projectToJSON(self, sp)
                 if count != len(subPR):
-                    print (",")
-            print("]")
+                    self.jsonfile.write ("," + "\n")
+            self.jsonfile.write("],")
         else:
-            print("\"SubProjects\" : \"None\",")
+            self.jsonfile.write("\"SubProjects\" : \"None\"," + "\n")
         if dBuilds:
-            print(("\"directBuilds\" : ["))
+            self.jsonfile.write(("\"directBuilds\" : [") + "\n")
             c = 0
             for db in dBuilds:
                 c +=1
                 self.buildToJSON(self, db)
                 if c != len(dBuilds):
-                    print(",")
-            print("]")
+                    self.jsonfile.write("," + "\n")
+
+            self.jsonfile.write("]")
         else:
-            print("\"directBuilds\" : \"None\"")
-        print ("}")
+            self.jsonfile.write("\"directBuilds\" : \"None\"" + "\n")
+        self.jsonfile.write ("}" + "\n")
