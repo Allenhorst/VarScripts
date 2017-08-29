@@ -29,28 +29,35 @@ class Loader():
         dirBuilds = jsondata["directBuilds"]
 
         subProjectsCount = DiskUsage.getSubProjectsCount(DiskUsage,subPs=subPr)
-        self.tree.create_node(prName,prID,parent=parent, data=customProjectNode(prID,parent,artSize))
+        if self.tree.contains(prID):
+            return
+        else:
+            self.tree.create_node(prName,prID,parent=parent, data=customProjectNode(prID,parent,artSize))
 
-        if dirBuilds:
-            for dB in dirBuilds:
-                dbId = dB["Build Id"]
-                dbName = dB["Build Name"]
-                dbAS = dB["ArtSize"]
-                self.tree.create_node(dbName, dbId, parent=prID,data=customProjectNode(dB, prID, dbAS ))
-        while subProjectsCount > 0:
-            roots = subPr
-            subProjects = []
-            subProjectsCount = 0
-            for root in roots:
+            if (dirBuilds != "None"):
+                for dB in dirBuilds:
+                    dbId = dB["Build Id"]
+                    dbName = dB["Build Name"]
+                    dbAS = dB["ArtSize"]
+                    self.tree.create_node(dbName, dbId, parent=prID,data=customProjectNode(dB, prID, dbAS ))
+            if subProjectsCount > 0:
+                roots = subPr
+                subProjects = []
 
-                subPrs = jsondata["SubProjects"]
-                if subPrs:
-                    subProjects += subPrs
-                    subPrsCount = len(subPrs)
-                else:
-                    subPrsCount = 0
-                subProjectsCount += subPrsCount
-                self.addProjectNode(root,parent=prID)
+                if roots != "None" :
+                    for root in roots:
+
+                        subPrs = jsondata["SubProjects"]
+                        if subPrs:
+                            subProjects += subPrs
+                            subPrsCount = len(subPrs)
+                        else:
+                            subPrsCount = 0
+                        subProjectsCount += subPrsCount
+                        self.tree.save2file("tree3.txt")
+                        print
+                        self.addProjectNode(self, jsondata=root, parent=prID)
+                    subProjectsCount -=1
 
         #print("done")
         return self.tree
