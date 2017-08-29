@@ -206,7 +206,7 @@ class DiskUsage(TC.Teamcity):
         subProjects = TC.Teamcity.getSubprojectsFromProject(TC.Teamcity, rootProjectID)
         subProjectsCount = DiskUsage.getSubProjectsCount(self, subProjects)
         self.tree = treelib.Tree()
-        roottree = customProjectNode(rootProjectID, None, self.projectsArtSize[rootProjectID])
+        #roottree = customProjectNode(rootProjectID, None, self.projectsArtSize[rootProjectID])
 
         self.tree.create_node(rootProjectID, rootProjectID, data=customProjectNode(rootProjectID, None,self.getFormattedSize(self,self.projectsArtSize[rootProjectID])))
         if directBuilds:
@@ -239,6 +239,7 @@ class DiskUsage(TC.Teamcity):
                         self.tree.create_node(dB, dB, parent=root, data=customProjectNode(dB, root, self.getFormattedSize(self,self.buildsArtSize[dB])))
                         # return tree #by this moment we can return out tree and work directly with it
         self.tree.save2file(filename=filename,data_property="data")
+        return self.tree
         #jsoned = tree.to_json()
 
     def buildToJSON(self,buildID):
