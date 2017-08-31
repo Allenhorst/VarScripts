@@ -4,6 +4,7 @@ import os
 import treelib
 import jsonpickle
 import joblib
+import datetime
 
 #spec = importlib.util.spec_from_file_location("Teamcity", "..\TA_TestReport\Teamcity.py")
 #TC = importlib.util.module_from_spec(spec)
@@ -72,18 +73,16 @@ class DiskUsage(TC.Teamcity):
     buildsArtSize = {}
     projectsArtSize = {}
     tree = treelib.Tree()
-    jsonname = "tree.json"
+    jsonname = "tree"
     jsonfile = None
-    def __init__(self, username=None, password=None, server=None, port=None,session=None, protocol=None):
+    def __init__(self, username=None, password=None, server=None, port=None,session=None, protocol=None, jsonname=jsonname):
         super(DiskUsage, self).__init__(TC.Teamcity, username=username, password=password, server=server, port=port,
                  session=session, protocol=protocol)
-        try:
-            os.remove(jsonname)
-        except FileNotFoundError as e:
-            pass
 
+        jsonname = jsonname+"-"+(datetime.datetime.now().isoformat(sep='-')[:-7]).replace(':','-')+".json"
         try:
-            self.jsonfile = open(jsonname, "w+")
+            path = os.getcwd()+"\\Reports\\"+jsonname
+            self.jsonfile = open(path, "w+")
         except OSError as e:
             pass
 
