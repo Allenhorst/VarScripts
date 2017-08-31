@@ -36,6 +36,13 @@ class Reporter():
 
         return text
 
+    def generateCompReport(self,new,old, level_cap):
+        diff = self.buildReport(self, new=new, old=old)
+        cur_level = 0
+        root = new.get_node( new.root)
+        text = self.buildComp(self,root,new,diff ,cur_level,level_cap)
+
+        return text
 
     def buildStr(self,tree,node,level, level_cap, row=""):
         self.row =row
@@ -52,7 +59,7 @@ class Reporter():
             #dirBuilds = node.data
 
             hLvl = lambda level : level+1 if level < 6 else 6
-            self.row += "<tr>" + "<td valign=top><h"+str(hLvl(cur_level))+">" +self.indent(cur_level)  + prName +  "</h"+str(hLvl(cur_level))+">"+ "</td><td>" + artSize + "</td></tr>\n"
+            self.row += "<tr>" + "<td valign=top><h"+str(hLvl(cur_level))+">" +self.indent(cur_level)  + node.tag + "(" + node.identifier + ") " +  "</h"+str(hLvl(cur_level))+">"+ "</td><td>" + artSize + "</td></tr>\n"
         if subPr != "None":
             for subP in subPr:
                 self.buildStr(self,tree,subP,level=cur_level+1, level_cap=level_cap, row=self.row)
@@ -60,29 +67,25 @@ class Reporter():
         # "<tr> <td valign=top>" + buildName + "</td></tr>"
         return self.row
 
-    def buildComp(self, node,diff, level, level_cap, row=""):
-        row = row
+    def buildComp(self, node,tree, diff, level, level_cap, row=""):
+        self.row = row
         if level > level_cap:
-            return row
+            return self.row
         else:
             cur_level = level
-
-            prName = node["Project Name"]
-            prID = node["Project Id"]
-            subPr = node["SubProjects"]
-            dirBuilds = node["directBuilds"]
+            artSize = node.data.artSize
+            try:
+                prName = node.identifier
+            except:
+                prName = node.data.name
+            subPr = tree.children(node.identifier)
+            # dirBuilds = node.data
 
             hLvl = lambda level: level + 1 if level < 6 else 6
-            row += "<tr>" + "<td>" + "<h" + hLvl + ">" + prName + "</td><td>" + diff["prID"] + "%" + + "</h" + hLvl + ">" +  "</td></tr>\n"
+            self.row += "<tr>" + "<td valign=top><h" + str(hLvl(cur_level)) + ">" + self.indent(cur_level) +  node.tag + "(" + node.identifier + ") "+ "</h" + str(hLvl(cur_level)) + ">" + "</td><td>" + str(diff[prName]) + "</td></tr>\n"
         if subPr != "None":
             for subP in subPr:
-                self.buildStr(subP, level=cur_level + 1, level_cap=level_cap, row=row)
-        if dirBuilds != "None":
-            for dB in dirBuilds:
-                dbName = dB["Build Name"]
-                dbID = dB["Build Id"]
-                dbAS = dB["ArtSize"]
-                row += "<tr>" + "<td ><h" + hLvl + ">" + dbName + "</td><td>" + diff["dbID"]  + "%" +   "</h" + hLvl + ">" + "</td></tr>\n"
+                self.buildComp(self,subP, tree,diff, level=cur_level + 1, level_cap=level_cap, row=self.row)
 
         # "<tr> <td valign=top>" + buildName + "</td></tr>"
-        return row
+        return self.row

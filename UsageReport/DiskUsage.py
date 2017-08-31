@@ -75,16 +75,21 @@ class DiskUsage(TC.Teamcity):
     tree = treelib.Tree()
     jsonname = "tree"
     jsonfile = None
+    path=""
     def __init__(self, username=None, password=None, server=None, port=None,session=None, protocol=None, jsonname=jsonname):
         super(DiskUsage, self).__init__(TC.Teamcity, username=username, password=password, server=server, port=port,
                  session=session, protocol=protocol)
 
         jsonname = jsonname+"-"+(datetime.datetime.now().isoformat(sep='-')[:-7]).replace(':','-')+".json"
         try:
-            path = os.getcwd()+"\\Reports\\"+jsonname
-            self.jsonfile = open(path, "w+")
+            self.path = os.getcwd()+"\\Reports\\"+jsonname
+            self.jsonfile = open(self.path, "w+")
         except OSError as e:
             pass
+
+    def closeFile(self):
+        self.jsonfile.close()
+
 
     def getSubProjectsCount(self, subPs):
         try:
