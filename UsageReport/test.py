@@ -21,7 +21,11 @@ def findFile(pattern, path):
 def findLastFile(files):
 
     t= sorted(files).pop()
-    return  t
+    return t
+
+
+def generateReport(jsondata,level):
+
 
 
 curPath = os.getcwd()
@@ -44,9 +48,20 @@ try:
 except IndexError as e:
     rootProjectId = rootID
 
-fileToFind = rootProjectId+".json"
+fileToFind = rootProjectId
 results = findFile(fileToFind, curPath+"//Reports")
 lastReport = ""
+
+
+
+
+
+
+if results == []:
+    #no files found, generating clear report
+    generateReport()
+else:
+    generateCompReport()
 
 
 

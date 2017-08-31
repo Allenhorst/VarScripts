@@ -4,7 +4,7 @@ import sys
 
 allBuildIds = []
 allBuildNames = []
-allTestsProjectIds = ["Prm_Tests_L1", "Prm_Tests_L2", "Prm_Tests_L3"]
+allTestsProjectIds = ["Prm_Tests_L1", "Prm_Tests_L2", "Prm_Tests_L3", "Prm_Tests_Newfn"]
 excludeProjectIds = ["Investigate", "Legacy"]  # to do add real id
 defaultAgentId = "ta-srv1112-14"
 try:

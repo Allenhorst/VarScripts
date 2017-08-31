@@ -65,8 +65,11 @@ class Teamcity:
         now = datetime.datetime(year=TCDate[0:4], month=TCDate[5:6], day=TCDate[7:8], hour=TCDate[10:11], minute=TCDate[12:13], second=TCDate[14:15])
         return now
 
-### rest api requests part
-  # builds related requests
+"""
+ # rest api requests part
+"""
+
+   # builds related requests
     def getBuildByBuildId(self, buildId):
         buildUrl = self.server + "/" + "httpAuth/app/rest/builds/?locator=buildType:" + buildId
         buildReq = self._prep_request(self,verb="GET", url=buildUrl)

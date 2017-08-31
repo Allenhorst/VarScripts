@@ -1,5 +1,3 @@
-import  os
-import  sys
 import DiskUsage as DU
 import datetime
 import importlib.util
@@ -11,7 +9,8 @@ if __name__ == '__main__':
     DU.DiskUsage.__init__(DU.DiskUsage, username="adacc",
                          password="jd7gowuX",
                          server="http://vmsk-tc-prm.paragon-software.com",
-                         port=None
+                         port=None,
+                         jsonname="Prm_Sandbox_2Sintsov"
                          )
     #builds = TC.Teamcity.getLastBuildsByDate(TC.Teamcity,"Prm_Tests_Sdkl1_723sdkFastWixFullLi", "20170727T000000%2B0300")
     #project = TC.Teamcity.getSubprojectsFromProject(TC.Teamcity, "PrmF100716")
@@ -20,12 +19,12 @@ if __name__ == '__main__':
 
     #DU.DiskUsage.buildTree(DU.DiskUsage, "PrmBackup")
     print ("Work begins :" + str(datetime.datetime.now()))
-    t = DU.DiskUsage.getAllBuildsArtsize(DU.DiskUsage, "Prm_Sandbox")
+    t = DU.DiskUsage.getAllBuildsArtsize(DU.DiskUsage, "Prm_Sandbox_2Sintsov")
 
-    print (t)
+    #print (t)
 
-    DU.DiskUsage.buildCustomTree(DU.DiskUsage, "Prm_Sandbox")
-    DU.DiskUsage.projectToJSON(DU.DiskUsage, "Prm_Sandbox")
+    DU.DiskUsage.buildCustomTree(DU.DiskUsage, "Prm_Sandbox_2Sintsov")
+    DU.DiskUsage.projectToJSON(DU.DiskUsage, "Prm_Sandbox_2Sintsov")
 
     #for k, v in DU.DiskUsage.projectsArtSize.items():
     #    print(k +" : "+ "%.3f" %(v/1048576) + " Mb")

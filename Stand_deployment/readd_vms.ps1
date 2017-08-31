@@ -1,6 +1,6 @@
-Connect-VIServer -Server vdlg-vc60-prm -User paragon\autotester -Password asdF5hh
+Connect-VIServer -Server 172.30.66.63 -User admin_esxi -Password Qwerty123!
             
-            $h = Get-VMHost -Name "srv1114.paragon-software.com"      
+            $h = Get-VMHost -Name "172.30.66.63"      
             $ds=$h|Get-Datastore 
             #$s=$h|Get-Datastore *srv1002:hdd1* #если хотите только с одного диска добавлять в инвентарь         
             foreach ($s in $ds)
