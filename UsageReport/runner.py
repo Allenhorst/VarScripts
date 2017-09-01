@@ -66,6 +66,11 @@ else:
 
 
 
+toRemove =findFile("report*", curPath+"\\HTMLs")
+for f in toRemove:
+    os.remove(f)
+
+
 htmlname = "reportss.html"
 startHTML = "\r\n<html> <body> \r\n<table border=1 cellpadding=10 cellspacing=0>  \r\n"
 endHTML = "</table> </body>\r\n</html> "
@@ -76,7 +81,7 @@ except FileNotFoundError as e:
     pass
 
 try:
-    f = open(htmlname, "w+")
+    f = open(curPath+"\\HTMLs"+htmlname, "w+")
 except OSError as e:
     pass
 f.write(startHTML)
