@@ -115,7 +115,7 @@ except FileNotFoundError as e:
     pass
 
 try:
-    f = open(curPath+"\\HTMLs"+htmlname, "w+")
+    f = open(curPath+"\\HTMLs\\"+htmlname, "w+")
 except OSError as e:
     pass
 f.write(startHTML)
