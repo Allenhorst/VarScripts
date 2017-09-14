@@ -28,6 +28,15 @@ def findLastFile(files):
 
 
 curPath = os.getcwd()
+
+
+
+"""
+Check input parameters :
+1. Id of root project to inspect
+2. Depth of subproject to inspect
+3. Max count of subprojects reports
+"""
 #rootID = "_Root"
 rootID = "Prm_Sandbox_2Sintsov"
 try:
@@ -35,7 +44,22 @@ try:
 except IndexError as e:
     rootProjectId = rootID
 
-fileToFind = rootProjectId+"*"
+
+
+try:
+    max_dLevel = int(sys.argv[2])
+except IndexError as e:
+    max_dLevel = 2
+
+
+try:
+    max_wLevel = sys.argv[3]
+except IndexError as e:
+    max_wLevel = 3
+
+
+
+fileToFind = rootProjectId+"-*"
 reports = findFile(fileToFind, curPath+"\\Reports")
 
 DiskUsage.DiskUsage.__init__(DiskUsage.DiskUsage, username="adacc",
@@ -55,14 +79,23 @@ new = loader.Loader.addProjectNode(loader.Loader, jsondata=js1)
 
 if reports == [] :
     # no suitable reports - generate one and make html report based on it
-    text = Reporter.Reporter.generateReport(Reporter.Reporter, new, 2)
+    text = Reporter.Reporter.generateReport(Reporter.Reporter, new, max_dLevel, max_wLevel)
+    header1 = "<tr><th colspan=\"2\"><h1>Report represents current artifacts size in project with id " + rootProjectId +"</h1></th></tr>"
+    header2 = "<tr><td><h2>Configuration Name(Conf ID)<h2></td><td><h2> Current artifact size</h2></td></tr>"
 else:
     lastReport = findLastFile(reports)
     L1 = loader.Loader(lastReport)
     js = L1.parseJson(lastReport)
     loader.Loader.tree= treelib.Tree()
     old = loader.Loader.addProjectNode(loader.Loader, jsondata=js)
-    text = Reporter.Reporter.generateCompReport(Reporter.Reporter, new, old, 2)
+    text = Reporter.Reporter.generateCompReport(Reporter.Reporter, new, old, max_dLevel, max_wLevel)
+    old_time = lastReport[-24:-5]
+    header1 = "<tr><th colspan=\"3\"><h1>Report represents changes in artifacts size in project with id  " + rootProjectId + "  from time"+ old_time+ "</h1></th></tr>"
+    header2 = "<tr>" \
+              "<td><h2>Configuration Name(Conf ID)</h2></td>"\
+              "<td><h2>Change</h2></td>"\
+              "<td><h2>Artifact size</h2></td>" \
+              "</tr>"
 
 
 
@@ -73,6 +106,7 @@ for f in toRemove:
 
 htmlname = "reportss.html"
 startHTML = "\r\n<html> <body> \r\n<table border=1 cellpadding=10 cellspacing=0>  \r\n"
+#header2 = "<tr><td>Configuration Name(Conf ID)</td><td> Artifact size</td></tr>"
 endHTML = "</table> </body>\r\n</html> "
 
 try:
@@ -85,6 +119,8 @@ try:
 except OSError as e:
     pass
 f.write(startHTML)
+f.write(header1)
+f.write(header2)
 f.write(text)
 f.write(endHTML)
 

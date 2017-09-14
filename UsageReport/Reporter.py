@@ -26,21 +26,21 @@ class Reporter():
                 print("Unexpected error within node" + node_new.name)
         return diff
 
-    def generateReport(self,new, level_cap):
+    def generateReport(self,new, depth_cap,width_cap):
         diff = {}
         cur_level = 0
         root = new.get_node( new.root)
         #text = self.buildStr(self,new,root,cur_level,level_cap)
-        text = self.buildRestStr(self,new,root,cur_level,level_cap,max_count=3)
+        text = self.buildRestStr(self,new,root,cur_level,depth_cap,max_count=width_cap)
 
         return text
 
-    def generateCompReport(self,new,old, level_cap):
+    def generateCompReport(self,new,old, depth_cap,width_cap):
         diff = self.buildReport(self, new=new, old=old)
         cur_level = 0
         root = new.get_node( new.root)
         #text = self.buildComp(self,root,new,diff ,cur_level,level_cap)
-        text = self.buildRestComp(self,root,new,diff ,cur_level,level_cap, max_count=3)
+        text = self.buildRestComp(self,root,new,diff ,cur_level,depth_cap, max_count=width_cap)
 
         return text
 
