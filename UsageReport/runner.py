@@ -5,6 +5,7 @@ import sys
 import os
 import fnmatch
 import treelib
+import datetime
 
 """
 consider input filename as rootId-yy-mm-dd-hh-mm-ss.json
@@ -38,7 +39,7 @@ Check input parameters :
 3. Max count of subprojects reports
 """
 #rootID = "_Root"
-rootID = "Prm_Sandbox_2Sintsov"
+rootID = "Prm_Sandbox"
 try:
     rootProjectId = sys.argv[1]
 except IndexError as e:
@@ -128,3 +129,6 @@ DiskUsage.DiskUsage.closeFile(DiskUsage.DiskUsage)
 toRemove =findFile("tree*", curPath+"\\Reports")
 for f in toRemove:
     os.remove(f)
+
+
+print("Work ends :" + str(datetime.datetime.now()))

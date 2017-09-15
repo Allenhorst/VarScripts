@@ -90,6 +90,15 @@ class DiskUsage(TC.Teamcity):
     def closeFile(self):
         self.jsonfile.close()
 
+    def dateComparer(self, firstDate, secondDate):
+        delta = TC.Teamcity.getDateFromTCDate(secondDate) - TC.Teamcity.getDateFromTCDate(firstDate)
+        if delta > 0 :
+            return 1
+        elif delta == 0 :
+            return 0
+        else :
+            return -1
+
 
     def getSubProjectsCount(self, subPs):
         try:
@@ -141,9 +150,17 @@ class DiskUsage(TC.Teamcity):
             if subProjectsCount == 0 :
                 pass
             else:
-                for subP in subProjects:
-                    t = self.getAllBuildsArtsize(self,subP)
-                    buildsSize += int(t)
+                #for subP in subProjects:
+                #    t = self.getAllBuildsArtsize(self,subP)#
+                #    buildsSize += int(t)
+                acc = 0
+                with joblib.Parallel(n_jobs=8, backend="threading") as parallel:
+
+                    build_s = parallel(
+                        joblib.delayed(self.getAllBuildsArtsize)(self, subP) for subP in subProjects)
+
+                    for i in build_s: acc += int(i)
+                    buildsSize += acc
             self.projectsArtSize[rootProjectID] = buildsSize
         else:
             buildsSize = self.projectsArtSize[rootProjectID]
@@ -257,6 +274,73 @@ class DiskUsage(TC.Teamcity):
             self.jsonfile.write("{ \"Build Name\" : \"" + bName + "\"," + "\n")
         self.jsonfile.write("\"Build Id\" : \"" + bID.replace("\\", "\\\\") + "\"," + "\n")
         self.jsonfile.write("\"ArtSize\" : \"" + size + "\"}" + "\n")
+
+    def getSmartAllBuildsArtsize(self, rootProjectID, info, date):
+
+        directBuilds = TC.Teamcity.getBuildsDirectlyFromProject(TC.Teamcity, rootProjectID)
+        subProjects = TC.Teamcity.getSubprojectsFromProject(TC.Teamcity, rootProjectID)
+        if rootProjectID not in self.projectsArtSize.keys():
+
+            try:
+                subProjectsCount = len(subProjects)
+            except TypeError as e:
+                subProjectsCount = 0
+            buildsSize = 0
+            builds = []
+            if directBuilds == 0:
+                pass
+            else:
+                for dBuild in directBuilds:
+
+                    if dBuild not in self.buildsArtSize.keys():
+                        buildsSizeL = 0
+                        # todo : get last build date only
+                        lastBuildTCDates,lastBuildDates = []
+                        lastBuildTCDates += TC.Teamcity.getBuildFinishDate(self, TC.Teamcity.getLastBuildsByCount(self,dBuild,1, personal="false"))
+                        lastBuildTCDates += TC.Teamcity.getBuildFinishDate(self, TC.Teamcity.getLastBuildsByCount(self,dBuild,1, personal="true"))
+
+                        lastBuildDates[0] = lastBuildTCDates[0]
+                        lastBuildDates[1] = lastBuildTCDates[1]
+                        comp = self.dateComparer(lastBuildDates[0],lastBuildDates[1])
+
+                        if comp > 0 :
+                            newer =  lastBuildDates[1]
+                        else :
+                            newer =  lastBuildDates[0]
+                        # check whether existing data is newer than last build
+                        comp = self.dateComparer(newer,date)
+
+                        if comp > 0 :
+
+                            info.get_node(dBuild)
+                            #no need to get info from TC, getting it from data
+
+                        else :
+
+                            builds = TC.Teamcity.getListOfBuildsByCountAndDate(TC.Teamcity,dBuild, count=16, date=8)
+                            acc = 0
+                            build_s = ""
+                            with joblib.Parallel(n_jobs=8, backend="threading") as parallel:
+
+                                build_s = parallel(joblib.delayed(TC.Teamcity.getArtifactsSizeById)(TC.Teamcity,build) for build in builds)
+
+                                for i in build_s: acc += int(i)
+                                buildsSizeL += acc
+                            self.buildsArtSize[dBuild] = buildsSizeL
+                            buildsSize += buildsSizeL
+                    else:
+                        buildsSize = self.buildsArtSize[dBuild]
+            if subProjectsCount == 0 :
+                pass
+            else:
+                for subP in subProjects:
+                    t = self.getAllBuildsArtsize(self,subP)
+                    buildsSize += int(t)
+            self.projectsArtSize[rootProjectID] = buildsSize
+        else:
+            buildsSize = self.projectsArtSize[rootProjectID]
+        return buildsSize
+
 
 
 

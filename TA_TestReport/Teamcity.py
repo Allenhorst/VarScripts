@@ -254,7 +254,8 @@ class Teamcity:
 
     def getAllBuildTypesForProject(self,projectId):
         buildIds = []
-        buildUrl = self.server + "/" + "httpAuth/app/rest/buildTypes?locator=affectedProject:(id:" + projectId + ")&fields=buildType(id,name,builds($locator(personal:any,running:false,canceled:false,count:1),build(number,status,statusText)))"
+        buildUrl = self.server + "/" + "httpAuth/app/rest/buildTypes?locator=affectedProject:(id:" + projectId + \
+                   ")&fields=buildType(id,name,builds($locator(personal:any,running:false,canceled:false,count:1),build(number,status,statusText)))"
         buildReq = self._prep_request(self, verb="GET", url=buildUrl)
         buildList = self._send_request(self, buildReq)
         buildDict = json.loads(buildList.text)
@@ -271,7 +272,8 @@ class Teamcity:
 
     def getAllBuildTypesForProjectNames(self,projectId):
         buildIds = []
-        buildUrl = self.server + "/" + "httpAuth/app/rest/buildTypes?locator=affectedProject:(id:" + projectId + ")&fields=buildType(id,name,builds($locator(personal:any,running:false,canceled:false,count:1),build(number,status,statusText)))"
+        buildUrl = self.server + "/" + "httpAuth/app/rest/buildTypes?locator=affectedProject:(id:" + projectId + \
+                   ")&fields=buildType(id,name,builds($locator(personal:any,running:false,canceled:false,count:1),build(number,status,statusText)))"
         buildReq = self._prep_request(self, verb="GET", url=buildUrl)
         buildList = self._send_request(self, buildReq)
         buildDict = json.loads(buildList.text)
@@ -319,3 +321,11 @@ class Teamcity:
         projectDict = json.loads(projectList.text)
 
         return projectDict['name']
+
+    def getBuildFinishDate(self,buildId):
+        buildUrl = self.server + "/" + "httpAuth/app/rest/builds/id:" + str(buildId)
+        buildReq = self._prep_request(self, verb="GET", url=buildUrl)
+        buildList = self._send_request(self, buildReq)
+        buildDict = json.loads(buildList.text)
+        finishDate = buildDict['finishDate']
+        return finishDate
