@@ -46,20 +46,20 @@ try:
 except IndexError as e:
     rootProjectId = rootID
 
-TM.message("Root project id is " , rootProjectId)
+TM._single_value_message("Root project id is " , rootProjectId)
 
 try:
     max_dLevel = int(sys.argv[2])
 except IndexError as e:
     max_dLevel = 2
 
-TM.message("Max depth of subprojects is " , str(max_dLevel))
+TM._single_value_message("Max depth of subprojects is " , str(max_dLevel))
 try:
     max_wLevel = sys.argv[3]
 except IndexError as e:
     max_wLevel = 3
 
-TM.message("Max number of reported subprojects/builds  of a project is " , str(max_wLevel))
+TM._single_value_message("Max number of reported subprojects/builds  of a project is " , str(max_wLevel))
 
 fileToFind = rootProjectId+"-*"
 reports = findFile(fileToFind, curPath+"\\Reports")
@@ -86,14 +86,14 @@ new = loader.Loader.addProjectNode(loader.Loader, jsondata=js1)
 
 if reports == [] :
     # no suitable reports - generate one and make html report based on it
-    TM.message("No suitable reports - generate one and make html report based on it", "")
+    TM._single_value_message("No suitable reports - generate one and make html report based on it", "")
     TM.blockOpened("Begin generating report")
     text = Reporter.Reporter.generateReport(Reporter.Reporter, new, max_dLevel, max_wLevel)
     TM.blockClosed("Ended generating report")
     header1 = "<tr><th colspan=\"2\"><h1>Report represents current artifacts size in project with id " + rootProjectId +"</h1></th></tr>"
     header2 = "<tr><td><h2>Configuration Name(Conf ID)<h2></td><td><h2> Current artifact size</h2></td></tr>"
 else:
-    TM.message("Find appropriate report - build comparative html report", "")
+    TM._single_value_message("Find appropriate report - build comparative html report", "")
     TM.blockOpened("Begin generating report")
     lastReport = findLastFile(reports)
     L1 = loader.Loader(lastReport)
