@@ -121,7 +121,7 @@ class Reporter():
                 i+=1
             odArtSize = collections.OrderedDict(sorted(artSizeDict.items(), key=lambda x: x[1][1]))
             k=0
-            count = min(i,max_count)
+            count = min(i,int(max_count))
             while k < count:
                 subp_od = subPDict[odArtSize.popitem()[1][0]]
                 self.buildRestStr(self, tree, subp_od, level=cur_level + 1, level_cap=level_cap, row=self.row, max_count =max_count )
@@ -167,7 +167,7 @@ class Reporter():
                 i+=1
             odArtSize = collections.OrderedDict(sorted(artSizeDict.items(), key=lambda x: x[1][1]))
             k=0
-            count = min(i, max_count)
+            count = min(i, int(max_count))
             while k < count:
                 subp_od = subPDict[odArtSize.popitem()[1][0]]
                 self.buildRestComp(self,subp_od,tree, diff, level=cur_level + 1, level_cap=level_cap, row=self.row, max_count= max_count)
