@@ -53,13 +53,13 @@ try:
 except IndexError as e:
     max_dLevel = 2
 
-TM.message("Max depth of subprojects is " + max_dLevel)
+TM.message("Max depth of subprojects is " + str(max_dLevel))
 try:
     max_wLevel = sys.argv[3]
 except IndexError as e:
     max_wLevel = 3
 
-TM.message("Max number of reported subprojects/builds  of a project is " + max_wLevel)
+TM.message("Max number of reported subprojects/builds  of a project is " + str(max_wLevel))
 
 fileToFind = rootProjectId+"-*"
 reports = findFile(fileToFind, curPath+"\\Reports")
