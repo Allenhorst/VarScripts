@@ -21,7 +21,7 @@ class Reporter():
                     oldsize2 = float(oldsize1)
                     oldsize = float(node_old.data.artSize[0:(len(node_old.data.artSize)-5)])
                     newsize = float(node_new.data.artSize[0:(len(node_new.data.artSize)-5)])
-                    diff[node_new.identifier] = [(newsize-oldsize),oldsize,newsize]
+                    diff[node_new.identifier] = [str("%.3f" % (newsize-oldsize)),oldsize,newsize]
             except:
                 print("Unexpected error within node" + node_new.name)
         return diff
