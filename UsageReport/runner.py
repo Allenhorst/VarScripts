@@ -30,8 +30,8 @@ TM = tm.TeamcityServiceMessages()
 
 
 curPath = os.getcwd()
-
-TM.blockOpened("Constructing started")
+print(str(datetime.datetime.now()))
+TM.blockOpened(name="UsageReporter")
 
 """
 Check input parameters :
@@ -46,20 +46,20 @@ try:
 except IndexError as e:
     rootProjectId = rootID
 
-TM._single_value_message("Root project id is " , rootProjectId)
+TM.message("Root project id is "  + rootProjectId)
 
 try:
     max_dLevel = int(sys.argv[2])
 except IndexError as e:
     max_dLevel = 2
 
-TM._single_value_message("Max depth of subprojects is " , str(max_dLevel))
+TM.message("Max depth of subprojects is " + str(max_dLevel))
 try:
     max_wLevel = sys.argv[3]
 except IndexError as e:
     max_wLevel = 3
 
-TM._single_value_message("Max number of reported subprojects/builds  of a project is " , str(max_wLevel))
+TM.message("Max number of reported subprojects/builds  of a project is " + str(max_wLevel))
 
 fileToFind = rootProjectId+"-*"
 reports = findFile(fileToFind, curPath+"\\Reports")
@@ -70,15 +70,15 @@ DiskUsage.DiskUsage.__init__(DiskUsage.DiskUsage, username="adacc",
                              port=None,
                              jsonname=rootProjectId
                              )
-TM.blockOpened("Begin collecting current artifact size")
+TM.blockOpened(name="getAllBuildsArtsize" ) # "Begin collecting current artifact size"
 DiskUsage.DiskUsage.getAllBuildsArtsize(DiskUsage.DiskUsage, rootProjectId)
-TM.blockClosed("Ended collecting current artifact size")
-TM.blockOpened("Begin building artifact size tree")
+TM.blockClosed(name="getAllBuildsArtsize") #("Ended collecting current artifact size")
+TM.blockOpened(name="buildCustomTree")#("Begin building artifact size tree")
 tree = DiskUsage.DiskUsage.buildCustomTree(DiskUsage.DiskUsage, rootProjectId)
-TM.blockClosed("Ended building artifact size tree")
-TM.blockOpened("Begin writing artifact size tree to JSON")
+TM.blockClosed(name="buildCustomTree")#("Ended building artifact size tree")
+TM.blockOpened(name="projectToJSON")#("Begin writing artifact size tree to JSON")
 DiskUsage.DiskUsage.projectToJSON(DiskUsage.DiskUsage, rootProjectId)
-TM.blockClosed("Ended writing artifact size tree to JSON")
+TM.blockClosed(name="projectToJSON")#("Ended writing artifact size tree to JSON")
 DiskUsage.DiskUsage.closeFile(DiskUsage.DiskUsage)
 L = loader.Loader(DiskUsage.DiskUsage.path)
 js1 = L.parseJson(DiskUsage.DiskUsage.path)
@@ -86,24 +86,24 @@ new = loader.Loader.addProjectNode(loader.Loader, jsondata=js1)
 
 if reports == [] :
     # no suitable reports - generate one and make html report based on it
-    TM._single_value_message("No suitable reports - generate one and make html report based on it", "")
-    TM.blockOpened("Begin generating report")
+    TM.message("No suitable reports - generate one and make html report based on it"+ "")
+    TM.blockOpened(name="generateReport")#("Begin generating report")
     text = Reporter.Reporter.generateReport(Reporter.Reporter, new, max_dLevel, max_wLevel)
-    TM.blockClosed("Ended generating report")
+    TM.blockClosed(name="generateReport")#("Ended generating report")
     header1 = "<tr><th colspan=\"2\"><h1>Report represents current artifacts size in project with id " + rootProjectId +"</h1></th></tr>"
     header2 = "<tr><td><h2>Configuration Name(Conf ID)<h2></td><td><h2> Current artifact size</h2></td></tr>"
 else:
-    TM._single_value_message("Find appropriate report - build comparative html report", "")
-    TM.blockOpened("Begin generating report")
+    TM.message("Find appropriate report - build comparative html report" + "")
+    TM.blockOpened(name="generateCompReport")#("Begin generating report")
     lastReport = findLastFile(reports)
     L1 = loader.Loader(lastReport)
     js = L1.parseJson(lastReport)
     loader.Loader.tree= treelib.Tree()
     old = loader.Loader.addProjectNode(loader.Loader, jsondata=js)
     text = Reporter.Reporter.generateCompReport(Reporter.Reporter, new, old, max_dLevel, max_wLevel)
-    TM.blockClosed("Ended generating report")
+    TM.blockClosed(name="generateCompReport")#("Ended generating report")
     old_time = lastReport[-24:-5]
-    header1 = "<tr><th colspan=\"3\"><h1>Report represents changes in artifacts size in project with id  " + rootProjectId + "  from time"+ old_time+ "</h1></th></tr>"
+    header1 = "<tr><th colspan=\"3\"><h1>Report represents changes in artifacts size in project with id  " + rootProjectId + "  from "+ old_time+ "</h1></th></tr>"
     header2 = "<tr>" \
               "<td><h2>Configuration Name(Conf ID)</h2></td>"\
               "<td><h2>Change</h2></td>"\
@@ -131,7 +131,7 @@ try:
     f = open(curPath+"\\HTMLs\\"+htmlname, "w+")
 except OSError as e:
     pass
-TM.blockOpened("Started writing report to file")
+TM.blockOpened(name="Write report to file")#("Started writing report to file")
 f.write(startHTML)
 f.write(header1)
 f.write(header2)
@@ -139,10 +139,11 @@ f.write(text)
 f.write(endHTML)
 
 DiskUsage.DiskUsage.closeFile(DiskUsage.DiskUsage)
-TM.blockOpened("Ended writing report to file")
+TM.blockClosed(name="Write report to file")#
 toRemove =findFile("tree*", curPath+"\\Reports")
 for f in toRemove:
     os.remove(f)
 
 
-TM.blockOpened("Constructing ended")
+TM.blockClosed(name="UsageReporter")
+print(str(datetime.datetime.now()))

@@ -62,7 +62,7 @@ class Teamcity:
         return TCNow
 
     def getDateFromTCDate(self,TCDate):
-        now = datetime.datetime(year=TCDate[0:4], month=TCDate[5:6], day=TCDate[7:8], hour=TCDate[10:11], minute=TCDate[12:13], second=TCDate[14:15])
+        now = datetime.datetime(year=int(TCDate[0:4]), month=int(TCDate[4:6]), day=int(TCDate[6:8]), hour=int(TCDate[9:11]), minute=int(TCDate[11:13]), second=int(TCDate[13:15]))
         return now
 
 

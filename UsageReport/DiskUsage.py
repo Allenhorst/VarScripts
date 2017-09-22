@@ -91,7 +91,8 @@ class DiskUsage(TC.Teamcity):
         self.jsonfile.close()
 
     def dateComparer(self, firstDate, secondDate):
-        delta = TC.Teamcity.getDateFromTCDate(secondDate) - TC.Teamcity.getDateFromTCDate(firstDate)
+        delta_0 = secondDate - firstDate
+        delta = delta_0.days*86400 + delta_0.seconds
         if delta > 0 :
             return 1
         elif delta == 0 :
@@ -232,7 +233,7 @@ class DiskUsage(TC.Teamcity):
         self.tree.create_node(rootProjectID, rootProjectID, data=customProjectNode(rootProjectID, None,self.getFormattedSize(self,self.projectsArtSize[rootProjectID])))
         if directBuilds:
             for dB in directBuilds:
-                node = customProjectNode(dB, rootProjectID, self.buildsArtSize[dB])
+                #node = customProjectNode(dB, rootProjectID, self.buildsArtSize[dB])
                 self.tree.create_node(dB, dB, parent=rootProjectID,
 
                                 data=customProjectNode(dB, rootProjectID, self.getFormattedSize(self,self.buildsArtSize[dB])  ))
@@ -295,24 +296,38 @@ class DiskUsage(TC.Teamcity):
                     if dBuild not in self.buildsArtSize.keys():
                         buildsSizeL = 0
                         # todo : get last build date only
-                        lastBuildTCDates,lastBuildDates = []
-                        lastBuildTCDates += TC.Teamcity.getBuildFinishDate(self, TC.Teamcity.getLastBuildsByCount(self,dBuild,1, personal="false"))
-                        lastBuildTCDates += TC.Teamcity.getBuildFinishDate(self, TC.Teamcity.getLastBuildsByCount(self,dBuild,1, personal="true"))
+                        lastBuildTCDates = ["20000101T000000+0300","20000101T000000+0300"]
+                        lastBuildDates = ["2000-01-01-00-00","2000-01-01-00-00"]
+                        lastNPBuild = TC.Teamcity.getLastBuildsByCount(self,dBuild,1, personal="false")
+                        if lastNPBuild != [] :
+                            lastBuildTCDates[0] = TC.Teamcity.getBuildFinishDate(TC.Teamcity, buildId=lastNPBuild[0])
 
-                        lastBuildDates[0] = lastBuildTCDates[0]
-                        lastBuildDates[1] = lastBuildTCDates[1]
-                        comp = self.dateComparer(lastBuildDates[0],lastBuildDates[1])
+
+                        lastPBuild= TC.Teamcity.getLastBuildsByCount(self,dBuild,1, personal="true")
+                        if lastPBuild != []:
+                            lastBuildTCDates[1] = TC.Teamcity.getBuildFinishDate(TC.Teamcity, buildId=lastPBuild[0])
+
+                        lastBuildDates[0] = TC.Teamcity.getDateFromTCDate(TC.Teamcity, lastBuildTCDates[0])
+
+                        lastBuildDates[1] = TC.Teamcity.getDateFromTCDate(TC.Teamcity, lastBuildTCDates[1])
+
+                        comp = self.dateComparer(self,firstDate=lastBuildDates[0],secondDate=lastBuildDates[1])
 
                         if comp > 0 :
                             newer =  lastBuildDates[1]
                         else :
                             newer =  lastBuildDates[0]
                         # check whether existing data is newer than last build
-                        comp = self.dateComparer(newer,date)
+                        repDate = datetime.datetime(int(date[:4]),int(date[5:7]),int(date[8:10]),int(date[11:13]),int(date[14:16]),int(date[17:19]))
+                        comp = self.dateComparer(self,firstDate= newer,secondDate= repDate)
 
                         if comp > 0 :
 
-                            info.get_node(dBuild)
+                            t = info.get_node(dBuild)
+                            buildsSizeL = int(float(t.data.artSize[:-4])*1048576)
+                            self.buildsArtSize[dBuild] = buildsSizeL
+                            buildsSize += buildsSizeL
+                            pass
                             #no need to get info from TC, getting it from data
 
                         else :
@@ -333,9 +348,18 @@ class DiskUsage(TC.Teamcity):
             if subProjectsCount == 0 :
                 pass
             else:
-                for subP in subProjects:
-                    t = self.getAllBuildsArtsize(self,subP)
-                    buildsSize += int(t)
+                #for subP in subProjects:
+                    #    t = self.getSmartAllBuildsArtsize(self,subP, info= info, date= date)
+                    #    buildsSize += int(t)
+
+                acc = 0
+                with joblib.Parallel(n_jobs=8, backend="threading") as parallel:
+
+                    build_s = parallel(
+                        joblib.delayed(self.getSmartAllBuildsArtsize)(self, subP,info, date) for subP in subProjects)
+
+                    for i in build_s: acc += int(i)
+                    buildsSize += acc
             self.projectsArtSize[rootProjectID] = buildsSize
         else:
             buildsSize = self.projectsArtSize[rootProjectID]
