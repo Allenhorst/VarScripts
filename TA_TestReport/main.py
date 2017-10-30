@@ -6,16 +6,17 @@ allBuildIds = []
 allBuildNames = []
 allTestsProjectIds = ["Prm_Tests_L1", "Prm_Tests_L2", "Prm_Tests_L3", "Prm_Tests_Newfn"]
 excludeProjectIds = ["Investigate", "Legacy"]  # to do add real id
-defaultAgentId = "ta-srv1112-14"
+defaultAgentId = "ta-srv1148-am"
 try:
     agentId = sys.argv[1]
 except IndexError as e:
     agentId = defaultAgentId
 
 filename = "report_" + agentId + ".html"
+filename1 = "alltest.txt"
 
 startHTML = "\r\n<html> <body> \r\n<table border=1 cellpadding=10 cellspacing=0> <tr><tr> \r\n"
-endHTML = "\r\n\r\n</html> </body>\r\n</tr> </table>\r\n"
+endHTML = "\r\n</tr> </table>\r\n\r\n </body> </html>\r\n"
 
 TC.Teamcity.__init__(TC.Teamcity, username="adacc",
                      password="jd7gowuX",
@@ -34,15 +35,24 @@ except OSError as e:
     pass
 
 allBuildIds.append("Prm_Tests_300smokeMainWithSdk")
-allBuildNames.append("300 SMOKE Main with SDK")
-allBuildIds.append("Prm_Tests_310unitUniversal")
-allBuildNames.append("310 UNIT Universal")
+allBuildNames.append("VB300 SMOKE Main ")
+#allBuildIds.append("Prm_Tests_310unitUniversal")
+#allBuildNames.append("310 UNIT Universal")
 
 for Pr_ids in allTestsProjectIds:
     buildids = TC.Teamcity.getAllBuildTypesForProject(TC.Teamcity, Pr_ids)
     buildnames = TC.Teamcity.getAllBuildTypesForProjectNames(TC.Teamcity, Pr_ids)
     allBuildIds += buildids
     allBuildNames += buildnames
+
+
+### uncomment to get all test configurations
+#f = open(filename1, "w+")
+#
+#for k,v in zip (allBuildIds, allBuildNames) :
+#    f.write( "\"" + v + "=>" + k + "\"\n" )
+#
+#f.close()
 
 print(agentId)
 
