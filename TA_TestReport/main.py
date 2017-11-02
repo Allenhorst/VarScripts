@@ -4,7 +4,7 @@ import sys
 
 allBuildIds = []
 allBuildNames = []
-allTestsProjectIds = ["Prm_Tests_L1", "Prm_Tests_L2", "Prm_Tests_L3", "Prm_Tests_Newfn"]
+allTestsProjectIds = ["Prm_Tests_L1", "Prm_Tests_L2", "Prm_Tests_L3"]
 excludeProjectIds = ["Investigate", "Legacy"]  # to do add real id
 defaultAgentId = "ta-srv1148-am"
 try:
@@ -13,7 +13,7 @@ except IndexError as e:
     agentId = defaultAgentId
 
 filename = "report_" + agentId + ".html"
-filename1 = "alltest.txt"
+#filename1 = "alltest.txt"
 
 startHTML = "\r\n<html> <body> \r\n<table border=1 cellpadding=10 cellspacing=0> <tr><tr> \r\n"
 endHTML = "\r\n</tr> </table>\r\n\r\n </body> </html>\r\n"
@@ -36,8 +36,7 @@ except OSError as e:
 
 allBuildIds.append("Prm_Tests_300smokeMainWithSdk")
 allBuildNames.append("VB300 SMOKE Main ")
-#allBuildIds.append("Prm_Tests_310unitUniversal")
-#allBuildNames.append("310 UNIT Universal")
+
 
 for Pr_ids in allTestsProjectIds:
     buildids = TC.Teamcity.getAllBuildTypesForProject(TC.Teamcity, Pr_ids)
