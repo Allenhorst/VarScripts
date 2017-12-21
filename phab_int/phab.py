@@ -6,7 +6,7 @@ class Phab:
     api_token = None
     phabricator = None
 
-    def __init__ (self, url=None, api_token=None):
+    def __init__(self, url=None, api_token=None):
         self.url = url
         self.api_token = api_token
         self.phabricator = Phabricator(host=self.url, token=self.api_token)
