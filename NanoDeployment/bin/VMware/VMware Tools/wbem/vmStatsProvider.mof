@@ -1,0 +1,508 @@
+///*****************************************************************************
+// * Copyright 2008 VMware, Inc.  All rights reserved.
+// * -- VMware Confidential
+// ****************************************************************************/
+
+#pragma namespace("\\\\.\\Root\\CimV2")
+
+//specify all the necessary qualifiers
+qualifier vendor:ToInstance;
+qualifier guid:ToInstance;
+qualifier displayname:ToInstance Amended;
+qualifier description:ToInstance Amended;
+qualifier perfindex:ToInstance;
+qualifier helpindex:ToInstance;
+qualifier perfdetail:ToInstance;
+qualifier countertype:ToInstance;
+qualifier perfdefault:ToInstance;
+qualifier defaultscale:ToInstance;
+
+///*****************************************************************************
+// * Main classes
+// * In this section are defined only the performance objects withouth any
+// * localization info. They are contained in the Root\\CimV2 namespace.
+// ****************************************************************************/
+
+[
+   hiperf(true),
+   dynamic(true),
+   provider("VMwareStatsProvider_v1"),
+   perfdetail(400),
+   displayname("VM Processor"),
+   description("Processor statistics for this Virtual Machine.")
+]
+class Win32_PerfRawData_vmGuestLib_VCPU : Win32_PerfRawData
+{
+   [
+      label,
+      key
+   ]
+   string Name;
+
+   [
+      perfdetail(100),
+      perfdefault(false),
+      defaultscale(-2),
+      countertype(65536),
+      displayname("Reservation in MHz"),
+      description("The minimum processing power in MHz available to the virtual machine. Assigning a CPU Reservation ensures that even as other virtual machines on the same host consume shared processing power, there is still a certain minimum amount for this virtual machine.")
+   ]
+   uint32 CpuReservationMHz;
+
+// For future versions
+//   [
+//      perfdetail(100),
+//      perfdefault(false),
+//      defaultscale(0),
+//      countertype(65536),
+//      displayname("% Reservation"),
+//      description(".")
+//   ]
+//   uint32 CpuReservationPercents;
+
+   [
+      perfdetail(100),
+      perfdefault(false),
+      defaultscale(-2),
+      countertype(65536),
+      displayname("Limit in MHz"),
+      description("The maximum processing power in MHz allowed to the virtual machine. Assigning a CPU Limit ensures that this virtual machine never consumes more than a certain amount of the available processor power. By limiting the amount of processing power consumed, a portion of the processing power becomes available to other virtual machines.")
+   ]
+   uint32 CpuLimitMHz;
+
+   [
+      perfdetail(100),
+      perfdefault(false),
+      defaultscale(-2),
+      countertype(65536),
+      displayname("Shares"),
+      description("The number of CPU shares allocated to the virtual machine.")
+   ]
+   uint32 CpuShares;
+
+   [
+      perfdetail(100),
+      perfdefault(false),
+      defaultscale(-2),
+      countertype(65536),
+      displayname("Host processor speed in MHz"),
+      description("Host Processor speed.")
+   ]
+   uint32 HostProcessorSpeedMHz;
+
+   [
+      perfdetail(100),
+      perfdefault(false),
+      defaultscale(-2),
+      countertype(65536),
+      displayname("Effective VM Speed in MHz"),
+      description("The approximate average effective speed of the VM's virtual CPU over the time period between the two samples.")
+   ]
+   uint32 EffectiveVMSpeedMHz;
+
+   [
+      perfdetail(100),
+      perfdefault(true),
+      defaultscale(0),
+      countertype(542180608),
+      displayname("% Processor Time"),
+      description("Current load of the VM's virtual processor.")
+   ]
+   uint64 CpuTimePercents;
+
+   [
+      perfdetail(100),
+      perfdefault(false),
+      defaultscale(0),
+      countertype(542180608),
+      displayname("CPU stolen time"),
+      description("The time (in ms) that the VM was runnable but not scheduled to run.")
+   ]
+   uint64 CpuStolenMs;
+
+// For future versions
+//   [
+//      perfdetail(100),
+//      perfdefault(false),
+//      defaultscale(0),
+//      countertype(65536),
+//      displayname("% Ready Time"),
+//      description(".")
+//   ]
+//   uint64 CpuReadyTimePercents;
+
+// For future versions
+//   [
+//      perfdetail(100),
+//      perfdefault(false),
+//      defaultscale(0),
+//      countertype(65536),
+//      displayname("% Limited Time"),
+//      description(".")
+//   ]
+//   uint64 CpuLimitedTimePercents;
+};
+
+[
+   hiperf(true),
+   dynamic(true),
+   provider("VMwareStatsProvider_v1"),
+   perfdetail(400),
+   displayname("VM Memory"),
+   description("Memory statistics for this Virtual Machine."),
+   singleton
+]
+class Win32_PerfRawData_vmGuestLib_VMEM : Win32_PerfRawData
+{
+   [
+      perfdetail(100),
+      perfdefault(false),
+      defaultscale(-1),
+      countertype(65536),
+      displayname("Memory Reservation in MB"),
+      description("The minimum amount of memory that is guaranteed to the virtual machine. Assigning a Memory Reservation ensures that even as other virtual machines on the same host consume memory, there is still a certain minimum amount for this virtual machine.")
+   ]
+   uint32 MemReservationMB;
+
+   [
+      perfdetail(100),
+      perfdefault(false),
+      defaultscale(-2),
+      countertype(65536),
+      displayname("Memory Limit in MB"),
+      description("The maximum amount of memory that is allowed to the virtual machine. Assigning a Memory Limit ensures that this virtual machine never consumes more than a certain amount of the allowed memory. By limiting the amount of memory consumed, a portion of this shared resource is allowed to other virtual machines.")
+   ]
+   uint32 MemLimitMB;
+
+   [
+      perfdetail(100),
+      perfdefault(false),
+      defaultscale(-4),
+      countertype(65536),
+      displayname("Memory Shares"),
+      description("The number of memory shares allocated to the virtual machine.")
+   ]
+   uint32 MemShares;
+
+   [
+      perfdetail(100),
+      perfdefault(false),
+      defaultscale(-2),
+      countertype(65536),
+      displayname("Memory Mapped in MB"),
+      description("The mapped memory size of this virtual machine. This is the current total amount of guest memory that is backed by physical memory. Note that this number may include pages of memory shared between multiple virtual machines and thus may be an overestimate of the amount of physical host memory *consumed* by this virtual machine.")
+   ]
+   uint32 MemMappedMB;
+
+   [
+      perfdetail(100),
+      perfdefault(true),
+      defaultscale(-1),
+      countertype(65536),
+      displayname("Memory Active in MB"),
+      description("The estimated amount of memory the virtual machine is actively using.")
+   ]
+   uint32 MemActiveMB;
+
+   [
+      perfdetail(100),
+      perfdefault(false),
+      defaultscale(-1),
+      countertype(65536),
+      displayname("Memory Overhead in MB"),
+      description("The amount of overhead memory associated with this virtual machine consumed on the host system.")
+   ]
+   uint32 MemOverheadMB;
+
+   [
+      perfdetail(100),
+      perfdefault(false),
+      defaultscale(-1),
+      countertype(65536),
+      displayname("Memory Ballooned in MB"),
+      description("The amount of memory that has been reclaimed from this virtual machine via the VMware Memory Balloon mechanism.")
+   ]
+   uint32 MemBalloonedMB;
+
+   [
+      perfdetail(100),
+      perfdefault(false),
+      defaultscale(-1),
+      countertype(65536),
+      displayname("Memory Swapped in MB"),
+      description("The amount of memory associated with this virtual machine that has been swapped by ESX.")
+   ]
+   uint32 MemSwappedMB;
+
+   [
+      perfdetail(100),
+      perfdefault(false),
+      defaultscale(-1),
+      countertype(65536),
+      displayname("Memory Shared in MB"),
+      description("The amount of physical memory associated with this virtual machine that is copy-on-write (COW) shared on the host.")
+   ]
+   uint32 MemSharedMB;
+
+   [
+      perfdetail(100),
+      perfdefault(false),
+      defaultscale(-1),
+      countertype(65536),
+      displayname("Memory Shared Saved in MB"),
+      description("The estimated amount of physical memory on the host saved from copy-on-write (COW) shared guest physical memory.")
+   ]
+   uint32 MemSharedSavedMB;
+
+   [
+      perfdetail(100),
+      perfdefault(false),
+      defaultscale(-1),
+      countertype(65536),
+      displayname("Memory Used in MB"),
+      description("The estimated amount of physical host memory currently consumed for this virtual machine's physical memory. This is the same as (Memory Mapped in MB) - (Memory Shared Saved in MB).")
+   ]
+   uint32 MemUsedMB;
+
+   [
+      perfdetail(100),
+      perfdefault(false),
+      defaultscale(0),
+      countertype(65792),
+      displayname("Memory Target Size"),
+      description("Memory Target Size.")
+   ]
+   uint64 MemTargetSizeMB;
+
+// For future versions
+//   [
+//      perfdetail(100),
+//      perfdefault(false),
+//      defaultscale(0),
+//      countertype(65536),
+//      displayname("Swap Read in MB/s"),
+//      description(".")
+//   ]
+//   uint32 MemSwapReadMBps;
+
+// For future versions
+//   [
+//      perfdetail(100),
+//      perfdefault(false),
+//      defaultscale(0),
+//      countertype(65536),
+//      displayname("Swap Write in MB/s"),
+//      description(".")
+//   ]
+//   uint32 MemSwapWriteMBps;
+};
+
+instance of __Win32Provider as $VMSTATSPROV
+{
+   Name                = "VMwareStatsProvider_v1";
+   CLSID               = "{C73DA087-EDDB-4a7c-B216-8EF8A3B92C7B}";
+   ClientLoadableCLSID = "{C73DA087-EDDB-4a7c-B216-8EF8A3B92C7B}";
+//   HostingModel        = "NetworkServiceHost"; /* This is not supported on Win2000 */
+};
+
+instance of __InstanceProviderRegistration
+{
+   InteractionType      = 0;
+   Provider             = $VMSTATSPROV;
+   SupportsEnumeration  = TRUE;
+   SupportsGet          = TRUE;
+};
+
+///*****************************************************************************
+// * Localization info for MS_409 locale (EN_US) - the default one.
+// * (always installed)
+// *
+// * This namespace Root\\CimV2\\ms_409 contains the amendment for the EN_US
+// * locale of the performance objects, which is installed always.
+// * However when you create new locales please put them in a UNICODE file with
+// * the appropriate naming and extension MFL. The file can start with U+FFFE
+// * or U+FEFF depending on the byte-ordering used in the file.
+// * For the contents of the fle use the provided section below as a template.
+// * Note that the amendments for every locale must be in a sub-namespace with
+// * name MS_XXX. For example the bulgarian localized amendements will be in
+// * Root\\CimV2\\ms_402 namespace in file vmStatsProvider_402.mfl.
+// * It is responsibility of the installer to choose the correct MFL file (if
+// * the locale is different from EN_US) and to install it toghether with this
+// * MOF file.
+// ****************************************************************************/
+
+#pragma namespace("\\\\.\\Root\\CimV2")
+
+instance of __namespace
+{
+   name="ms_409";
+};
+
+#pragma namespace("\\\\.\\Root\\CimV2\\ms_409")
+
+[
+   AMENDMENT,
+   LOCALE(0x409),
+   displayname("VM Processor"),
+   description("Processor statistics for this Virtual Machine.")
+]
+class Win32_PerfRawData_vmGuestLib_VCPU : Win32_PerfRawData
+{
+   [
+      displayname("Reservation in MHz"),
+      description("The minimum processing power in MHz available to the virtual machine. Assigning a CPU Reservation ensures that even as other virtual machines on the same host consume shared processing power, there is still a certain minimum amount for this virtual machine.")
+   ]
+   uint32 CpuReservationMHz;
+
+// For future versions
+//   [
+//      displayname("% Reservation"),
+//      description(".")
+//   ]
+//   uint32 CpuReservationPercents;
+
+   [
+      displayname("Limit in MHz"),
+      description("The maximum processing power in MHz allowed to the virtual machine. Assigning a CPU Limit ensures that this virtual machine never consumes more than a certain amount of the available processor power. By limiting the amount of processing power consumed, a portion of the processing power becomes available to other virtual machines.")
+   ]
+   uint32 CpuLimitMHz;
+
+   [
+      displayname("Shares"),
+      description("The number of CPU shares allocated to the virtual machine.")
+   ]
+   uint32 CpuShares;
+
+   [
+      displayname("Host processor speed in MHz"),
+      description("Host Processor speed.")
+   ]
+   uint32 HostProcessorSpeedMHz;
+
+   [
+      displayname("Effective VM Speed in MHz"),
+      description("The approximate average effective speed of the VM's virtual CPU over the time period between the two samples.")
+   ]
+   uint32 EffectiveVMSpeedMHz;
+
+   [
+      displayname("% Processor Time"),
+      description("Current load of the VM's virtual processor.")
+   ]
+   uint64 CpuTimePercents;
+
+   [
+      displayname("CPU stolen time"),
+      description("The time (in ms) that the VM was runnable but not scheduled to run.")
+   ]
+   uint64 CpuStolenMs;
+
+// For future versions
+//   [
+//      displayname("% Ready Time"),
+//      description(".")
+//   ]
+//   uint64 CpuReadyTimePercents;
+
+// For future versions
+//   [
+//      displayname("% Limited Time"),
+//      description(".")
+//   ]
+//   uint64 CpuLimitedTimePercents;
+};
+
+[
+   AMENDMENT,
+   LOCALE(0x409),
+   displayname("VM Memory"),
+   description("Memory statistics for this Virtual Machine.")
+]
+class Win32_PerfRawData_vmGuestLib_VMEM : Win32_PerfRawData
+{
+   [
+      displayname("Memory Reservation in MB"),
+      description("The minimum amount of memory that is guaranteed to the virtual machine. Assigning a Memory Reservation ensures that even as other virtual machines on the same host consume memory, there is still a certain minimum amount for this virtual machine.")
+   ]
+   uint32 MemReservationMB;
+
+   [
+      displayname("Memory Limit in MB"),
+      description("The maximum amount of memory that is allowed to the virtual machine. Assigning a Memory Limit ensures that this virtual machine never consumes more than a certain amount of the allowed memory. By limiting the amount of memory consumed, a portion of this shared resource is allowed to other virtual machines.")
+   ]
+   uint32 MemLimitMB;
+
+   [
+      displayname("Memory Shares"),
+      description("The number of memory shares allocated to the virtual machine.")
+   ]
+   uint32 MemShares;
+
+   [
+      displayname("Memory Mapped in MB"),
+      description("The mapped memory size of this virtual machine. This is the current total amount of guest memory that is backed by physical memory. Note that this number may include pages of memory shared between multiple virtual machines and thus may be an overestimate of the amount of physical host memory *consumed* by this virtual machine.")
+   ]
+   uint32 MemMappedMB;
+
+   [
+      displayname("Memory Active in MB"),
+      description("The estimated amount of memory the virtual machine is actively using.")
+   ]
+   uint32 MemActiveMB;
+
+   [
+      displayname("Memory Overhead in MB"),
+      description("The amount of overhead memory associated with this virtual machine consumed on the host system.")
+   ]
+   uint32 MemOverheadMB;
+
+   [
+      displayname("Memory Ballooned in MB"),
+      description("The amount of memory that has been reclaimed from this virtual machine via the VMware Memory Balloon mechanism.")
+   ]
+   uint32 MemBalloonedMB;
+
+   [
+      displayname("Memory Swapped in MB"),
+      description("The amount of memory associated with this virtual machine that has been swapped by ESX.")
+   ]
+   uint32 MemSwappedMB;
+
+   [
+      displayname("Memory Shared in MB"),
+      description("The amount of physical memory associated with this virtual machine that is copy-on-write (COW) shared on the host.")
+   ]
+   uint32 MemSharedMB;
+
+   [
+      displayname("Memory Shared Saved in MB"),
+      description("The estimated amount of physical memory on the host saved from copy-on-write (COW) shared guest physical memory.")
+   ]
+   uint32 MemSharedSavedMB;
+
+   [
+      displayname("Memory Used in MB"),
+      description("The estimated amount of physical host memory currently consumed for this virtual machine's physical memory. This is the same as (Memory Mapped in MB) - (Memory Shared Saved in MB).")
+   ]
+   uint32 MemUsedMB;
+
+   [
+      displayname("Memory Target Size"),
+      description("Memory Target Size.")
+   ]
+   uint64 MemTargetSizeMB;
+
+// For future versions
+//   [
+//      displayname("Swap Read in MB/s"),
+//      description(".")
+//   ]
+//   uint32 MemSwapReadMBps;
+
+// For future versions
+//   [
+//      displayname("Swap Write in MB/s"),
+//      description(".")
+//   ]
+//   uint32 MemSwapWriteMBps;
+};

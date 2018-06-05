@@ -1,0 +1,36 @@
+# Unity window filter rules for Vista Sidebar and other Vista Unity artifacts that need filtering.
+# Encoding is UTF-8.
+#
+
+BeginRule
+classname=Internet Explorer_Server
+company=Microsoft Corporation
+product=Microsoft® Windows® Operating System
+action=block
+EndRule
+
+BeginRule
+classname=SideBar_AppBarWindow
+company=Microsoft Corporation
+product=Microsoft® Windows® Operating System
+action=block
+EndRule
+
+# Comment out the following rule to gain access to gadget controls (and slightly uglier UI)
+
+BeginRule
+classname=BasicWindow
+company=Microsoft Corporation
+product=Microsoft® Windows® Operating System
+action=block
+EndRule
+
+# Start menu button. Clipping the button is better than showing portions of the Vista desktop background window.
+
+BeginRule
+classname=Button
+company=Microsoft Corporation
+product=Microsoft® Windows® Operating System
+action=block
+EndRule
+

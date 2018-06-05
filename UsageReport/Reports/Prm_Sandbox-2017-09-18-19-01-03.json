@@ -1,0 +1,2054 @@
+{ "Project Name" : "SANDBOX",
+"Project Id" : "Prm_Sandbox",
+"ArtSize" : "15183.376 : Mb",
+"SubProjects" : [
+{ "Project Name" : "2Abramov",
+"Project Id" : "Prm_Sandbox_2Abramov",
+"ArtSize" : "508.737 : Mb",
+"SubProjects" : "None",
+"directBuilds" : [
+{ "Build Name" : "940 SERVICE Deploy PRM Desk (nolegacy 1.03, upgrade only)[CUSTOM]",
+"Build Id" : "Prm_Sandbox_2Abramov_940serviceDeployPrmDeskNolegacy103upgradeOnlyCustom",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "940 SERVICE Deploy PRM Desk - OLD",
+"Build Id" : "Prm_Sandbox_2Abramov_940serviceDeployPrmDeskOld",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "070 BUILD AGR Core x64",
+"Build Id" : "Prm_Sandbox_2Abramov_AgrCore",
+"ArtSize" : "136.940 : Mb"}
+,
+{ "Build Name" : "AGR-Personal",
+"Build Id" : "Prm_Sandbox_2Abramov_AgrPersonal",
+"ArtSize" : "47.863 : Mb"}
+,
+{ "Build Name" : "AGR_Product",
+"Build Id" : "Prm_Sandbox_2Abramov_AgrProduct",
+"ArtSize" : "321.235 : Mb"}
+,
+{ "Build Name" : "Deploy Fake-IT-TEST Desk",
+"Build Id" : "Prm_Sandbox_2Abramov_DeployFakeITTest",
+"ArtSize" : "0.505 : Mb"}
+,
+{ "Build Name" : "Deploy Fake-IT-1 Desk",
+"Build Id" : "Prm_Sandbox_2Abramov_DeployFakeIt1Desk",
+"ArtSize" : "1.147 : Mb"}
+,
+{ "Build Name" : "Deploy Fake-IT-2 Desk",
+"Build Id" : "Prm_Sandbox_2Abramov_DeployFakeIt2Desk",
+"ArtSize" : "1.035 : Mb"}
+,
+{ "Build Name" : "PyWinAutoTest",
+"Build Id" : "Prm_Sandbox_2Abramov_PyWinAutoTest",
+"ArtSize" : "0.012 : Mb"}
+,
+{ "Build Name" : "VMBackup_GUI_Test",
+"Build Id" : "Prm_Sandbox_2Abramov_VMBackupGuiTest",
+"ArtSize" : "0.000 : Mb"}
+]}
+,
+{ "Project Name" : "2Arustamyan",
+"Project Id" : "Prm_Sandbox_2Arustamyan",
+"ArtSize" : "113.805 : Mb",
+"SubProjects" : "None",
+"directBuilds" : [
+{ "Build Name" : "202 Universal DISTRIBUTIVE (Wix LI2 Full)",
+"Build Id" : "Prm_Sandbox_2Arustamyan_202UniversalDistributiveWixLi2Full",
+"ArtSize" : "113.805 : Mb"}
+]}
+,
+{ "Project Name" : "2Karpov",
+"Project Id" : "Prm_Sandbox_2Karpov",
+"ArtSize" : "1010.785 : Mb",
+"SubProjects" : "None",
+"directBuilds" : [
+{ "Build Name" : "098 BUILD PRM46 WebApi Prototype",
+"Build Id" : "Prm_Sandbox_2Karpov_098buildPrm46WebApiPrototype",
+"ArtSize" : "36.987 : Mb"}
+,
+{ "Build Name" : "101 BUILD QT Wizards",
+"Build Id" : "Prm_Sandbox_2Karpov_101buildQtWizards",
+"ArtSize" : "967.305 : Mb"}
+,
+{ "Build Name" : "84 BUILD PEGR WebUI",
+"Build Id" : "Prm_Sandbox_2Karpov_108buildPegrWebUI",
+"ArtSize" : "6.493 : Mb"}
+,
+{ "Build Name" : "Updater",
+"Build Id" : "Prm_Sandbox_2Karpov_Updater",
+"ArtSize" : "0.000 : Mb"}
+]}
+,
+{ "Project Name" : "2Kholodov",
+"Project Id" : "Prm_Sandbox_2Kholodov",
+"ArtSize" : "45.645 : Mb",
+"SubProjects" : "None",
+"directBuilds" : [
+{ "Build Name" : "300 SMOKE Main with SDK (PT-235)",
+"Build Id" : "Prm_Sandbox_2Kholodov_300smokeMainWithSdkPt235",
+"ArtSize" : "2.433 : Mb"}
+,
+{ "Build Name" : "719 SDK FUNC WinPE New recovery policy  PRM_Bug Bug 86595",
+"Build Id" : "Prm_Sandbox_2Kholodov_719sdkFuncWinPENewRecoveryPolicyRestoreOverModeSilentMode",
+"ArtSize" : "11.201 : Mb"}
+,
+{ "Build Name" : "771 NEGATIVE VM Replica LimitSnapshot",
+"Build Id" : "Prm_Sandbox_2Kholodov_771negativeVmReplicaLimitSnapshot",
+"ArtSize" : "3.205 : Mb"}
+,
+{ "Build Name" : "770 NEGATIVE VMBackup Break ESX Agent",
+"Build Id" : "Prm_Tests_Investigate_770negativeVMBackupHotAddRemoveBackupSnapshotsBug110846",
+"ArtSize" : "28.806 : Mb"}
+]}
+,
+{ "Project Name" : "2Lavrentev",
+"Project Id" : "Prm_Sandbox_2Lavrentev",
+"ArtSize" : "1121.181 : Mb",
+"SubProjects" : "None",
+"directBuilds" : [
+{ "Build Name" : "202 DISTRIBUTIVE (Wix LI2 Full)",
+"Build Id" : "Prm_Sandbox_2Lavrentev_202distributiveWixLi2Full",
+"ArtSize" : "1121.181 : Mb"}
+]}
+,
+{ "Project Name" : "2Omelchuk",
+"Project Id" : "Prm_Sandbox_2Omelchuk",
+"ArtSize" : "79.731 : Mb",
+"SubProjects" : "None",
+"directBuilds" : [
+{ "Build Name" : "300 SMOKE Main with SDK (Full+1Inc+2inc+Restore; CbtMethod:Auto; Local/UNC/ESX)",
+"Build Id" : "Prm_Sandbox_2Omelchuk_300smokeMainWithSdkFull1Inc2incRestoreCbtMethodAutoLocalUn",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "300 SMOKE Main with SDK [TEST CHECK]",
+"Build Id" : "Prm_Sandbox_2Omelchuk_300smokeMainWithSdkTestCheck",
+"ArtSize" : "1.287 : Mb"}
+,
+{ "Build Name" : "707 SDK REGRESS VM Backup on Windows Server 2012 R2",
+"Build Id" : "Prm_Sandbox_2Omelchuk_707sdkRegressVmBackupOnWindowsServer2012r2",
+"ArtSize" : "19.229 : Mb"}
+,
+{ "Build Name" : "734 SDK Simple VM Backup Restore (W2012R2)",
+"Build Id" : "Prm_Sandbox_2Omelchuk_734sdkSimpleVmBackupRestoreW2012r2",
+"ArtSize" : "55.214 : Mb"}
+,
+{ "Build Name" : "740 SDK Major VM Backup Test on Windows Server 2012 R2",
+"Build Id" : "Prm_Sandbox_2Omelchuk_740sdkMajorVmBackupTestOnWindowsServer2012r2",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "770 NEGATIVE VMBackup_HotAdd_RemoveBackupSnapshots (ToGo)",
+"Build Id" : "Prm_Sandbox_2Omelchuk_770negativeVMBackupHotAddRemoveBackupSnapshotsToGo",
+"ArtSize" : "4.001 : Mb"}
+]}
+,
+{ "Project Name" : "2Onikienko",
+"Project Id" : "Prm_Sandbox_2Onikienko",
+"ArtSize" : "61.919 : Mb",
+"SubProjects" : [
+{ "Project Name" : "BUILDS_copy",
+"Project Id" : "Prm_Sandbox_2Onikienko_BuildsCopy",
+"ArtSize" : "61.919 : Mb",
+"SubProjects" : "None",
+"directBuilds" : [
+{ "Build Name" : "1000 BUILD Version",
+"Build Id" : "Prm_Sandbox_2Onikienko_BuildsCopy_1000buildVersion",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "1900 BUILD VM Deployment Tool",
+"Build Id" : "Prm_Sandbox_2Onikienko_BuildsCopy_1900buildNfcFileCopy",
+"ArtSize" : "23.285 : Mb"}
+,
+{ "Build Name" : "2000 PACK VM Deployment Tool",
+"Build Id" : "Prm_Sandbox_2Onikienko_BuildsCopy_2000packVmDeploymentTool",
+"ArtSize" : "38.634 : Mb"}
+,
+{ "Build Name" : "9800 PUBLISH VM Deployment Tool",
+"Build Id" : "Prm_Sandbox_2Onikienko_BuildsCopy_9800publishVmDeploymentTool",
+"ArtSize" : "0.000 : Mb"}
+]}
+],"directBuilds" : "None"
+}
+,
+{ "Project Name" : "2Piminov",
+"Project Id" : "Prm_Sandbox_2Piminov",
+"ArtSize" : "2684.919 : Mb",
+"SubProjects" : [
+{ "Project Name" : "BXT",
+"Project Id" : "Prm_Sandbox_2Piminov_Bxt",
+"ArtSize" : "2684.919 : Mb",
+"SubProjects" : [
+{ "Project Name" : "LEGACY",
+"Project Id" : "Prm_Sandbox_2Piminov_Experimental_Legacy",
+"ArtSize" : "1343.815 : Mb",
+"SubProjects" : "None",
+"directBuilds" : [
+{ "Build Name" : "0101 BUILD QT Wizards",
+"Build Id" : "Prm_Sandbox_2Piminov_Experimental_Legacy_0101buildQtWizards",
+"ArtSize" : "834.365 : Mb"}
+,
+{ "Build Name" : "0103 BUILD NFS Server + UIM",
+"Build Id" : "Prm_Sandbox_2Piminov_Experimental_Legacy_0103buildNfsServerUim",
+"ArtSize" : "33.181 : Mb"}
+,
+{ "Build Name" : "0105 BUILD PRM Linux",
+"Build Id" : "Prm_Sandbox_2Piminov_Experimental_Legacy_0105buildPrmLinux",
+"ArtSize" : "12.804 : Mb"}
+,
+{ "Build Name" : "080 BUILD BASE x64",
+"Build Id" : "Prm_Sandbox_2Piminov_Experimental_Legacy_080buildBaseX64",
+"ArtSize" : "76.911 : Mb"}
+,
+{ "Build Name" : "081.Base BUILD LEGACY x64",
+"Build Id" : "Prm_Sandbox_2Piminov_Experimental_Legacy_081buildLegacyX64",
+"ArtSize" : "103.613 : Mb"}
+,
+{ "Build Name" : "081.QT BUILD LEGACY x64",
+"Build Id" : "Prm_Sandbox_2Piminov_Experimental_Legacy_081qtBuildLegacyX64",
+"ArtSize" : "282.711 : Mb"}
+,
+{ "Build Name" : "200 DISTRIBUTIVE (PRM SDK Standalone)",
+"Build Id" : "Prm_Sandbox_2Piminov_Experimental_Legacy_200distributivePrmSdkStandalone",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "202 DISTRIBUTIVE (Wix LI2 Full)",
+"Build Id" : "Prm_Sandbox_2Piminov_Experimental_Legacy_202distributiveWixLi2Full",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "203 DISTRIBUTIVE (PRM SDK Full)",
+"Build Id" : "Prm_Sandbox_2Piminov_Experimental_Legacy_203distributivePrmSdkFull",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "305 UNIT Windows unmanaged GTests",
+"Build Id" : "Prm_Sandbox_2Piminov_Experimental_Legacy_305unitWindowsUnmanagedGTests",
+"ArtSize" : "0.230 : Mb"}
+,
+{ "Build Name" : "971 SERVICE Publish PrmLegacy NuGet packages",
+"Build Id" : "Prm_Sandbox_2Piminov_Experimental_Legacy_971servicePublishPrmLegacyNuGetPackages",
+"ArtSize" : "0.000 : Mb"}
+]}
+],"directBuilds" : [
+{ "Build Name" : "082 BUILD PRM30 x64",
+"Build Id" : "Prm_Sandbox_2Piminov_Experimental_082buildPrm30x64",
+"ArtSize" : "171.281 : Mb"}
+,
+{ "Build Name" : "090 BUILD Version",
+"Build Id" : "Prm_Sandbox_2Piminov_Experimental_090buildVersion",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "100 BUILD PRM x64",
+"Build Id" : "Prm_Sandbox_2Piminov_Experimental_100buildPrmX64",
+"ArtSize" : "826.510 : Mb"}
+,
+{ "Build Name" : "190 BUILD StoreSymbols",
+"Build Id" : "Prm_Sandbox_2Piminov_Experimental_190buildStoreSymbols",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "201 DISTRIBUTIVE SDK",
+"Build Id" : "Prm_Sandbox_2Piminov_Experimental_201distributiveSdk",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "209 BUNDLE (VmBackup)",
+"Build Id" : "Prm_Sandbox_2Piminov_Experimental_209bundleVmBackup",
+"ArtSize" : "343.313 : Mb"}
+]}
+],"directBuilds" : [
+{ "Build Name" : "Run BXT",
+"Build Id" : "Prm_Sandbox_2Piminov_RunBxt",
+"ArtSize" : "0.000 : Mb"}
+]}
+,
+{ "Project Name" : "2Ryzhkov",
+"Project Id" : "Prm_Sandbox_2Ryzhkov",
+"ArtSize" : "0.000 : Mb",
+"SubProjects" : "None",
+"directBuilds" : [
+{ "Build Name" : "7XX SDK BIG Appliance Smoke",
+"Build Id" : "Prm_Sandbox_2Ryzhkov_7xxSdkBigApplianceSmoke",
+"ArtSize" : "0.000 : Mb"}
+]}
+,
+{ "Project Name" : "2Senchenkov",
+"Project Id" : "Prm_Sandbox_2Senchenkov",
+"ArtSize" : "1.537 : Mb",
+"SubProjects" : "None",
+"directBuilds" : [
+{ "Build Name" : "940* DEBUG Deploy Nolegacy Desk (nolegacy 1.03, upgrade only)",
+"Build Id" : "Components_Msbuild_ParagonComponentsToGo_Service_Tg950DeployNolegacyDeskNolegacy",
+"ArtSize" : "0.729 : Mb"}
+,
+{ "Build Name" : "940* LEGACY SERVICE Deploy PRM Desk (nolegacy 1.03, upgrade only)",
+"Build Id" : "Prm_Sandbox_2Senchenkov_940serviceDeployPrmDeskNolegacy103upgradeOnly",
+"ArtSize" : "0.808 : Mb"}
+]}
+,
+{ "Project Name" : "2Sintsov",
+"Project Id" : "Prm_Sandbox_2Sintsov",
+"ArtSize" : "4828.576 : Mb",
+"SubProjects" : [
+{ "Project Name" : "COMPONENTS",
+"Project Id" : "Prm_Sandbox_2Syntsov_Components",
+"ArtSize" : "1273.528 : Mb",
+"SubProjects" : [
+{ "Project Name" : "PBA",
+"Project Id" : "Prm_Sandbox_2Syntsov_Pba",
+"ArtSize" : "1.234 : Mb",
+"SubProjects" : "None",
+"directBuilds" : [
+{ "Build Name" : "2x PBA + SP BACKUP\\REPLICATION",
+"Build Id" : "Prm_Sandbox_2Syntsov_Pba_2xPbaSpBackupReplication",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "CA+LA+SP BACKUP.xml",
+"Build Id" : "Prm_Sandbox_2Syntsov_Pba_CaLaSpBackupXml",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "CA+LA+SP RESTORE.xml",
+"Build Id" : "Prm_Sandbox_2Syntsov_Pba_CaLaSpRestoreXml",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "PBA + SP BACKUP\\REPLICATION",
+"Build Id" : "Prm_Sandbox_2Syntsov_Pba_PbaSpBackupReplication",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "SMOKE PBA Slimagent BACKUP",
+"Build Id" : "Prm_Sandbox_2Syntsov_Pba_SmokePbaSlimagentBackup",
+"ArtSize" : "0.440 : Mb"}
+,
+{ "Build Name" : "SMOKE PBA+TA Slimagent SELECTIVE BACKUP",
+"Build Id" : "Prm_Sandbox_2Syntsov_Pba_SmokePbaTaSlimagentIncrementBackup",
+"ArtSize" : "0.261 : Mb"}
+,
+{ "Build Name" : "SMOKE TA+SS Slimagent INCREMENT BACKUP",
+"Build Id" : "Prm_Sandbox_2Syntsov_Pba_SmokeTaSlimagentSlimstorageIncrementBackup",
+"ArtSize" : "0.533 : Mb"}
+]}
+,
+{ "Project Name" : "SERVICE",
+"Project Id" : "Prm_Sandbox_2Syntsov_Components_Service",
+"ArtSize" : "1271.197 : Mb",
+"SubProjects" : "None",
+"directBuilds" : [
+{ "Build Name" : "LC700 BUILD Ubuntu Slimagent ISO",
+"Build Id" : "Prm_Sandbox_2Syntsov_Appliance_Lc700buildUbuntuSlimagentIso",
+"ArtSize" : "1271.197 : Mb"}
+,
+{ "Build Name" : "LC920 PACKAGE+RELEASE NuGet",
+"Build Id" : "Prm_Sandbox_2Syntsov_Lc920packageReleaseNuGet",
+"ArtSize" : "0.000 : Mb"}
+]}
+,
+{ "Project Name" : "SLIMPLATFORM",
+"Project Id" : "Prm_Sandbox_2Syntsov_Components_Slimplatform",
+"ArtSize" : "0.692 : Mb",
+"SubProjects" : "None",
+"directBuilds" : [
+{ "Build Name" : "SMOKE SDK SlimPlatform selective backup restore",
+"Build Id" : "Prm_Sandbox_2Syntsov_Appliance_TestsSlimplatform_SmokeSdkSlimPlatformSelectiveBa",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "SMOKE SDK SlimPlatform selective backup restore with excludes",
+"Build Id" : "Prm_Sandbox_2Syntsov_Appliance_TestsSlimplatform_SmokeSdkSlimPlatformSelective_2",
+"ArtSize" : "0.398 : Mb"}
+,
+{ "Build Name" : "SMOKE SDK SlimPlatform selective backup restore with excludes Linux",
+"Build Id" : "Prm_Sandbox_2Syntsov_Appliance_TestsSlimplatform_SmokeSdkSlimPlatformSelective_3",
+"ArtSize" : "0.294 : Mb"}
+]}
+,
+{ "Project Name" : "TESTAPPLIANCE",
+"Project Id" : "Prm_Sandbox_2Syntsov_Testappliance",
+"ArtSize" : "0.405 : Mb",
+"SubProjects" : "None",
+"directBuilds" : [
+{ "Build Name" : "SVN_TA300 SMOKE TestAppliance integration with SlimStorage and SlimPlatform",
+"Build Id" : "Prm_Sandbox_2Syntsov_Testappliance_SvnTa300smokeTestApplianceIntegrationWithSlim",
+"ArtSize" : "0.405 : Mb"}
+]}
+],"directBuilds" : "None"
+}
+,
+{ "Project Name" : "OBSOLETE",
+"Project Id" : "Prm_Sandbox_2Syntsov_Obsolete_2",
+"ArtSize" : "99.243 : Mb",
+"SubProjects" : [
+{ "Project Name" : "TESTS Big_Appliance + SA",
+"Project Id" : "Prm_Sandbox_2Syntsov_Appliance_Tests",
+"ArtSize" : "33.863 : Mb",
+"SubProjects" : "None",
+"directBuilds" : [
+{ "Build Name" : "320 SMOKE Appliance Slimcomponents BACKUP",
+"Build Id" : "Prm_Sandbox_2Syntsov_320smokeApplianceSlimcomponentsBackup",
+"ArtSize" : "2.948 : Mb"}
+,
+{ "Build Name" : "340 SMOKE Appliance Slimcomponents BACKUP/RESTORE",
+"Build Id" : "Prm_Sandbox_2Syntsov_330smokeApplianceSlimcomponentsBackupRestore",
+"ArtSize" : "2.697 : Mb"}
+,
+{ "Build Name" : "330 SMOKE Appliance Slimcomponents BACKUP Linux",
+"Build Id" : "Prm_Sandbox_2Syntsov_Appliance_Tests_330smokeApplianceSlimcomponentsBackupLinux",
+"ArtSize" : "10.840 : Mb"}
+,
+{ "Build Name" : "342 SMOKE Appliance +  SA RecoveryScheme BACKUP/RESTORE",
+"Build Id" : "Prm_Sandbox_2Syntsov_Appliance_Tests_342smokeApplianceSaRecoverySchemeBackupRest",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "350 SMOKE Appliance Slimcomponents BACKUP/RESTORE Linux",
+"Build Id" : "Prm_Sandbox_2Syntsov_Appliance_Tests_350smokeApplianceSlimcomponentsBackupRestor",
+"ArtSize" : "1.994 : Mb"}
+,
+{ "Build Name" : "352 SMOKE Appliance + SA RecoveryScheme BACKUP/RESTORE Linux",
+"Build Id" : "Prm_Sandbox_2Syntsov_Appliance_Tests_352smokeApplianceSaRecoverySchemeBackupRest",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "SMOKE_Appliance_Backup\\Restore(Lin)",
+"Build Id" : "Prm_Sandbox_2Syntsov_Appliance_Tests_SmokeApplianceBackupRestoreLin",
+"ArtSize" : "2.695 : Mb"}
+,
+{ "Build Name" : "SMOKE_Appliance_Backup",
+"Build Id" : "Prm_Sandbox_2Syntsov_SmokeApplianceBackup",
+"ArtSize" : "2.577 : Mb"}
+,
+{ "Build Name" : "SMOKE_Appliance_Backup(Lin)",
+"Build Id" : "Prm_Sandbox_2Syntsov_SmokeApplianceBackupLin",
+"ArtSize" : "7.352 : Mb"}
+,
+{ "Build Name" : "SMOKE_Appliance_Backup\\Restore",
+"Build Id" : "Prm_Sandbox_2Syntsov_SmokeApplianceBackupRestore",
+"ArtSize" : "2.760 : Mb"}
+]}
+,
+{ "Project Name" : "TESTS Big_Appliance + SP",
+"Project Id" : "Prm_Sandbox_2Syntsov_Appliance_TestsSlimplatform",
+"ArtSize" : "54.274 : Mb",
+"SubProjects" : "None",
+"directBuilds" : [
+{ "Build Name" : "321 SMOKE Appliance SLIMPLATFORM BACKUP",
+"Build Id" : "Prm_Sandbox_2Syntsov_Appliance_TestsSlimplatform_321smokeApplianceSlimplatformBa",
+"ArtSize" : "26.808 : Mb"}
+,
+{ "Build Name" : "331 SMOKE Appliance SLIMPLATFORM BACKUP Linux",
+"Build Id" : "Prm_Sandbox_2Syntsov_Appliance_TestsSlimplatform_331smokeApplianceSlimplatformBa",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "341 SMOKE Appliance SLIMPLATFORM BACKUP/RESTORE",
+"Build Id" : "Prm_Sandbox_2Syntsov_Appliance_TestsSlimplatform_341smokeApplianceSlimplatformBa",
+"ArtSize" : "27.466 : Mb"}
+,
+{ "Build Name" : "351 SMOKE Appliance SLIMPLATFORM BACKUP/RESTORE Linux",
+"Build Id" : "Prm_Sandbox_2Syntsov_Appliance_TestsSlimplatform_351smokeApplianceSlimplatformBa",
+"ArtSize" : "0.000 : Mb"}
+]}
+,
+{ "Project Name" : "TESTS NT_F_105428 Big_Appliance + SA",
+"Project Id" : "Prm_Sandbox_2Syntsov_Appliance_TestsNtF105428",
+"ArtSize" : "11.106 : Mb",
+"SubProjects" : "None",
+"directBuilds" : [
+{ "Build Name" : "SMOKE_Appliance_Backup",
+"Build Id" : "Prm_Sandbox_2Syntsov_Appliance_TestsNtF105428_SmokeApplianceBackup",
+"ArtSize" : "1.267 : Mb"}
+,
+{ "Build Name" : "SMOKE_Appliance_Backup(Lin)",
+"Build Id" : "Prm_Sandbox_2Syntsov_Appliance_TestsNtF105428_SmokeApplianceBackupLin",
+"ArtSize" : "7.110 : Mb"}
+,
+{ "Build Name" : "SMOKE_Appliance_Backup\\Restore",
+"Build Id" : "Prm_Sandbox_2Syntsov_Appliance_TestsNtF105428_SmokeApplianceBackupRestore",
+"ArtSize" : "1.304 : Mb"}
+,
+{ "Build Name" : "SMOKE_Appliance_Backup\\Restore(Lin)",
+"Build Id" : "Prm_Sandbox_2Syntsov_Appliance_TestsNtF105428_SmokeApplianceBackupRestoreLin",
+"ArtSize" : "1.425 : Mb"}
+]}
+],"directBuilds" : "None"
+}
+,
+{ "Project Name" : "SVN_UTILITIES",
+"Project Id" : "Prm_Sandbox_2Syntsov_SvnUtilities",
+"ArtSize" : "2.466 : Mb",
+"SubProjects" : "None",
+"directBuilds" : [
+{ "Build Name" : "SVN_UT300 Smart Volume Backup Scenario",
+"Build Id" : "Prm_Sandbox_2Syntsov_Components_SvnUt300SmartVolumeBackupScenario",
+"ArtSize" : "2.466 : Mb"}
+]}
+,
+{ "Project Name" : "TRUNK",
+"Project Id" : "Prm_Sandbox_2Syntsov_Obsolete",
+"ArtSize" : "3452.630 : Mb",
+"SubProjects" : [
+{ "Project Name" : "SLIM AGENT + HDM",
+"Project Id" : "Prm_Sandbox_2Syntsov_SlimAgentHdm",
+"ArtSize" : "449.075 : Mb",
+"SubProjects" : [
+{ "Project Name" : "Package view",
+"Project Id" : "Prm_Sandbox_2Syntsov_SlimAgentHdm_PackageView",
+"ArtSize" : "449.075 : Mb",
+"SubProjects" : "None",
+"directBuilds" : [
+{ "Build Name" : "2XX2 SlimAgent + HDM only",
+"Build Id" : "Prm_Sandbox_2Syntsov_SlimAgentHdm_PackageView_2xx2SlimAgentHdmOnly",
+"ArtSize" : "449.075 : Mb"}
+]}
+],"directBuilds" : [
+{ "Build Name" : "1000 Prereqs 2015 [TMP HACK]",
+"Build Id" : "Prm_Sandbox_2Syntsov_SlimAgentHdm_1000pre",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "1001 HDM [Obsolete - see 2XX2]",
+"Build Id" : "Prm_Sandbox_2Syntsov_SlimAgentHdm_1001hdm",
+"ArtSize" : "0.000 : Mb"}
+]}
+,
+{ "Project Name" : "_BUILDS",
+"Project Id" : "Prm_Sandbox_2Syntsov_Appliance_Builds",
+"ArtSize" : "2989.646 : Mb",
+"SubProjects" : "None",
+"directBuilds" : [
+{ "Build Name" : "107 BUILD SlimAgent x64",
+"Build Id" : "Prm_Sandbox_2Syntsov_107buildSlimAgentX64",
+"ArtSize" : "25.134 : Mb"}
+,
+{ "Build Name" : "108 BUILD PEGR WebUI",
+"Build Id" : "Prm_Sandbox_2Syntsov_108buildPegrWebUI",
+"ArtSize" : "14.355 : Mb"}
+,
+{ "Build Name" : "109 BUILD SlimAgent Linux",
+"Build Id" : "Prm_Sandbox_2Syntsov_109buildSlimAgentLinux",
+"ArtSize" : "26.626 : Mb"}
+,
+{ "Build Name" : "192 BUILD Ubuntu Recovery ISO",
+"Build Id" : "Prm_Sandbox_2Syntsov_192buildUbuntuRecoveryIso",
+"ArtSize" : "1271.209 : Mb"}
+,
+{ "Build Name" : "202 DISTRIBUTIVE (Wix LI2 Full)",
+"Build Id" : "Prm_Sandbox_2Syntsov_202distributiveWixLi2Full",
+"ArtSize" : "211.160 : Mb"}
+,
+{ "Build Name" : "204 DISTRIBUTIVE Appliance",
+"Build Id" : "Prm_Sandbox_2Syntsov_204distributiveAppliance",
+"ArtSize" : "895.480 : Mb"}
+,
+{ "Build Name" : "983 PUBLISH SlimAgent_test",
+"Build Id" : "Prm_Sandbox_2Syntsov_983publishSlimAgentTest",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "BUILD_RCD_Linux",
+"Build Id" : "Prm_Sandbox_2Syntsov_BuildRcdLinux",
+"ArtSize" : "545.682 : Mb"}
+]}
+,
+{ "Project Name" : "_TESTS",
+"Project Id" : "Prm_Sandbox_2Syntsov_Obsolete_Tests",
+"ArtSize" : "13.909 : Mb",
+"SubProjects" : "None",
+"directBuilds" : [
+{ "Build Name" : "709.1 SDK STRESS TaskManager Database",
+"Build Id" : "Prm_Sandbox_2Syntsov_7091sdkStressTaskManagerDatabase",
+"ArtSize" : "13.909 : Mb"}
+]}
+],"directBuilds" : "None"
+}
+],"directBuilds" : [
+{ "Build Name" : "970 SERVICE Tests Executor [CUSTOM]",
+"Build Id" : "Prm_Sandbox_2Syntsov_970serviceTestsExecutorCustom",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "DEPLOY CGM Infrastructure",
+"Build Id" : "Prm_Sandbox_2Syntsov_DeployCgmInfrastructure",
+"ArtSize" : "0.197 : Mb"}
+,
+{ "Build Name" : "DEPLOY PBA Infrastructure",
+"Build Id" : "Prm_Sandbox_2Syntsov_DeployPbaInfrastructure",
+"ArtSize" : "0.347 : Mb"}
+,
+{ "Build Name" : "DEPLOY Slim Infrastructure",
+"Build Id" : "Prm_Sandbox_2Syntsov_DeploySlimInfrastructureExpanded",
+"ArtSize" : "0.165 : Mb"}
+,
+{ "Build Name" : "TEST",
+"Build Id" : "Prm_Sandbox_2Syntsov_Test",
+"ArtSize" : "0.000 : Mb"}
+]}
+,
+{ "Project Name" : "2Sirotkin",
+"Project Id" : "Prm_Sandbox_2Sirotkin_2",
+"ArtSize" : "56.837 : Mb",
+"SubProjects" : "None",
+"directBuilds" : [
+{ "Build Name" : "098 BUILD PRM46 WebApi Prototype (NUGET PROTO)",
+"Build Id" : "Prm_Sandbox_2Sirotkin_2_098buildPrm46WebApiPrototype",
+"ArtSize" : "56.837 : Mb"}
+]}
+,
+{ "Project Name" : "2Sytar",
+"Project Id" : "Prm_Sandbox_2Sytar",
+"ArtSize" : "0.000 : Mb",
+"SubProjects" : "None",
+"directBuilds" : "None"
+}
+,
+{ "Project Name" : "2Tazetdinov",
+"Project Id" : "Prm_Sandbox_2Tazetdinov",
+"ArtSize" : "0.000 : Mb",
+"SubProjects" : [
+{ "Project Name" : "SERVICE CUSTOM",
+"Project Id" : "Prm_Sandbox_2Tazetdinov_ServiceCustom",
+"ArtSize" : "0.000 : Mb",
+"SubProjects" : "None",
+"directBuilds" : [
+{ "Build Name" : "970 SERVICE Tests Executor [CUSTOM]",
+"Build Id" : "Prm_Sandbox_2Tazetdinov_970serviceTestsExecutorCustom",
+"ArtSize" : "0.000 : Mb"}
+]}
+],"directBuilds" : "None"
+}
+,
+{ "Project Name" : "2Tipikin",
+"Project Id" : "Prm_Sandbox_2Tipikin",
+"ArtSize" : "96.893 : Mb",
+"SubProjects" : [
+{ "Project Name" : "L0 (PT-237)",
+"Project Id" : "Prm_Sandbox_2Tipikin_L0",
+"ArtSize" : "2.469 : Mb",
+"SubProjects" : "None",
+"directBuilds" : [
+{ "Build Name" : "300 SMOKE Main with SDK",
+"Build Id" : "Prm_Sandbox_2Tipikin_L0_300smokeMainWithSdk",
+"ArtSize" : "2.469 : Mb"}
+]}
+,
+{ "Project Name" : "L1 (PT-237)",
+"Project Id" : "Prm_Sandbox_2Tipikin_L1pt237",
+"ArtSize" : "35.512 : Mb",
+"SubProjects" : [
+{ "Project Name" : "BS",
+"Project Id" : "Prm_Sandbox_2Tipikin_L1pt237_Bs",
+"ArtSize" : "9.224 : Mb",
+"SubProjects" : "None",
+"directBuilds" : [
+{ "Build Name" : "756 PRM SDK FUNC Virtual Disk Combo (Fast)",
+"Build Id" : "Prm_Sandbox_2Tipikin_L1pt237_Bs_756prmSdkFuncVirtualDiskComboFast",
+"ArtSize" : "9.224 : Mb"}
+]}
+,
+{ "Project Name" : "CORE",
+"Project Id" : "Prm_Sandbox_2Tipikin_L1pt237_Core",
+"ArtSize" : "2.751 : Mb",
+"SubProjects" : "None",
+"directBuilds" : [
+{ "Build Name" : "705 SDK TM2 test with AgentEmulator",
+"Build Id" : "Prm_Sandbox_2Tipikin_L1pt237_Core_705sdkTm2testWithAgentEmulator",
+"ArtSize" : "2.062 : Mb"}
+,
+{ "Build Name" : "709.1 SDK STRESS TaskManager Database",
+"Build Id" : "Prm_Sandbox_2Tipikin_L1pt237_Core_7091sdkStressTaskManagerDatabase",
+"ArtSize" : "0.689 : Mb"}
+]}
+,
+{ "Project Name" : "VSPHERE",
+"Project Id" : "Prm_Sandbox_2Tipikin_L1pt237_Vsphere",
+"ArtSize" : "16.968 : Mb",
+"SubProjects" : "None",
+"directBuilds" : [
+{ "Build Name" : "734 SDK Simple VM Backup Restore (W2012R2)",
+"Build Id" : "Prm_Sandbox_2Tipikin_L1pt237_Vsphere_734sdkSimpleVmBackupRestoreW2012r2",
+"ArtSize" : "11.929 : Mb"}
+,
+{ "Build Name" : "735 SDK VM Volume backup/restore",
+"Build Id" : "Prm_Sandbox_2Tipikin_L1pt237_Vsphere_735sdkVmVolumeBackupRestore",
+"ArtSize" : "5.039 : Mb"}
+]}
+],"directBuilds" : [
+{ "Build Name" : "700 SDK REGRESS Fast",
+"Build Id" : "Prm_Sandbox_2Tipikin_L1pt237_700sdkRegressFast",
+"ArtSize" : "2.393 : Mb"}
+,
+{ "Build Name" : "723 SDK FAST WixFull LI",
+"Build Id" : "Prm_Sandbox_2Tipikin_L1pt237_723sdkFastWixFullLi",
+"ArtSize" : "4.176 : Mb"}
+]}
+,
+{ "Project Name" : "L2",
+"Project Id" : "Prm_Sandbox_2Tipikin_L2",
+"ArtSize" : "58.255 : Mb",
+"SubProjects" : [
+{ "Project Name" : "BS",
+"Project Id" : "Prm_Sandbox_2Tipikin_L2_Bs",
+"ArtSize" : "28.420 : Mb",
+"SubProjects" : "None",
+"directBuilds" : [
+{ "Build Name" : "756.1 PRM SDK FUNC Virtual Disk Combo (Test Cases 1-128)",
+"Build Id" : "Prm_Sandbox_2Tipikin_L2_Bs_7561prmSdkFuncVirtualDiskComboTestCases1128",
+"ArtSize" : "13.047 : Mb"}
+,
+{ "Build Name" : "756.2 PRM SDK FUNC Virtual Disk Combo (Test Cases 129-256)",
+"Build Id" : "Prm_Sandbox_2Tipikin_L2_Bs_7562prmSdkFuncVirtualDiskComboTestCases129256",
+"ArtSize" : "13.094 : Mb"}
+,
+{ "Build Name" : "757 PRM SDK FUNC StorageTransfer",
+"Build Id" : "Prm_Sandbox_2Tipikin_L2_Bs_757prmSdkFuncStorageTransfer",
+"ArtSize" : "2.279 : Mb"}
+]}
+,
+{ "Project Name" : "CORE",
+"Project Id" : "Prm_Sandbox_2Tipikin_L2_Core",
+"ArtSize" : "3.517 : Mb",
+"SubProjects" : "None",
+"directBuilds" : [
+{ "Build Name" : "709.2 SDK STRESS TaskManager Database",
+"Build Id" : "Prm_Sandbox_2Tipikin_L2_Core_7092sdkStressTaskManagerDatabase",
+"ArtSize" : "2.225 : Mb"}
+,
+{ "Build Name" : "729 SDK TM2 advanced test with AgentEmulator",
+"Build Id" : "Prm_Sandbox_2Tipikin_L2_Core_729sdkTm2advancedTestWithAgentEmulator",
+"ArtSize" : "1.292 : Mb"}
+]}
+,
+{ "Project Name" : "VSPHERE",
+"Project Id" : "Prm_Sandbox_2Tipikin_L2_Vsphere",
+"ArtSize" : "20.450 : Mb",
+"SubProjects" : "None",
+"directBuilds" : [
+{ "Build Name" : "735 SDK VM Volume backup/restore",
+"Build Id" : "Prm_Sandbox_2Tipikin_L2_Vsphere_735sdkVmVolumeBackupRestore",
+"ArtSize" : "2.557 : Mb"}
+,
+{ "Build Name" : "740 SDK Major VM Backup Test on Windows Server 2012 R2",
+"Build Id" : "Prm_Sandbox_2Tipikin_L2_Vsphere_740sdkMajorVmBackupTestOnWindowsServer2012r2",
+"ArtSize" : "15.641 : Mb"}
+,
+{ "Build Name" : "758 SDK VM backup/restore with volume exclude",
+"Build Id" : "Prm_Sandbox_2Tipikin_L2_Vsphere_758sdkVmBackupRestoreWithVolumeExclude",
+"ArtSize" : "2.252 : Mb"}
+]}
+],"directBuilds" : [
+{ "Build Name" : "720 SDK FULL WixFull LI",
+"Build Id" : "Prm_Sandbox_2Tipikin_L2_720sdkFullWixFullLi",
+"ArtSize" : "4.087 : Mb"}
+,
+{ "Build Name" : "739 FAST Security switch test",
+"Build Id" : "Prm_Sandbox_2Tipikin_L2_739fastSecuritySwitchTest",
+"ArtSize" : "0.463 : Mb"}
+,
+{ "Build Name" : "741 SDK Granular Recovery Base",
+"Build Id" : "Prm_Sandbox_2Tipikin_L2_741sdkGranularRecoveryBase",
+"ArtSize" : "1.318 : Mb"}
+]}
+,
+{ "Project Name" : "NEWFN",
+"Project Id" : "Prm_Sandbox_2Tipikin_Newfn",
+"ArtSize" : "0.657 : Mb",
+"SubProjects" : [
+{ "Project Name" : "MSSQL",
+"Project Id" : "Prm_Sandbox_2Tipikin_Newfn_Mssql",
+"ArtSize" : "0.000 : Mb",
+"SubProjects" : "None",
+"directBuilds" : [
+{ "Build Name" : "301 SMOKE Main with SDK (MSSQL - Bug 100640)",
+"Build Id" : "Prm_Sandbox_2Tipikin_Newfn_Mssql_301smokeMainWithSdkMssqlBug100640",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "311 UNIT MSSQL Tests (Bug 100640)",
+"Build Id" : "Prm_Sandbox_2Tipikin_Newfn_Mssql_311unitMssqlTestsBug100640",
+"ArtSize" : "0.000 : Mb"}
+]}
+],"directBuilds" : [
+{ "Build Name" : "742 SDK Long Backup Chains [Bug 84017]",
+"Build Id" : "Prm_Sandbox_2Tipikin_Newfn_742sdkLongBackupChainsBug84017",
+"ArtSize" : "0.657 : Mb"}
+,
+{ "Build Name" : "743 SDK Exchange 2010 VM Backup [Bug 45494]",
+"Build Id" : "Prm_Sandbox_2Tipikin_Newfn_743sdkExchange2010vmBackupBug45494",
+"ArtSize" : "0.000 : Mb"}
+]}
+],"directBuilds" : "None"
+}
+,
+{ "Project Name" : "2Tsypunov",
+"Project Id" : "Prm_Sandbox_2Tsypunov",
+"ArtSize" : "3.346 : Mb",
+"SubProjects" : "None",
+"directBuilds" : [
+{ "Build Name" : "734 SDK Simple VM Backup Restore (W2012R2)",
+"Build Id" : "Prm_Sandbox_2Tsypunov_734sdkSimpleVmBackupRestoreW2012r2",
+"ArtSize" : "3.155 : Mb"}
+,
+{ "Build Name" : "Tests Report [CUSTOM]",
+"Build Id" : "Prm_Sandbox_2Tsypunov_TestsReportCustom",
+"ArtSize" : "0.173 : Mb"}
+,
+{ "Build Name" : "Usage Report [CUSTOM]",
+"Build Id" : "Prm_Sandbox_2Tsypunov_UsageReportCustom",
+"ArtSize" : "0.018 : Mb"}
+]}
+,
+{ "Project Name" : "2Yurkov",
+"Project Id" : "Prm_Sandbox_2Yurkov",
+"ArtSize" : "435.008 : Mb",
+"SubProjects" : "None",
+"directBuilds" : [
+{ "Build Name" : "200 DISTRIBUTIVE (PRM SDK Standalone)",
+"Build Id" : "Prm_Sandbox_2Yurkov_200distributivePrmSdkStandalone",
+"ArtSize" : "435.008 : Mb"}
+]}
+,
+{ "Project Name" : "Chichkov",
+"Project Id" : "Prm_Sandbox_Chichkov",
+"ArtSize" : "0.000 : Mb",
+"SubProjects" : "None",
+"directBuilds" : [
+{ "Build Name" : "NFSServer_functional_testing",
+"Build Id" : "Prm_Sandbox_Chichkov_NFSServerFunctionalTesting",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "test",
+"Build Id" : "Prm_Sandbox_Chichkov_Test",
+"ArtSize" : "0.000 : Mb"}
+]}
+,
+{ "Project Name" : "Dubinin",
+"Project Id" : "Prm_Sandbox_Dubinin",
+"ArtSize" : "0.000 : Mb",
+"SubProjects" : "None",
+"directBuilds" : "None"
+}
+,
+{ "Project Name" : "Mikhaylov",
+"Project Id" : "Prm_Sandbox_Mikhaylov",
+"ArtSize" : "0.000 : Mb",
+"SubProjects" : "None",
+"directBuilds" : "None"
+}
+,
+{ "Project Name" : "Naguchev",
+"Project Id" : "Prm_Sandbox_Naguchev",
+"ArtSize" : "366.862 : Mb",
+"SubProjects" : "None",
+"directBuilds" : [
+{ "Build Name" : "206 DISTRIBUTIVE Agr Standalone",
+"Build Id" : "Prm_Sandbox_Naguchev_206distributiveAgrStandalone",
+"ArtSize" : "366.862 : Mb"}
+]}
+,
+{ "Project Name" : "SDK",
+"Project Id" : "Prm_Sandbox_Sdk_2",
+"ArtSize" : "2078.069 : Mb",
+"SubProjects" : [
+{ "Project Name" : "SDK Coverage",
+"Project Id" : "Prm_Sandbox_Sdk_2_SdkCoverage",
+"ArtSize" : "0.000 : Mb",
+"SubProjects" : "None",
+"directBuilds" : [
+{ "Build Name" : "100500_SERVICE: PRM SDK Code Coverage SDKL1",
+"Build Id" : "Prm_Sandbox_2Senchenkov_SdkCoverage_100500servicePrmSdkCodeCoverageMergedFromAll",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "100500_SERVICE: PRM SDK Code Coverage SDKL2",
+"Build Id" : "Prm_Sandbox_2Senchenkov_SdkCoverage_100500servicePrmSdkCodeCoverageSdkl2",
+"ArtSize" : "0.000 : Mb"}
+]}
+,
+{ "Project Name" : "SDK_DEV",
+"Project Id" : "Prm_Sandbox_Sdk",
+"ArtSize" : "696.977 : Mb",
+"SubProjects" : "None",
+"directBuilds" : [
+{ "Build Name" : "754 SDK FUNC VM Backup combinatorics",
+"Build Id" : "Prm_Sandbox_2Tazetdinov_Tests_754sdkFuncVmBackupCombinatoricsPrmF103963",
+"ArtSize" : "6.402 : Mb"}
+,
+{ "Build Name" : "610 TOGO NEGATIVE Vogel",
+"Build Id" : "Prm_Sandbox_Sdk_610togoNegativeVogel",
+"ArtSize" : "21.481 : Mb"}
+,
+{ "Build Name" : "705 SDK TM2 test with AgentEmulator (bug 103292)",
+"Build Id" : "Prm_Sandbox_Sdk_705sdkTm2testWithAgentEmulatorBug103292",
+"ArtSize" : "0.034 : Mb"}
+,
+{ "Build Name" : "714 PRM SDK STRESS AdminServer on Windows (Bug 96178)",
+"Build Id" : "Prm_Sandbox_Sdk_714prmSdkStressAdminServerOnWindowsBug96178",
+"ArtSize" : "10.261 : Mb"}
+,
+{ "Build Name" : "724 SDK LOAD vSphere Web SDK (Bug 97239)",
+"Build Id" : "Prm_Sandbox_Sdk_724sdkLoadVSphereWebSdkBug97239",
+"ArtSize" : "27.690 : Mb"}
+,
+{ "Build Name" : "727 PRM SDK TM FAST STRESS AdminServer on Windows (Bug 97005)",
+"Build Id" : "Prm_Sandbox_Sdk_727prmSdkTmFastStressAdminServerOnWindowsBug97005",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "727 PRM SDK TM FAST STRESS AdminServer on Windows (Ring Physical Backup)",
+"Build Id" : "Prm_Sandbox_Sdk_727prmSdkTmFastStressAdminServerOnWindowsRingPhysicalBackup",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "729 SDK TM2 advanced test with AgentEmulator",
+"Build Id" : "Prm_Sandbox_Sdk_729sdkTm2advancedTestWithAgentEmulator",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "737 SDK Notification (Bug 108916)",
+"Build Id" : "Prm_Sandbox_Sdk_737sdkNotificationBug108916",
+"ArtSize" : "0.283 : Mb"}
+,
+{ "Build Name" : "737 SDK Notification collector test with AgentEmulator (prm_f_108916)",
+"Build Id" : "Prm_Sandbox_Sdk_737sdkNotificationCollectorTestWithAgentEmulatorPrmF108916",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "738 SDK LOAD Notification collector stress test using AgentEmulator",
+"Build Id" : "Prm_Sandbox_Sdk_738sdkLoadNotificationCollectorStressTestUsingAgentEmulator",
+"ArtSize" : "0.023 : Mb"}
+,
+{ "Build Name" : "741 SDK Granular Recovery Base",
+"Build Id" : "Prm_Sandbox_Sdk_741sdkGranularRecoveryBase",
+"ArtSize" : "5.898 : Mb"}
+,
+{ "Build Name" : "745_1 SDK SlinAgent SimpleTest",
+"Build Id" : "Prm_Sandbox_Sdk_7451sdkSlinAgentSimpleTest",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "745 SDK SlinAgent SimpleTest",
+"Build Id" : "Prm_Sandbox_Sdk_745sdkSlinAgentSimpleTest",
+"ArtSize" : "1.322 : Mb"}
+,
+{ "Build Name" : "746 SDK SlimAgent SimpleTest",
+"Build Id" : "Prm_Sandbox_Sdk_746sdkSlimAgentSimpleTest",
+"ArtSize" : "2.170 : Mb"}
+,
+{ "Build Name" : "747 SDK LOAD NEGATIVE VM backup [Bug 100455]",
+"Build Id" : "Prm_Sandbox_Sdk_747sdkLoadNegativeVmBackupBug100455",
+"ArtSize" : "2.100 : Mb"}
+,
+{ "Build Name" : "770_1  VMBackup_HotAdd (2GO + PRM Plugin)",
+"Build Id" : "Prm_Sandbox_Sdk_7701VMBackupHotAdd2goPrmPlugin",
+"ArtSize" : "9.194 : Mb"}
+,
+{ "Build Name" : "770 NEGATIVE(PRM2GO PT-237)",
+"Build Id" : "Prm_Sandbox_Sdk_770negativePrm2goPt237",
+"ArtSize" : "6.569 : Mb"}
+,
+{ "Build Name" : "770 NEGATIVE VMBackup_HotAdd_RemoveBackupSnapshots (PT_237)",
+"Build Id" : "Prm_Sandbox_Sdk_770negativeVMBackupHotAddRemoveBackupSnapshots2goPrmPlugin",
+"ArtSize" : "2.834 : Mb"}
+,
+{ "Build Name" : "771 NEGATIVE VmReplicaLimitSnapshot  (PRM2GO)",
+"Build Id" : "Prm_Sandbox_Sdk_771negativeVmReplicaLimitSnapshotPrm2go",
+"ArtSize" : "8.027 : Mb"}
+,
+{ "Build Name" : "701 SDK FAST STRESS TM2 with AgentEmulator",
+"Build Id" : "Prm_Sandbox_Sdk_ForIntegration_701sdkFastStressTm2withAgentEmulator",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "706 SDK FUNC Bitlocker support for Phys Backup",
+"Build Id" : "Prm_Sandbox_Sdk_ForIntegration_706sdkFuncBitlockerSupportForPhysBackup",
+"ArtSize" : "7.196 : Mb"}
+,
+{ "Build Name" : "709 SDK STRESS TM2 with AgentEmulator",
+"Build Id" : "Prm_Sandbox_Sdk_ForIntegration_709sdkStressTm2withAgentEmulator",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "746_1 SDK SlimAgent SimpleTest",
+"Build Id" : "Prm_Sandbox_Sdk_ForIntegration_7461sdkSlimAgentSimpleTest",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "746 SDK SlimAgent SimpleTest (1)",
+"Build Id" : "Prm_Sandbox_Sdk_ForIntegration_746sdkSlimAgentSimpleTest",
+"ArtSize" : "20.340 : Mb"}
+,
+{ "Build Name" : "New Exchange Utility Test",
+"Build Id" : "Prm_Sandbox_Sdk_NewExchangeUtilityTest",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "New SDK Pegr",
+"Build Id" : "Prm_Sandbox_Sdk_NewSdkPegr",
+"ArtSize" : "0.194 : Mb"}
+,
+{ "Build Name" : "TEST 2GO (BUG 102942)",
+"Build Id" : "Prm_Sandbox_Sdk_Test2goBug102942",
+"ArtSize" : "1.569 : Mb"}
+,
+{ "Build Name" : "708 SDK RELIABILITY EsxAgent on Win 2012 R2 (Parallel policy run) [Bug 73733]",
+"Build Id" : "Prm_Tests_Sdknewfn_708sdkReliabilityEsxAgentOnWin2012r2ParallelPolicyRun",
+"ArtSize" : "563.390 : Mb"}
+]}
+,
+{ "Project Name" : "SDK_FOR_INTEGRATION",
+"Project Id" : "Prm_Sandbox_Sdk_ForIntegration",
+"ArtSize" : "1253.514 : Mb",
+"SubProjects" : [
+{ "Project Name" : "GenericEsxStorage",
+"Project Id" : "Prm_Sandbox_Sdk_ForIntegration_GenericEsxStorage",
+"ArtSize" : "24.743 : Mb",
+"SubProjects" : "None",
+"directBuilds" : [
+{ "Build Name" : "300 SMOKE Main with SDK",
+"Build Id" : "Prm_Sandbox_Sdk_ForIntegration_GenericEsxStorage_300smokeMainWithSdk",
+"ArtSize" : "1.219 : Mb"}
+,
+{ "Build Name" : "707 SDK REGRESS VM Backup on Windows Server 2012 R2",
+"Build Id" : "Prm_Sandbox_Sdk_ForIntegration_GenericEsxStorage_707sdkRegressVmBackupOnWindow_2",
+"ArtSize" : "6.475 : Mb"}
+,
+{ "Build Name" : "734 SDK Simple VM Backup Restore (W2012R2)",
+"Build Id" : "Prm_Sandbox_Sdk_ForIntegration_GenericEsxStorage_734sdkSimpleVmBackupRestoreW201",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "735 SDK VM Volume backup/restore",
+"Build Id" : "Prm_Sandbox_Sdk_ForIntegration_GenericEsxStorage_735sdkVmVolumeBackupRestore",
+"ArtSize" : "2.500 : Mb"}
+,
+{ "Build Name" : "740 SDK Major VM Backup Test on Windows Server 2012 R2",
+"Build Id" : "Prm_Sandbox_Sdk_ForIntegration_GenericEsxStorage_740sdkMajorVmBackupTestOnWind_2",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "745 SDK NEGATIVE Destroy Backup Server",
+"Build Id" : "Prm_Sandbox_Sdk_ForIntegration_GenericEsxStorage_745sdkNegativeDestroyBackupSe_2",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "754 SDK FUNC VM Backup combinatorics [Bug 85846]",
+"Build Id" : "Prm_Sandbox_Sdk_ForIntegration_GenericEsxStorage_754sdkFuncVmBackupCombinatori_2",
+"ArtSize" : "10.006 : Mb"}
+,
+{ "Build Name" : "757 PRM SDK FUNC StorageTransfer",
+"Build Id" : "Prm_Sandbox_Sdk_ForIntegration_GenericEsxStorage_757prmSdkFuncStorageTransfer",
+"ArtSize" : "2.253 : Mb"}
+,
+{ "Build Name" : "758 SDK VM backup/restore with volume exclude",
+"Build Id" : "Prm_Sandbox_Sdk_ForIntegration_GenericEsxStorage_758sdkVmBackupRestoreWithVolume",
+"ArtSize" : "2.290 : Mb"}
+,
+{ "Build Name" : "770 NEGATIVE VMBackup_HotAdd_RemoveBackupSnapshots (PRM2GO)",
+"Build Id" : "Prm_Sandbox_Sdk_ForIntegration_GenericEsxStorage_770negativeVMBackupHotAddRemo_2",
+"ArtSize" : "0.000 : Mb"}
+]}
+,
+{ "Project Name" : "GenericEsxStorageOld",
+"Project Id" : "Prm_Sandbox_Sdk_ForIntegration_GenericEsxStorageOld",
+"ArtSize" : "18.564 : Mb",
+"SubProjects" : "None",
+"directBuilds" : [
+{ "Build Name" : "300.G SMOKE Main with SDK",
+"Build Id" : "Prm_Tests_Newfn_GenericEsxStorage_300gSmokeMainWithSdk",
+"ArtSize" : "8.355 : Mb"}
+,
+{ "Build Name" : "734.G SDK Simple VM Backup Restore (W2012R2)",
+"Build Id" : "Prm_Tests_Newfn_GenericEsxStorage_734gSdkSimpleVmBackupRestoreW2012r2",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "735.G SDK VM Volume backup/restore",
+"Build Id" : "Prm_Tests_Newfn_GenericEsxStorage_735gSdkVmVolumeBackupRestore",
+"ArtSize" : "2.730 : Mb"}
+,
+{ "Build Name" : "757.G PRM SDK FUNC StorageTransfer",
+"Build Id" : "Prm_Tests_Newfn_GenericEsxStorage_757gPrmSdkFuncStorageTransfer",
+"ArtSize" : "7.479 : Mb"}
+]}
+,
+{ "Project Name" : "GenericEsxStorageOld2",
+"Project Id" : "Prm_Sandbox_Sdk_ForIntegration_GenericEsxStorageOld2",
+"ArtSize" : "89.021 : Mb",
+"SubProjects" : "None",
+"directBuilds" : [
+{ "Build Name" : "300.G SMOKE Main with SDK",
+"Build Id" : "Prm_Sandbox_Sdk_ForIntegration_GenericEsxStorage_300gSmokeMainWithSdk",
+"ArtSize" : "9.724 : Mb"}
+,
+{ "Build Name" : "707 SDK REGRESS VM Backup on Windows Server 2012 R2",
+"Build Id" : "Prm_Sandbox_Sdk_ForIntegration_GenericEsxStorage_707sdkRegressVmBackupOnWindowsS",
+"ArtSize" : "12.881 : Mb"}
+,
+{ "Build Name" : "713 SDK FUNC Export Phys & VM Backup to Hyper-V VM",
+"Build Id" : "Prm_Sandbox_Sdk_ForIntegration_GenericEsxStorage_713sdkFuncExportPhysVmBackupToH",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "734.G SDK Simple VM Backup Restore (W2012R2)",
+"Build Id" : "Prm_Sandbox_Sdk_ForIntegration_GenericEsxStorage_734gSdkSimpleVmBackupRestoreW20",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "735.G SDK VM Volume backup/restore",
+"Build Id" : "Prm_Sandbox_Sdk_ForIntegration_GenericEsxStorage_735gSdkVmVolumeBackupRestore",
+"ArtSize" : "2.682 : Mb"}
+,
+{ "Build Name" : "740 SDK Major VM Backup Test on Windows Server 2012 R2",
+"Build Id" : "Prm_Sandbox_Sdk_ForIntegration_GenericEsxStorage_740sdkMajorVmBackupTestOnWindow",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "743 SDK Exchange 2010 VM Backup [Bug 45494]",
+"Build Id" : "Prm_Sandbox_Sdk_ForIntegration_GenericEsxStorage_743sdkExchange2010vmBackupBug45",
+"ArtSize" : "2.431 : Mb"}
+,
+{ "Build Name" : "745 SDK NEGATIVE Destroy Backup Server",
+"Build Id" : "Prm_Sandbox_Sdk_ForIntegration_GenericEsxStorage_745sdkNegativeDestroyBackupServ",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "754 SDK FUNC VM Backup combinatorics [Bug 85846]",
+"Build Id" : "Prm_Sandbox_Sdk_ForIntegration_GenericEsxStorage_754sdkFuncVmBackupCombinatorics",
+"ArtSize" : "37.420 : Mb"}
+,
+{ "Build Name" : "757.G PRM SDK FUNC StorageTransfer",
+"Build Id" : "Prm_Sandbox_Sdk_ForIntegration_GenericEsxStorage_757gPrmSdkFuncStorageTransfer",
+"ArtSize" : "7.332 : Mb"}
+,
+{ "Build Name" : "758.G SDK VM backup/restore with volume exclude",
+"Build Id" : "Prm_Sandbox_Sdk_ForIntegration_GenericEsxStorage_758gSdkVmBackupRestoreWithVolum",
+"ArtSize" : "15.082 : Mb"}
+,
+{ "Build Name" : "770 NEGATIVE VMBackup_HotAdd_RemoveBackupSnapshots (PRM2GO)",
+"Build Id" : "Prm_Sandbox_Sdk_ForIntegration_GenericEsxStorage_770negativeVMBackupHotAddRemove",
+"ArtSize" : "1.469 : Mb"}
+]}
+,
+{ "Project Name" : "Linux AS",
+"Project Id" : "Prm_Sandbox_Sdk_ForIntegration_LinuxAs",
+"ArtSize" : "1118.437 : Mb",
+"SubProjects" : "None",
+"directBuilds" : [
+{ "Build Name" : "702 SDK Directory Replication SUSE",
+"Build Id" : "Prm_Tests_702sdkDirectoryReplicationSuse",
+"ArtSize" : "6.334 : Mb"}
+,
+{ "Build Name" : "703 SDK REGRESS Phys Backup in to openSuse13.1",
+"Build Id" : "Prm_Tests_703sdkRegressFastSuse",
+"ArtSize" : "6.142 : Mb"}
+,
+{ "Build Name" : "715 PRM FUNC Linux Physical Backup [Bug 88132]",
+"Build Id" : "Prm_Tests_Sdkl2_715prmFuncLinuxPhysicalBackup",
+"ArtSize" : "17.986 : Mb"}
+,
+{ "Build Name" : "710 SDK STRESS AdminServer on openSuse 13.1 (Ring Physical Backup) - WEEKLY",
+"Build Id" : "Prm_Tests_Sdknewfn_710prmSdkStressAdminServerOnOpenSuse131RingPhysicalBackup",
+"ArtSize" : "1087.975 : Mb"}
+,
+{ "Build Name" : "712 SDK RELIABILITY EsxAgent on openSuse 13.1 (Parallel policy run)",
+"Build Id" : "Prm_Tests_Sdknewfn_712sdkReliabilityEsxAgentOnOpenSuse131ParallelPolicyRun",
+"ArtSize" : "0.000 : Mb"}
+]}
+],"directBuilds" : [
+{ "Build Name" : "610 TOGO NEGATIVE Vogel",
+"Build Id" : "Prm_Sandbox_Sdk_ForIntegration_610togoNegativeVogel",
+"ArtSize" : "2.749 : Mb"}
+,
+{ "Build Name" : "792 SDK Sample ValidateEsxBackup",
+"Build Id" : "Prm_Tests_Sdknewfn_792sdkSampleValidateEsxBackup",
+"ArtSize" : "0.000 : Mb"}
+]}
+,
+{ "Project Name" : "SDK_LOAD",
+"Project Id" : "Prm_Sandbox_Sdk_2_SdkLoad",
+"ArtSize" : "121.171 : Mb",
+"SubProjects" : "None",
+"directBuilds" : [
+{ "Build Name" : "724 SDK LOAD vSphere Web SDK",
+"Build Id" : "Prm_Sandbox_Sdk_2_WebSdkLoadTesting_724sdkLoadVSphereWebSdk",
+"ArtSize" : "121.171 : Mb"}
+]}
+],"directBuilds" : [
+{ "Build Name" : "100500_SERVICE: PRM SDK Code Coverage (merged from all tests)",
+"Build Id" : "Prm_Sandbox_2Senchenkov_Merge",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "731 SDK VirtualFramework SimpleTest [Bug 70095]",
+"Build Id" : "Prm_Tests_Sdknewfn_731sdkVirtualFrameworkSimpleTest",
+"ArtSize" : "6.407 : Mb"}
+]}
+,
+{ "Project Name" : "trash",
+"Project Id" : "Prm_Sandbox_Trash",
+"ArtSize" : "1689.526 : Mb",
+"SubProjects" : [
+{ "Project Name" : "2Kuzmin",
+"Project Id" : "Prm_Sandbox_2Kuzmin",
+"ArtSize" : "72.302 : Mb",
+"SubProjects" : "None",
+"directBuilds" : [
+{ "Build Name" : "Get PRM desk Info",
+"Build Id" : "Prm_Sandbox_2Kuzmin_GetPrmDeskInfo",
+"ArtSize" : "0.200 : Mb"}
+,
+{ "Build Name" : "431_BsRestore",
+"Build Id" : "Prm_Sandbox_Philippov_431BsRestore",
+"ArtSize" : "72.102 : Mb"}
+]}
+,
+{ "Project Name" : "Gorlin",
+"Project Id" : "Prm_Sandbox_Gorlin",
+"ArtSize" : "38.517 : Mb",
+"SubProjects" : [
+{ "Project Name" : "CDP",
+"Project Id" : "Prm_Sandbox_Gorlin_Cdp",
+"ArtSize" : "38.517 : Mb",
+"SubProjects" : "None",
+"directBuilds" : [
+{ "Build Name" : "102 CDP",
+"Build Id" : "Prm_Sandbox_Gorlin_102cdp",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "102 BUILD CDP MSI",
+"Build Id" : "bt169",
+"ArtSize" : "38.517 : Mb"}
+]}
+,
+{ "Project Name" : "CDP3",
+"Project Id" : "Prm_Sandbox_Gorlin_Cdp3",
+"ArtSize" : "0.000 : Mb",
+"SubProjects" : "None",
+"directBuilds" : [
+{ "Build Name" : "102 BUILD CDP MSI",
+"Build Id" : "Prm_Sandbox_Gorlin_Cdp3_102buildCdpMsi",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "102 CDP",
+"Build Id" : "Prm_Sandbox_Gorlin_Cdp3_102cdp",
+"ArtSize" : "0.000 : Mb"}
+]}
+],"directBuilds" : [
+{ "Build Name" : "nant mono runner",
+"Build Id" : "Prm_Sandbox_GorlinDrafts_NantMonoRunner",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "100 BUILD PRM x64 svnDLG",
+"Build Id" : "Prm_Sandbox_Gorlin_100buildPrmX64svnDLG",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "101 BUILD QT Wizards  test for 2012r2",
+"Build Id" : "Prm_Sandbox_Gorlin_101buildQtWizardsTestFor2012r2",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "101 BUILD QT Wizards win32",
+"Build Id" : "Prm_Sandbox_Gorlin_101buildQtWizardsWin32",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "101 BUILD QT Wizards win64",
+"Build Id" : "Prm_Sandbox_Gorlin_101buildQtWizardsWin64",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "105 BUILD PRM Linux (centos)",
+"Build Id" : "Prm_Sandbox_Gorlin_105buildPrmLinuxCentos",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "200 DISTRIBUTIVE (Wix LI2 Standalone)  test confog",
+"Build Id" : "Prm_Sandbox_Gorlin_200distributiveWixLi2StandaloneTestConfog",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "202 DISTRIBUTIVE (Wix LI2 Full) test pub",
+"Build Id" : "Prm_Sandbox_Gorlin_202distributiveWixLi2FullTestPub",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "405_PhysicalBackup_Archiving_LaunchBackup_R47",
+"Build Id" : "Prm_Sandbox_Gorlin_405PhysicalBackupArchivingLaunchBackupR47_2",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "PRM SUSE mono nant test",
+"Build Id" : "Prm_Sandbox_PrmSuseMonoNantTest",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "990 Version Publicator",
+"Build Id" : "SampleTests_990VersionPublicator",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "GUI_test_code_inspections",
+"Build Id" : "bt115",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "step name test experiments",
+"Build Id" : "bt302",
+"ArtSize" : "0.000 : Mb"}
+]}
+,
+{ "Project Name" : "VOGEL",
+"Project Id" : "Prm_Sandbox_Vogel",
+"ArtSize" : "1540.224 : Mb",
+"SubProjects" : "None",
+"directBuilds" : [
+{ "Build Name" : "204 DISTRIBUTIVE Vogel",
+"Build Id" : "Prm_Builds_204distributiveVogel",
+"ArtSize" : "1477.600 : Mb"}
+,
+{ "Build Name" : "797 WEBSDK VOGEL SAMPLES",
+"Build Id" : "Prm_Sandbox_2Senchenkov_Togo2_Tests_7001VogelSamples",
+"ArtSize" : "8.433 : Mb"}
+,
+{ "Build Name" : "350 UNIT Vogel",
+"Build Id" : "Prm_Tests_L1_350unitVogel",
+"ArtSize" : "54.191 : Mb"}
+,
+{ "Build Name" : "728 SDK FUNC Vogel cross-site replication",
+"Build Id" : "Prm_Tests_Newfn_728sdkFuncVogelCrossSiteReplication",
+"ArtSize" : "0.000 : Mb"}
+]}
+,
+{ "Project Name" : "_BACKUP (trunk before dotNet 4.6.1)",
+"Project Id" : "PrmBackup",
+"ArtSize" : "38.483 : Mb",
+"SubProjects" : [
+{ "Project Name" : "BUILDS",
+"Project Id" : "PrmBackup_Builds",
+"ArtSize" : "38.483 : Mb",
+"SubProjects" : "None",
+"directBuilds" : [
+{ "Build Name" : "079 BUILD BASE x86",
+"Build Id" : "PrmBackup_Builds_079buildBaseX86",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "080 BUILD BASE x64",
+"Build Id" : "PrmBackup_Builds_080buildBaseX64",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "081 BUILD PRM30 x86",
+"Build Id" : "PrmBackup_Builds_081buildPrm30x86",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "082 BUILD PRM30 x64",
+"Build Id" : "PrmBackup_Builds_082buildPrm30x64",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "084 BUILD PEGR WebUI",
+"Build Id" : "PrmBackup_Builds_084buildPegrWebUI",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "090 BUILD Version",
+"Build Id" : "PrmBackup_Builds_090buildVersion",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "098 BUILD PRM46 WebApi Prototype",
+"Build Id" : "PrmBackup_Builds_098buildPrm46WebApiPrototype",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "099 BUILD PRM x86",
+"Build Id" : "PrmBackup_Builds_099buildPrmX86",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "100 BUILD PRM x64",
+"Build Id" : "PrmBackup_Builds_100buildPrmX64",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "101 BUILD QT Wizards",
+"Build Id" : "PrmBackup_Builds_101buildQtWizards",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "103 BUILD NFS Server + UIM",
+"Build Id" : "PrmBackup_Builds_103buildNfsServerUim",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "105 BUILD PRM Linux",
+"Build Id" : "PrmBackup_Builds_105buildPrmLinux",
+"ArtSize" : "38.483 : Mb"}
+,
+{ "Build Name" : "107 BUILD SlimAgent x64",
+"Build Id" : "PrmBackup_Builds_107buildSlimAgentX64",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "109 BUILD SlimAgent Linux",
+"Build Id" : "PrmBackup_Builds_109buildSlimAgentLinux",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "190 BUILD StoreSymbols",
+"Build Id" : "PrmBackup_Builds_190buildStoreSymbols",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "191 BUILD WinPE Recovery ISO",
+"Build Id" : "PrmBackup_Builds_191buildWinPERecoveryIso",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "192 BUILD Ubuntu Recovery ISO",
+"Build Id" : "PrmBackup_Builds_192buildUbuntuRecoveryIso",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "200 DISTRIBUTIVE (PRM SDK Standalone)",
+"Build Id" : "PrmBackup_Builds_200distributiveStandaloneWiX",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "201 DISTRIBUTIVE SDK",
+"Build Id" : "PrmBackup_Builds_201distributiveSdk",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "202 DISTRIBUTIVE (Wix LI2 Full)",
+"Build Id" : "PrmBackup_Builds_202distributiveLi",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "203 DISTRIBUTIVE (PRM SDK Full)",
+"Build Id" : "PrmBackup_Builds_203distributivePrmSdkFull",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "205 DISTRIBUTIVE (Linux Recovery ISO Installer)",
+"Build Id" : "PrmBackup_Builds_205distributiveLinuxRecoveryIsoInstaller",
+"ArtSize" : "0.000 : Mb"}
+]}
+,
+{ "Project Name" : "SERVICE",
+"Project Id" : "PrmBackup_Service",
+"ArtSize" : "0.000 : Mb",
+"SubProjects" : "None",
+"directBuilds" : [
+{ "Build Name" : "900 SERVICE DeployPackageOnDesk",
+"Build Id" : "PrmBackup_Service_900serviceDeployPackageOnDesk",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "910 SERVICE Test Execution Layer 0",
+"Build Id" : "PrmBackup_Service_910serviceTestExecutionLayer0",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "911 SERVICE Test Execution Layer 1",
+"Build Id" : "PrmBackup_Service_911serviceTestExecutionLayer1",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "912 SERVICE Test Execution Layer 2",
+"Build Id" : "PrmBackup_Service_912serviceTestExecutionLayer2",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "913 SERVICE Test Execution Layer 3",
+"Build Id" : "PrmBackup_Service_913serviceTestExecutionLayer3",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "914 SERVICE Test Execution NewFn Layer",
+"Build Id" : "PrmBackup_Service_914serviceTestExecutionNewFnLayer",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "915 SERVICE Test Execution Legacy Layer",
+"Build Id" : "PrmBackup_Service_915serviceTestExecutionLegacyLayer",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "930 SERVICE PRM SDK Tests Code Quality",
+"Build Id" : "PrmBackup_Service_930servicePrmSdkTestsCodeQuality",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "955 SERVICE Long Backup Chains",
+"Build Id" : "PrmBackup_Service_955serviceLongBackupChains",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "956 SERVICE Build Promotion Report",
+"Build Id" : "PrmBackup_Service_956serviceBuildPromotionReport",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "970 SERVICE Tests Executor",
+"Build Id" : "PrmBackup_Service_970serviceTestsExecutor",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "980 PUBLISH PRM SDK Standalone",
+"Build Id" : "PrmBackup_Service_980publishPrmSdkStandalone",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "981 PUBLISH PPR Enterprise",
+"Build Id" : "PrmBackup_Service_981publishPprEnterprise",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "982 PUBLISH PRM SDK Full",
+"Build Id" : "PrmBackup_Service_982prmSdkFullPublicator",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "983 PUBLISH SlimAgent",
+"Build Id" : "PrmBackup_Service_983publishSlimAgent",
+"ArtSize" : "0.000 : Mb"}
+]}
+,
+{ "Project Name" : "TESTS",
+"Project Id" : "PrmBackup_Tests",
+"ArtSize" : "0.000 : Mb",
+"SubProjects" : [
+{ "Project Name" : "EXCHANGE",
+"Project Id" : "PrmBackup_Tests_Exchange",
+"ArtSize" : "0.000 : Mb",
+"SubProjects" : "None",
+"directBuilds" : [
+{ "Build Name" : "441_Exchange2010Protection Basic Test",
+"Build Id" : "PrmBackup_Tests_Exchange_441Exchange2010ProtectionBasicTest",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "442_Exchange2010Protection Long Test",
+"Build Id" : "PrmBackup_Tests_Exchange_442Exchange2010ProtectionLongTest",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "443_Exchange2007Protection Basic Test",
+"Build Id" : "PrmBackup_Tests_Exchange_443Exchange2007ProtectionBasicTest",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "444_Exchange2007Protection Long Test",
+"Build Id" : "PrmBackup_Tests_Exchange_444Exchange2007ProtectionLongTest",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "445_Exchange2013Protection Basic Test",
+"Build Id" : "PrmBackup_Tests_Exchange_445Exchange2013ProtectionBasicTest",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "446_Exchange2013Protection Long Test",
+"Build Id" : "PrmBackup_Tests_Exchange_446Exchange2013ProtectionLongTest",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "447_Exchange2010Protection DAG Test",
+"Build Id" : "PrmBackup_Tests_Exchange_447Exchange2010ProtectionDagTest",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "448_Exchange2016Protection Basic Test",
+"Build Id" : "PrmBackup_Tests_Exchange_448Exchange2016ProtectionBasicTest",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "449_Exchange2016Protection Long Test",
+"Build Id" : "PrmBackup_Tests_Exchange_449Exchange2016ProtectionLongTest",
+"ArtSize" : "0.000 : Mb"}
+]}
+,
+{ "Project Name" : "INVESTIGATE",
+"Project Id" : "PrmBackup_Tests_Investigate",
+"ArtSize" : "0.000 : Mb",
+"SubProjects" : "None",
+"directBuilds" : [
+{ "Build Name" : "202 fake for bug 89570",
+"Build Id" : "PrmBackup_Tests_Investigate_202fakeForBug89570",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "300 SMOKE Main with SDK",
+"Build Id" : "PrmBackup_Tests_Investigate_300smokeMainWithSdk",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "406_Fast_Load_BS(Bug 99615)",
+"Build Id" : "PrmBackup_Tests_Investigate_406FastLoadBsBug99615",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "408_BsRestore (Bug 96393)",
+"Build Id" : "PrmBackup_Tests_Investigate_408BsRestoreBug96393",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "410_BackupArchiveRetentionImportCheckRestoreDetach (Bug 89367)",
+"Build Id" : "PrmBackup_Tests_Investigate_410BackupArchiveRetentionImportCheckRestoreDetachBug",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "502 FUNC FTW Main (Bug 93949)",
+"Build Id" : "PrmBackup_Tests_Investigate_502funcFtwMain",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "506 REGRESS Virtual Backup (Bug 93994)",
+"Build Id" : "PrmBackup_Tests_Investigate_506regressVirtualBackupBug93994",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "708 SDK RELIABILITY EsxAgent on Win 2012 R2 (Parallel policy run)  Bug 78366",
+"Build Id" : "PrmBackup_Tests_Investigate_708sdkReliabilityEsxAgentOnWin2012r2ParallelPolicyRu",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "713 SDK FUNC Export Phys & VM Backup to Hyper-V VM (Install Only Bug 89570)",
+"Build Id" : "PrmBackup_Tests_Investigate_713sdkFuncExportPhysVmBackupToHyperVVmInstallOnlyBug",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "718_1109",
+"Build Id" : "PrmBackup_Tests_Investigate_7181109",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "718_1156_ac",
+"Build Id" : "PrmBackup_Tests_Investigate_7181156ac",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "718_Investigate",
+"Build Id" : "PrmBackup_Tests_Investigate_718Investigate",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "721 SDK FUNC Exchange 2010 DB Backup and Restore (Bug 92807)",
+"Build Id" : "PrmBackup_Tests_Investigate_721sdkFuncExchange2010dbBackupAndRestoreBug92807",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "724 SDK LOAD vSphere Web SDK (Bug 96281)",
+"Build Id" : "PrmBackup_Tests_Investigate_724sdkLoadVSphereWebSdkBug96281",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "747 SDK LOAD NEGATIVE VM backup (Bug 99227)",
+"Build Id" : "PrmBackup_Tests_Investigate_747sdkLoadNegativeVmBackupBug99227",
+"ArtSize" : "0.000 : Mb"}
+]}
+,
+{ "Project Name" : "L1",
+"Project Id" : "PrmBackup_Tests_L1",
+"ArtSize" : "0.000 : Mb",
+"SubProjects" : [
+{ "Project Name" : "CORE",
+"Project Id" : "PrmBackup_Tests_L1_Core",
+"ArtSize" : "0.000 : Mb",
+"SubProjects" : "None",
+"directBuilds" : [
+{ "Build Name" : "705 SDK TM2 test with AgentEmulator",
+"Build Id" : "PrmBackup_Tests_L1_Core_705sdkTm2testWithAgentEmulator",
+"ArtSize" : "0.000 : Mb"}
+]}
+,
+{ "Project Name" : "HYPERV",
+"Project Id" : "PrmBackup_Tests_L1_Hyperv",
+"ArtSize" : "0.000 : Mb",
+"SubProjects" : "None",
+"directBuilds" : [
+{ "Build Name" : "725 SDK Fast Hyper-V  Backup/Restore",
+"Build Id" : "PrmBackup_Tests_L1_Hyperv_725sdkFastHyperVBackupRestore",
+"ArtSize" : "0.000 : Mb"}
+]}
+,
+{ "Project Name" : "PRMSDK",
+"Project Id" : "PrmBackup_Tests_L1_Prmsdk",
+"ArtSize" : "0.000 : Mb",
+"SubProjects" : "None",
+"directBuilds" : [
+{ "Build Name" : "700 SDK REGRESS Fast",
+"Build Id" : "PrmBackup_Tests_L1_Prmsdk_700sdkRegressFast",
+"ArtSize" : "0.000 : Mb"}
+]}
+,
+{ "Project Name" : "VSPHERE",
+"Project Id" : "PrmBackup_Tests_L1_Vsphere",
+"ArtSize" : "0.000 : Mb",
+"SubProjects" : "None",
+"directBuilds" : [
+{ "Build Name" : "734 SDK Simple VM Backup Restore on Windows Server 2012 R2",
+"Build Id" : "PrmBackup_Tests_L1_Vsphere_734sdkSimpleVmBackupRestoreOnWindowsServer2012r2",
+"ArtSize" : "0.000 : Mb"}
+]}
+],"directBuilds" : [
+{ "Build Name" : "407_Fast_Restore_Resize",
+"Build Id" : "PrmBackup_Tests_L1_407FastRestoreResize",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "721 SDK FUNC Exchange 2010 DB Backup and Restore",
+"Build Id" : "PrmBackup_Tests_L1_721sdkFuncExchange2010dbBackupAndRestore",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "723 SDK FAST WixFull LI",
+"Build Id" : "PrmBackup_Tests_L1_723sdkFastWixFullLi",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "744 SDK FUNC Restore Physical Machine",
+"Build Id" : "PrmBackup_Tests_L1_744sdkFuncRestorePhysicalMachine",
+"ArtSize" : "0.000 : Mb"}
+]}
+,
+{ "Project Name" : "L2",
+"Project Id" : "PrmBackup_Tests_L2",
+"ArtSize" : "0.000 : Mb",
+"SubProjects" : [
+{ "Project Name" : "CORE",
+"Project Id" : "PrmBackup_Tests_L2_Core",
+"ArtSize" : "0.000 : Mb",
+"SubProjects" : "None",
+"directBuilds" : [
+{ "Build Name" : "727 PRM SDK TM FAST STRESS AdminServer on Windows (Ring Physical Backup)",
+"Build Id" : "PrmBackup_Tests_L2_Core_727prmSdkTmFastStressAdminServerOnWindowsRingPhysicalBac",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "729 SDK TM2 advanced test with AgentEmulator",
+"Build Id" : "PrmBackup_Tests_L2_Core_729sdkTm2advancedTestWithAgentEmulator",
+"ArtSize" : "0.000 : Mb"}
+]}
+,
+{ "Project Name" : "HYPERV",
+"Project Id" : "PrmBackup_Tests_L2_Hyperv",
+"ArtSize" : "0.000 : Mb",
+"SubProjects" : "None",
+"directBuilds" : [
+{ "Build Name" : "704 SDK Simple Hyper-V  Backup/Restore",
+"Build Id" : "PrmBackup_Tests_L2_Hyperv_704sdkSimpleHyperVBackupRestore",
+"ArtSize" : "0.000 : Mb"}
+]}
+,
+{ "Project Name" : "PRMSDK",
+"Project Id" : "PrmBackup_Tests_L2_Prmsdk",
+"ArtSize" : "0.000 : Mb",
+"SubProjects" : "None",
+"directBuilds" : [
+{ "Build Name" : "790 SDK Sample PhysicalExportVd",
+"Build Id" : "PrmBackup_Tests_L2_Prmsdk_790sdkSamplePhysicalExportVd",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "791 SDK Sample BackupRestoreHyperV",
+"Build Id" : "PrmBackup_Tests_L2_Prmsdk_791sdkSampleBackupRestoreHyperV",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "793 SDK Sample HyperVBackupRestore",
+"Build Id" : "PrmBackup_Tests_L2_Prmsdk_793sdkSampleHyperVBackupRestore",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "794 SDK Sample RemoteInstallation",
+"Build Id" : "PrmBackup_Tests_L2_Prmsdk_794sdkSampleRemoteInstallation",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "795 SDK Sample BuildRecoveryMedia",
+"Build Id" : "PrmBackup_Tests_L2_Prmsdk_795sdkSampleBuildRecoveryMedia",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "796 SDK Sample BuildRecoveryMedia (Standalone)",
+"Build Id" : "PrmBackup_Tests_L2_Prmsdk_796sdkSampleBuildRecoveryMediaStandalone",
+"ArtSize" : "0.000 : Mb"}
+]}
+,
+{ "Project Name" : "VSPHERE",
+"Project Id" : "PrmBackup_Tests_L2_Vsphere",
+"ArtSize" : "0.000 : Mb",
+"SubProjects" : "None",
+"directBuilds" : [
+{ "Build Name" : "707 SDK REGRESS VM Backup on Windows Server 2012 R2",
+"Build Id" : "PrmBackup_Tests_L2_Vsphere_707sdkRegressVmBackupOnWindowsServer2012r2",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "735 SDK VM Volume backup/restore",
+"Build Id" : "PrmBackup_Tests_L2_Vsphere_735sdkVmVolumeBackupRestore",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "740 SDK Major VM Backup Test on Windows Server 2012 R2",
+"Build Id" : "PrmBackup_Tests_L2_Vsphere_740sdkMajorVmBackupTestOnWindowsServer2012r2",
+"ArtSize" : "0.000 : Mb"}
+]}
+],"directBuilds" : [
+{ "Build Name" : "410_BackupArchiveRetentionImportCheckRestoreDetach",
+"Build Id" : "PrmBackup_Tests_L2_410BackupArchiveRetentionImportCheckRestoreDetach",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "413_BackupArchiveImportRetentionCheckRestoreDetach",
+"Build Id" : "PrmBackup_Tests_L2_413BackupArchiveImportRetentionCheckRestoreDetach",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "415_BackupArchiveCheckRestoreDetach",
+"Build Id" : "PrmBackup_Tests_L2_415BackupArchiveCheckRestoreDetach",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "420_VirtualDiskCombo",
+"Build Id" : "PrmBackup_Tests_L2_420VirtualDiskCombo",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "713 SDK FUNC Export Phys & VM Backup to Hyper-V VM",
+"Build Id" : "PrmBackup_Tests_L2_713sdkFuncExportPhysVmBackupToHyperVVm",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "715 PRM FUNC Linux Physical Backup",
+"Build Id" : "PrmBackup_Tests_L2_715prmFuncLinuxPhysicalBackup",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "716 SDK FUNC Win8.1 PhysBackup & WinPE Standalone Recovery",
+"Build Id" : "PrmBackup_Tests_L2_716sdkFuncWin81PhysBackupWinPEStandaloneRecovery",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "718 SDK FUNC WinPE Recovery with Existing Policy (Silent Mode)",
+"Build Id" : "PrmBackup_Tests_L2_718sdkFuncWinPERecoveryWithExistingPolicySilentMode",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "719 SDK FUNC WinPE New recovery policy RestoreOverMode (Silent Mode)",
+"Build Id" : "PrmBackup_Tests_L2_719sdkFuncWinPENewRecoveryPolicyRestoreOverModeSilentMode",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "720 SDK FULL WixFull LI",
+"Build Id" : "PrmBackup_Tests_L2_720sdkFullWixFullLi",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "733 SDK FUNC Win10 PhysBackup & WinPE Standalone Recovery",
+"Build Id" : "PrmBackup_Tests_L2_733sdkFuncWin10PhysBackupWinPEStandaloneRecovery",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "736 SDK FUNC Win10 WinPE Single partition restore (Silent Mode)",
+"Build Id" : "PrmBackup_Tests_L2_736sdkFuncWin10WinPESinglePartitionRestoreSilentMode",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "737 SDK Notification collector test with AgentEmulator",
+"Build Id" : "PrmBackup_Tests_L2_737sdkNotificationCollectorTestWithAgentEmulator",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "741 SDK Granular Recovery Base",
+"Build Id" : "PrmBackup_Tests_L2_741sdkGranularRecoveryBase",
+"ArtSize" : "0.000 : Mb"}
+]}
+,
+{ "Project Name" : "L3",
+"Project Id" : "PrmBackup_Tests_L3",
+"ArtSize" : "0.000 : Mb",
+"SubProjects" : [
+{ "Project Name" : "CORE",
+"Project Id" : "PrmBackup_Tests_L3_Core",
+"ArtSize" : "0.000 : Mb",
+"SubProjects" : "None",
+"directBuilds" : [
+{ "Build Name" : "714 PRM SDK STRESS AdminServer on Windows (Ring Physical Backup)",
+"Build Id" : "PrmBackup_Tests_L3_Core_714prmSdkStressAdminServerOnWindowsRingPhysicalBackup",
+"ArtSize" : "0.000 : Mb"}
+]}
+],"directBuilds" : [
+{ "Build Name" : "432_40VirtualBackupToEsxStorage_Detach",
+"Build Id" : "PrmBackup_Tests_L3_43240VirtualBackupToEsxStorageDetach",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "738 SDK LOAD Notification collector stress test using AgentEmulator",
+"Build Id" : "PrmBackup_Tests_L3_738sdkLoadNotificationCollectorStressTestUsingAgentEmulator",
+"ArtSize" : "0.000 : Mb"}
+]}
+,
+{ "Project Name" : "LEGACY",
+"Project Id" : "PrmBackup_Tests_Legacy",
+"ArtSize" : "0.000 : Mb",
+"SubProjects" : "None",
+"directBuilds" : [
+{ "Build Name" : "400_Installation",
+"Build Id" : "PrmBackup_Tests_Legacy_400Installation",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "401_Installation_from_DISTRIBUTIVE(LI)",
+"Build Id" : "PrmBackup_Tests_Legacy_401InstallationFromDistributiveLi",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "403_BackupDetachEsxStorage",
+"Build Id" : "PrmBackup_Tests_Legacy_403BackupDetachEsxStorage",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "404_PhysBackupMultiToDiskStorage",
+"Build Id" : "PrmBackup_Tests_Legacy_404PhysBackupMultiToDiskStorage",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "405_PhysicalBackup_Archiving_LaunchBackup",
+"Build Id" : "PrmBackup_Tests_Legacy_405PhysicalBackupArchivingLaunchBackup",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "406_Fast_Load_BS",
+"Build Id" : "PrmBackup_Tests_Legacy_406FastLoadBs",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "408_BsRestore",
+"Build Id" : "PrmBackup_Tests_Legacy_408BsRestore",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "409 Fast Resize Flags Check",
+"Build Id" : "PrmBackup_Tests_Legacy_409FastResizeFlagsCheck",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "411_VirtualBackupDisk_VirtualBackupEsx_ArchiveEsxUnc_CBToff",
+"Build Id" : "PrmBackup_Tests_Legacy_411VirtualBackupDiskVirtualBackupEsxArchiveEsxUncCBToff",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "412_VirtualBackupDisk_VirtualBackupEsx_Archive_Detach_CBTon",
+"Build Id" : "PrmBackup_Tests_Legacy_412VirtualBackupDiskVirtualBackupEsxArchiveDetachCBTon",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "414_VirtualBackupEsx_ArchiveEsxDisk_RestoreDetach_CBTon",
+"Build Id" : "PrmBackup_Tests_Legacy_414VirtualBackupEsxArchiveEsxDiskRestoreDetachCBTon",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "416_PerformanceDiskStorageVsEsxStorage",
+"Build Id" : "PrmBackup_Tests_Legacy_416PerformanceDiskStorageVsEsxStorage",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "417_Fast_VirtualBackupToDiskStorage_RestoreToEsx",
+"Build Id" : "PrmBackup_Tests_Legacy_417FastVirtualBackupToDiskStorageRestoreToEsx",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "418_BackupRestoreDiskStorage_DiskRawCopy+CheckTroubleshooting",
+"Build Id" : "PrmBackup_Tests_Legacy_418BackupRestoreDiskStorageDiskRawCopyCheckTroubleshootin",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "419_PerformanceDefaultStorageVsCustomVirtualDiskType",
+"Build Id" : "PrmBackup_Tests_Legacy_419PerformanceDefaultStorageVsCustomVirtualDiskType",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "422_TestFailover",
+"Build Id" : "PrmBackup_Tests_Legacy_422TestFailover",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "423_LaunchBackup",
+"Build Id" : "PrmBackup_Tests_Legacy_423LaunchBackup",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "424 FUNC VirtualBackup_RestoreDetachTestFailoverLaunchBackup",
+"Build Id" : "PrmBackup_Tests_Legacy_424funcVirtualBackupRestoreDetachTestFailoverLaunchBackup",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "425_BackupServerLoad",
+"Build Id" : "PrmBackup_Tests_Legacy_425BackupServerLoad",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "430_PhysicalBackupWinPERestoreSameDisks",
+"Build Id" : "PrmBackup_Tests_Legacy_430PhysicalBackupWinPERestoreSameDisks",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "433 FUNC NewPhysicalRestorefromEsxStorage",
+"Build Id" : "PrmBackup_Tests_Legacy_433funcNewPhysicalRestorefromEsxStorage",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "434 FUNC NewPhysicalRestoreWithResizeDown",
+"Build Id" : "PrmBackup_Tests_Legacy_434funcNewPhysicalRestoreWithResizeDown",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "435 FUNC NewPhysicalRestoreFromVirtualBackup",
+"Build Id" : "PrmBackup_Tests_Legacy_435funcNewPhysicalRestoreFromVirtualBackup",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "461 FUNC SmartIncrementAll Validation",
+"Build Id" : "PrmBackup_Tests_Legacy_461funcSmartIncrementAllValidation",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "462 FUNC DEDUP_VirtualBackupBaseDisk_ArchiveSibUnc_Import_Restore",
+"Build Id" : "PrmBackup_Tests_Legacy_462funcDedupVirtualBackupBaseDiskArchiveSibUncImportResto",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "463 FUNC DEDUP_BackupBaseEsx_ArchiveSibDisk_SibBlocksArchiving",
+"Build Id" : "PrmBackup_Tests_Legacy_463funcDedupBackupBaseEsxArchiveSibDiskSibBlocksArchiving",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "464 FUNC DEDUP_BackupToSibDis_BackupToSibUnc_WinPeRestore",
+"Build Id" : "PrmBackup_Tests_Legacy_464funcDedupBackupToSibDisBackupToSibUncWinPeRestore",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "465 FUNC DEDUP_BackupBaseDisk1_ArchiveSibDisk_ArchiveBaseDisk2",
+"Build Id" : "PrmBackup_Tests_Legacy_465funcDedupBackupBaseDisk1ArchiveSibDiskArchiveBaseDisk2",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "466 FUNC DEDUP_Dedup_ParallelTest",
+"Build Id" : "PrmBackup_Tests_Legacy_466funcDedupDedupParallelTest",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "468 FUNC DEDUP_BackupSibDisk_ArchiveSibDisk_Restore",
+"Build Id" : "PrmBackup_Tests_Legacy_468funcDedupBackupSibDiskArchiveSibDiskRestore",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "469 FUNC DEDUP_Performance",
+"Build Id" : "PrmBackup_Tests_Legacy_469funcDedupPerformance",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "500 SMOKE Main",
+"Build Id" : "PrmBackup_Tests_Legacy_500smokeMain",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "501 REGRESS Fast",
+"Build Id" : "PrmBackup_Tests_Legacy_501regressFast",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "502 FUNC FTW Main",
+"Build Id" : "PrmBackup_Tests_Legacy_502funcFtwMain",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "503 GUI Browse AD in forest",
+"Build Id" : "PrmBackup_Tests_Legacy_503guiBrowseAdInForest",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "504 FUNC GUI Dedup",
+"Build Id" : "PrmBackup_Tests_Legacy_504funcGuiDedup",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "505 FUNC GUI ExportImport",
+"Build Id" : "PrmBackup_Tests_Legacy_505funcGuiExportImport",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "506 REGRESS Virtual Backup",
+"Build Id" : "PrmBackup_Tests_Legacy_506regressVirtualBackup",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "507 REGRESS Replication",
+"Build Id" : "PrmBackup_Tests_Legacy_507regressReplication",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "508 REGRESS Physical Backup",
+"Build Id" : "PrmBackup_Tests_Legacy_508regressPhysicalBackup",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "509 GUI MSSQL Server Backup Restore",
+"Build Id" : "PrmBackup_Tests_Legacy_509guiMssqlServerBackupRestore",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "511 GUI Vim Volume Plugin License",
+"Build Id" : "PrmBackup_Tests_Legacy_511guiVimVolumePluginLicense",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "512 GUI Full Volume Backup",
+"Build Id" : "PrmBackup_Tests_Legacy_512guiFullVolumeBackup",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "513 [GUI] PPR activation autotest",
+"Build Id" : "PrmBackup_Tests_Legacy_513guiPprActivationAutotest",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "717 SDK FUNC Simple backup",
+"Build Id" : "PrmBackup_Tests_Legacy_717sdkFuncSimpleBackup",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "750 SDK Carbonite Fast Validation",
+"Build Id" : "PrmBackup_Tests_Legacy_750sdkCarboniteFastValidation",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "751 SDK Carbonite Smoke with SimpleBackup",
+"Build Id" : "PrmBackup_Tests_Legacy_751sdkCarboniteSmokeWithSimpleBackup",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "752 SDK Carbonite 3*30 increments",
+"Build Id" : "PrmBackup_Tests_Legacy_752sdkCarbonite330increments",
+"ArtSize" : "0.000 : Mb"}
+]}
+,
+{ "Project Name" : "MSSQL",
+"Project Id" : "PrmBackup_Tests_SQLProtectionTests",
+"ArtSize" : "0.000 : Mb",
+"SubProjects" : "None",
+"directBuilds" : [
+{ "Build Name" : "SQL Protection Test",
+"Build Id" : "PrmBackup_Tests_SQLProtectionTests_SqlProtectionTest",
+"ArtSize" : "0.000 : Mb"}
+]}
+,
+{ "Project Name" : "NEWFN",
+"Project Id" : "PrmBackup_Tests_Newfn",
+"ArtSize" : "0.000 : Mb",
+"SubProjects" : "None",
+"directBuilds" : [
+{ "Build Name" : "708 SDK RELIABILITY EsxAgent on Win 2012 R2 (Parallel policy run)",
+"Build Id" : "PrmBackup_Tests_Newfn_708sdkReliabilityEsxAgentOnWin2012r2ParallelPolicyRun",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "730 SDK TM2 unstable test scenarios with AgentEmulator",
+"Build Id" : "PrmBackup_Tests_Newfn_730sdkTm2unstableTestScenariosWithAgentEmulator",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "731 SDK VirtualFramework SimpleTest",
+"Build Id" : "PrmBackup_Tests_Newfn_731sdkVirtualFrameworkSimpleTest",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "739 FAST Security switch test",
+"Build Id" : "PrmBackup_Tests_Newfn_739fastSecuritySwitchTest",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "742 SDK Long Backup Chains",
+"Build Id" : "PrmBackup_Tests_Newfn_742sdkLongBackupChains",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "743 SDK Exchange 2010 VM Backup",
+"Build Id" : "PrmBackup_Tests_Newfn_743sdkExchange2010vmBackup",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "745 SDK NEGATIVE Destroy Backup Server",
+"Build Id" : "PrmBackup_Tests_Newfn_745sdkNegativeDestroyBackupServer",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "747 SDK LOAD NEGATIVE VM backup",
+"Build Id" : "PrmBackup_Tests_Newfn_747sdkLoadNegativeVmBackup",
+"ArtSize" : "0.000 : Mb"}
+]}
+,
+{ "Project Name" : "SDKNEWFN",
+"Project Id" : "PrmBackup_Tests_Sdknewfn",
+"ArtSize" : "0.000 : Mb",
+"SubProjects" : "None",
+"directBuilds" : "None"
+}
+],"directBuilds" : [
+{ "Build Name" : "300 SMOKE Main with SDK",
+"Build Id" : "PrmBackup_Tests_300smokeMainWithSdk",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "310 UNITTESTS Universal",
+"Build Id" : "PrmBackup_Tests_310unittestsUniversal",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "None",
+"Build Id" : "PrmBackup_Tests_Sdknewfn",
+"ArtSize" : "0.000 : Mb"}
+]}
+],"directBuilds" : "None"
+}
+],"directBuilds" : "None"
+}
+],"directBuilds" : [
+{ "Build Name" : "None",
+"Build Id" : "Prm_Sandbox_2Sytar",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "None",
+"Build Id" : "Prm_Sandbox_Dubinin",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "None",
+"Build Id" : "Prm_Sandbox_Mikhaylov",
+"ArtSize" : "0.000 : Mb"}
+]}

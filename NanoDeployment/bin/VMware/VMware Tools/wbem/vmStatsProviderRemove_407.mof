@@ -1,0 +1,9 @@
+///*****************************************************************************
+// * Copyright 2008 VMware, Inc.  All rights reserved.
+// * -- VMware Confidential
+// ****************************************************************************/
+
+#pragma namespace("\\\\.\\Root\\CimV2\\ms_407")
+
+#pragma deleteclass("Win32_PerfRawData_vmGuestLib_VCPU", nofail)
+#pragma deleteclass("Win32_PerfRawData_vmGuestLib_VMEM", nofail)

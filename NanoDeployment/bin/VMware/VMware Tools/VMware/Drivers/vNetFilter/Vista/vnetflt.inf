@@ -1,0 +1,75 @@
+;;;
+;;; vNETflt
+;;;
+;;;
+;;; Copyright (c) 2010-17, VMware, Inc.
+;;;
+
+[Version]
+Signature         = "$Windows NT$"
+Provider          = %VMW%
+DriverVer         = 05/15/2017,10.1.10.0
+CatalogFile       = vnetflt.cat
+Class             = NetService
+ClassGUID         = {4d36e974-e325-11ce-bfc1-08002be10318}
+DriverPackageType = KernelService
+
+[DestinationDirs]
+DefaultDestDir = 12
+DriverFiles    = 12  ; %windir%\system32\drivers
+
+;; Exclude drivers from "Add New Hardware" list.
+[ControlFlags]
+ExcludeFromSelect = *
+
+;;
+;; Install sections
+;;
+[DefaultInstall]
+CopyFiles  = DriverFiles
+
+[DefaultInstall.Services]
+AddService = %ServiceName%,0x00000800,Service
+
+;;
+;; Uninstall sections
+;;
+[DefaultUninstall]
+DelFiles   = DriverFiles
+
+[DefaultUninstall.Services]
+DelService = %ServiceName%,0x200  ; Ensure service is stopped before deleting
+
+;;
+;; Services Section
+;;
+[Service]
+DisplayName    = %ServiceName%
+Description    = %ServiceDescription%
+ServiceBinary  = %12%\vnetflt.sys
+Dependencies   = "tcpip"
+ServiceType    = 1      ; SERVICE_KERNEL_DRIVER
+StartType      = 1      ; SERVICE_SYSTEM_START
+ErrorControl   = 1      ; SERVICE_ERROR_NORMAL
+LoadOrderGroup = PNP_TDI
+
+;;
+;; Copy Files
+;;
+[DriverFiles]
+vnetflt.sys
+
+[SourceDisksNames]
+1 = %DiskId%
+
+[SourceDisksFiles]
+vnetflt.sys = 1
+
+;;
+;; String Section
+;;
+[Strings]
+VMW                = "VMware, Inc."
+ServiceDescription = "Guest Introspection Network Filter Driver"
+ServiceName        = "vnetflt"
+DiskId             = "Guest Introspection Installation Disk"

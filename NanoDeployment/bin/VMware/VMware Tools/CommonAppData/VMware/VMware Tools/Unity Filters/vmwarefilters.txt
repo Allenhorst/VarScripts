@@ -1,0 +1,176 @@
+# Miscellaneous Unity window filter rules for VMware
+# Encoding is UTF-8
+
+# Following are needed for switching to Aero themes while in Unity
+BeginRule
+classname=CoverWindowClass
+company=Microsoft Corporation
+action=block
+EndRule
+
+BeginRule
+classname=VMwareDragDetWndClass
+action=block
+EndRule
+
+BeginRule
+classname=TaskSwitcherOverlayWnd
+company=Microsoft Corporation
+action=block
+EndRule
+
+BeginRule
+classname=WorkerW
+company=Microsoft Corporation
+action=block
+EndRule
+# end of Aero unity filters
+
+BeginRule
+classname=Progman
+action=block
+EndRule
+
+BeginRule
+classname=$$$Secure UAP Dummy Window Class For Interim Dialog
+action=block
+EndRule
+
+BeginRule
+classname=VMware View Shell Replacement Window
+action=block
+EndRule
+
+BeginRule
+classname=ComboLBox
+type=combobox
+action=map
+EndRule
+
+BeginRule
+classname=Auto-Suggest Dropdown
+type=combobox
+action=map
+EndRule
+
+BeginRule
+classname=#32768
+type=menu
+action=map
+EndRule
+
+BeginRule
+classname=BaseBar
+type=menu
+action=map
+EndRule
+
+BeginRule
+classname=tooltips_class32
+type=tooltip
+action=map
+EndRule
+
+BeginRule
+classname=VMwareThumbnailWindowClass
+action=block
+EndRule
+
+BeginRule
+classname=EdgeUiInputWndClass
+company=Microsoft Corporation
+action=block
+EndRule
+
+BeginRule
+classname=EdgeUiInputTopWndClass
+company=Microsoft Corporation
+action=block
+EndRule
+
+BeginRule
+classname=Internet Explorer_Hidden
+company=Microsoft Corporation
+action=block
+EndRule
+
+BeginRule
+classname=Alternate Owner
+company=Microsoft Corporation
+action=block
+EndRule
+
+BeginRule
+classname=ImmersiveLauncher
+type=startscreen
+action=map
+EndRule
+
+BeginRule
+classname=Shell_TrayWnd
+type=taskbar
+action=map
+EndRule
+
+BeginRule
+classname=Shell_SecondaryTrayWnd
+type=taskbar
+action=map
+EndRule
+
+BeginRule
+classname=Shell_LightDismissOverlay
+company=Microsoft Corporation
+action=block
+EndRule
+
+# dwm.exe creates this window as the "Not Responding" overlay.
+BeginRule
+classname=Ghost
+company=Microsoft Corporation
+action=block
+EndRule
+
+# Mapping this as a toolbar helps us avoid bug 1272412.
+BeginRule
+classname=CiceroUIWndFrame
+company=Microsoft Corporation
+type=toolbar
+action=map
+EndRule
+
+# Standard QT popup menu should be categorized as a menu to avoid bug 1280514.
+BeginRule
+classname=QPopup
+type=menu
+action=map
+EndRule
+
+BeginRule
+classname=MetroGhostWindow
+company=Microsoft Corporation
+action=block
+EndRule
+
+# Touch contact window that Microsoft shows.  Adding this during a touch operation
+# causes spurious mouse events when scrolling via touch, which can cause text to be
+# selected in Notepad while scrolling via touch.
+BeginRule
+classname=UIHubMouseHiderWindowClass
+company=Microsoft Corporation
+action=block
+EndRule
+
+# QQ's transparent background (see bug 1362318).
+BeginRule
+classname=TXGFLayerMask
+product=QQ International
+action=block
+EndRule
+
+# Delphi app combo boxes use this classname (see bug 1406355).
+BeginRule
+classname=TcxComboBoxPopupWindow
+type=combobox
+action=map
+EndRule

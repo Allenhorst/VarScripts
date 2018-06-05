@@ -1,0 +1,39 @@
+# Unity window filter rules for Google Desktop Sidebar.
+# Encoding is UTF-8.
+#
+
+BeginRule
+company=Google
+product=Google Desktop
+classname=PluginHost
+type=widget
+action=map
+EndRule
+
+BeginRule
+company=Google
+product=Google Desktop
+classname=ATL:051CD228
+action=block
+EndRule
+
+BeginRule
+company=Google
+product=Google Desktop
+classname=ATL:051D0ED8
+action=block
+EndRule
+
+BeginRule
+company=Google
+product=Google Desktop
+classname=ATL:051D1838
+action=block
+EndRule
+
+BeginRule
+company=Google
+product=Google Talk
+classname=ATL:005CF020
+action=block
+EndRule

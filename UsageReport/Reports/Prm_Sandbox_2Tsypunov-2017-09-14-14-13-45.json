@@ -1,0 +1,17 @@
+{ "Project Name" : "2Tsypunov",
+"Project Id" : "Prm_Sandbox_2Tsypunov",
+"ArtSize" : "3.373 : Mb",
+"SubProjects" : "None",
+"directBuilds" : [
+{ "Build Name" : "734 SDK Simple VM Backup Restore (W2012R2)",
+"Build Id" : "Prm_Sandbox_2Tsypunov_734sdkSimpleVmBackupRestoreW2012r2",
+"ArtSize" : "3.155 : Mb"}
+,
+{ "Build Name" : "Tests Report [CUSTOM]",
+"Build Id" : "Prm_Sandbox_2Tsypunov_TestsReportCustom",
+"ArtSize" : "0.173 : Mb"}
+,
+{ "Build Name" : "Usage Report [CUSTOM]",
+"Build Id" : "Prm_Sandbox_2Tsypunov_UsageReportCustom",
+"ArtSize" : "0.045 : Mb"}
+]}

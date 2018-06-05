@@ -1,0 +1,16 @@
+///*****************************************************************************
+// * Copyright 2008 VMware, Inc.  All rights reserved.
+// * -- VMware Confidential
+// ****************************************************************************/
+
+#pragma namespace("\\\\.\\Root\\CimV2")
+
+#pragma deleteclass("Win32_PerfRawData_vmGuestLib_VCPU", nofail)
+#pragma deleteclass("Win32_PerfRawData_vmGuestLib_VMEM", nofail)
+#pragma deleteinstance("\\\\.\\ROOT\\cimv2:__InstanceProviderRegistration.provider=\"\\\\.\\Root\\CimV2:__Win32Provider.Name=\"VMwareGuestLibProvider_v1\"\"", nofail)
+#pragma deleteinstance("\\\\.\\Root\\CimV2:__Win32Provider.Name=\"VMwareGuestLibProvider_v1\"", nofail)
+
+#pragma namespace("\\\\.\\Root\\CimV2\\ms_409")
+
+#pragma deleteclass("Win32_PerfRawData_vmGuestLib_VCPU", nofail)
+#pragma deleteclass("Win32_PerfRawData_vmGuestLib_VMEM", nofail)

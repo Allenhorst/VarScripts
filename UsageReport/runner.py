@@ -135,7 +135,7 @@ TM.blockOpened(name="Write report to file")#("Started writing report to file")
 f.write(startHTML)
 f.write(header1)
 f.write(header2)
-f.write(text)
+f.write(text)                                                                                                                                                  
 f.write(endHTML)
 
 DiskUsage.DiskUsage.closeFile(DiskUsage.DiskUsage)

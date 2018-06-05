@@ -1,0 +1,1 @@
+echo "123124" > file.txt

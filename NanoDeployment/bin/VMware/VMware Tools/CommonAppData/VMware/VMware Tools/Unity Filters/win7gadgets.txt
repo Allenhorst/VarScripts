@@ -1,0 +1,18 @@
+# Unity window filter rules for Windows 7 Gadgets that need filtering.
+# Encoding is UTF-8.
+#
+
+BeginRule
+classname=Internet Explorer_Server
+company=Microsoft Corporation
+product=Microsoft® Windows® Operating System
+action=block
+EndRule
+
+BeginRule
+classname=SideBar_HTMLHostWindow
+company=Microsoft Corporation
+product=Microsoft® Windows® Operating System
+action=block
+EndRule
+

@@ -1,0 +1,289 @@
+{ "Project Name" : "2Sintsov",
+"Project Id" : "Prm_Sandbox_2Sintsov",
+"ArtSize" : "4828.575 : Mb",
+"SubProjects" : [
+{ "Project Name" : "COMPONENTS",
+"Project Id" : "Prm_Sandbox_2Syntsov_Components",
+"ArtSize" : "1273.528 : Mb",
+"SubProjects" : [
+{ "Project Name" : "PBA",
+"Project Id" : "Prm_Sandbox_2Syntsov_Pba",
+"ArtSize" : "1.234 : Mb",
+"SubProjects" : "None",
+"directBuilds" : [
+{ "Build Name" : "2x PBA + SP BACKUP\\REPLICATION",
+"Build Id" : "Prm_Sandbox_2Syntsov_Pba_2xPbaSpBackupReplication",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "CA+LA+SP BACKUP.xml",
+"Build Id" : "Prm_Sandbox_2Syntsov_Pba_CaLaSpBackupXml",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "CA+LA+SP RESTORE.xml",
+"Build Id" : "Prm_Sandbox_2Syntsov_Pba_CaLaSpRestoreXml",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "PBA + SP BACKUP\\REPLICATION",
+"Build Id" : "Prm_Sandbox_2Syntsov_Pba_PbaSpBackupReplication",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "SMOKE PBA Slimagent BACKUP",
+"Build Id" : "Prm_Sandbox_2Syntsov_Pba_SmokePbaSlimagentBackup",
+"ArtSize" : "0.440 : Mb"}
+,
+{ "Build Name" : "SMOKE PBA+TA Slimagent SELECTIVE BACKUP",
+"Build Id" : "Prm_Sandbox_2Syntsov_Pba_SmokePbaTaSlimagentIncrementBackup",
+"ArtSize" : "0.261 : Mb"}
+,
+{ "Build Name" : "SMOKE TA+SS Slimagent INCREMENT BACKUP",
+"Build Id" : "Prm_Sandbox_2Syntsov_Pba_SmokeTaSlimagentSlimstorageIncrementBackup",
+"ArtSize" : "0.533 : Mb"}
+]}
+,
+{ "Project Name" : "SERVICE",
+"Project Id" : "Prm_Sandbox_2Syntsov_Components_Service",
+"ArtSize" : "1271.197 : Mb",
+"SubProjects" : "None",
+"directBuilds" : [
+{ "Build Name" : "LC700 BUILD Ubuntu Slimagent ISO",
+"Build Id" : "Prm_Sandbox_2Syntsov_Appliance_Lc700buildUbuntuSlimagentIso",
+"ArtSize" : "1271.197 : Mb"}
+,
+{ "Build Name" : "LC920 PACKAGE+RELEASE NuGet",
+"Build Id" : "Prm_Sandbox_2Syntsov_Lc920packageReleaseNuGet",
+"ArtSize" : "0.000 : Mb"}
+]}
+,
+{ "Project Name" : "SLIMPLATFORM",
+"Project Id" : "Prm_Sandbox_2Syntsov_Components_Slimplatform",
+"ArtSize" : "0.692 : Mb",
+"SubProjects" : "None",
+"directBuilds" : [
+{ "Build Name" : "SMOKE SDK SlimPlatform selective backup restore",
+"Build Id" : "Prm_Sandbox_2Syntsov_Appliance_TestsSlimplatform_SmokeSdkSlimPlatformSelectiveBa",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "SMOKE SDK SlimPlatform selective backup restore with excludes",
+"Build Id" : "Prm_Sandbox_2Syntsov_Appliance_TestsSlimplatform_SmokeSdkSlimPlatformSelective_2",
+"ArtSize" : "0.398 : Mb"}
+,
+{ "Build Name" : "SMOKE SDK SlimPlatform selective backup restore with excludes Linux",
+"Build Id" : "Prm_Sandbox_2Syntsov_Appliance_TestsSlimplatform_SmokeSdkSlimPlatformSelective_3",
+"ArtSize" : "0.294 : Mb"}
+]}
+,
+{ "Project Name" : "TESTAPPLIANCE",
+"Project Id" : "Prm_Sandbox_2Syntsov_Testappliance",
+"ArtSize" : "0.405 : Mb",
+"SubProjects" : "None",
+"directBuilds" : [
+{ "Build Name" : "SVN_TA300 SMOKE TestAppliance integration with SlimStorage and SlimPlatform",
+"Build Id" : "Prm_Sandbox_2Syntsov_Testappliance_SvnTa300smokeTestApplianceIntegrationWithSlim",
+"ArtSize" : "0.405 : Mb"}
+]}
+],"directBuilds" : "None"
+}
+,
+{ "Project Name" : "OBSOLETE",
+"Project Id" : "Prm_Sandbox_2Syntsov_Obsolete_2",
+"ArtSize" : "99.241 : Mb",
+"SubProjects" : [
+{ "Project Name" : "TESTS Big_Appliance + SA",
+"Project Id" : "Prm_Sandbox_2Syntsov_Appliance_Tests",
+"ArtSize" : "33.862 : Mb",
+"SubProjects" : "None",
+"directBuilds" : [
+{ "Build Name" : "320 SMOKE Appliance Slimcomponents BACKUP",
+"Build Id" : "Prm_Sandbox_2Syntsov_320smokeApplianceSlimcomponentsBackup",
+"ArtSize" : "2.948 : Mb"}
+,
+{ "Build Name" : "340 SMOKE Appliance Slimcomponents BACKUP/RESTORE",
+"Build Id" : "Prm_Sandbox_2Syntsov_330smokeApplianceSlimcomponentsBackupRestore",
+"ArtSize" : "2.697 : Mb"}
+,
+{ "Build Name" : "330 SMOKE Appliance Slimcomponents BACKUP Linux",
+"Build Id" : "Prm_Sandbox_2Syntsov_Appliance_Tests_330smokeApplianceSlimcomponentsBackupLinux",
+"ArtSize" : "10.840 : Mb"}
+,
+{ "Build Name" : "342 SMOKE Appliance +  SA RecoveryScheme BACKUP/RESTORE",
+"Build Id" : "Prm_Sandbox_2Syntsov_Appliance_Tests_342smokeApplianceSaRecoverySchemeBackupRest",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "350 SMOKE Appliance Slimcomponents BACKUP/RESTORE Linux",
+"Build Id" : "Prm_Sandbox_2Syntsov_Appliance_Tests_350smokeApplianceSlimcomponentsBackupRestor",
+"ArtSize" : "1.994 : Mb"}
+,
+{ "Build Name" : "352 SMOKE Appliance + SA RecoveryScheme BACKUP/RESTORE Linux",
+"Build Id" : "Prm_Sandbox_2Syntsov_Appliance_Tests_352smokeApplianceSaRecoverySchemeBackupRest",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "SMOKE_Appliance_Backup\\Restore(Lin)",
+"Build Id" : "Prm_Sandbox_2Syntsov_Appliance_Tests_SmokeApplianceBackupRestoreLin",
+"ArtSize" : "2.695 : Mb"}
+,
+{ "Build Name" : "SMOKE_Appliance_Backup",
+"Build Id" : "Prm_Sandbox_2Syntsov_SmokeApplianceBackup",
+"ArtSize" : "2.577 : Mb"}
+,
+{ "Build Name" : "SMOKE_Appliance_Backup(Lin)",
+"Build Id" : "Prm_Sandbox_2Syntsov_SmokeApplianceBackupLin",
+"ArtSize" : "7.352 : Mb"}
+,
+{ "Build Name" : "SMOKE_Appliance_Backup\\Restore",
+"Build Id" : "Prm_Sandbox_2Syntsov_SmokeApplianceBackupRestore",
+"ArtSize" : "2.760 : Mb"}
+]}
+,
+{ "Project Name" : "TESTS Big_Appliance + SP",
+"Project Id" : "Prm_Sandbox_2Syntsov_Appliance_TestsSlimplatform",
+"ArtSize" : "54.274 : Mb",
+"SubProjects" : "None",
+"directBuilds" : [
+{ "Build Name" : "321 SMOKE Appliance SLIMPLATFORM BACKUP",
+"Build Id" : "Prm_Sandbox_2Syntsov_Appliance_TestsSlimplatform_321smokeApplianceSlimplatformBa",
+"ArtSize" : "26.808 : Mb"}
+,
+{ "Build Name" : "331 SMOKE Appliance SLIMPLATFORM BACKUP Linux",
+"Build Id" : "Prm_Sandbox_2Syntsov_Appliance_TestsSlimplatform_331smokeApplianceSlimplatformBa",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "341 SMOKE Appliance SLIMPLATFORM BACKUP/RESTORE",
+"Build Id" : "Prm_Sandbox_2Syntsov_Appliance_TestsSlimplatform_341smokeApplianceSlimplatformBa",
+"ArtSize" : "27.466 : Mb"}
+,
+{ "Build Name" : "351 SMOKE Appliance SLIMPLATFORM BACKUP/RESTORE Linux",
+"Build Id" : "Prm_Sandbox_2Syntsov_Appliance_TestsSlimplatform_351smokeApplianceSlimplatformBa",
+"ArtSize" : "0.000 : Mb"}
+]}
+,
+{ "Project Name" : "TESTS NT_F_105428 Big_Appliance + SA",
+"Project Id" : "Prm_Sandbox_2Syntsov_Appliance_TestsNtF105428",
+"ArtSize" : "11.105 : Mb",
+"SubProjects" : "None",
+"directBuilds" : [
+{ "Build Name" : "SMOKE_Appliance_Backup",
+"Build Id" : "Prm_Sandbox_2Syntsov_Appliance_TestsNtF105428_SmokeApplianceBackup",
+"ArtSize" : "1.267 : Mb"}
+,
+{ "Build Name" : "SMOKE_Appliance_Backup(Lin)",
+"Build Id" : "Prm_Sandbox_2Syntsov_Appliance_TestsNtF105428_SmokeApplianceBackupLin",
+"ArtSize" : "7.110 : Mb"}
+,
+{ "Build Name" : "SMOKE_Appliance_Backup\\Restore",
+"Build Id" : "Prm_Sandbox_2Syntsov_Appliance_TestsNtF105428_SmokeApplianceBackupRestore",
+"ArtSize" : "1.304 : Mb"}
+,
+{ "Build Name" : "SMOKE_Appliance_Backup\\Restore(Lin)",
+"Build Id" : "Prm_Sandbox_2Syntsov_Appliance_TestsNtF105428_SmokeApplianceBackupRestoreLin",
+"ArtSize" : "1.425 : Mb"}
+]}
+],"directBuilds" : "None"
+}
+,
+{ "Project Name" : "SVN_UTILITIES",
+"Project Id" : "Prm_Sandbox_2Syntsov_SvnUtilities",
+"ArtSize" : "2.466 : Mb",
+"SubProjects" : "None",
+"directBuilds" : [
+{ "Build Name" : "SVN_UT300 Smart Volume Backup Scenario",
+"Build Id" : "Prm_Sandbox_2Syntsov_Components_SvnUt300SmartVolumeBackupScenario",
+"ArtSize" : "2.466 : Mb"}
+]}
+,
+{ "Project Name" : "TRUNK",
+"Project Id" : "Prm_Sandbox_2Syntsov_Obsolete",
+"ArtSize" : "3452.630 : Mb",
+"SubProjects" : [
+{ "Project Name" : "SLIM AGENT + HDM",
+"Project Id" : "Prm_Sandbox_2Syntsov_SlimAgentHdm",
+"ArtSize" : "449.075 : Mb",
+"SubProjects" : [
+{ "Project Name" : "Package view",
+"Project Id" : "Prm_Sandbox_2Syntsov_SlimAgentHdm_PackageView",
+"ArtSize" : "449.075 : Mb",
+"SubProjects" : "None",
+"directBuilds" : [
+{ "Build Name" : "2XX2 SlimAgent + HDM only",
+"Build Id" : "Prm_Sandbox_2Syntsov_SlimAgentHdm_PackageView_2xx2SlimAgentHdmOnly",
+"ArtSize" : "449.075 : Mb"}
+]}
+],"directBuilds" : [
+{ "Build Name" : "1000 Prereqs 2015 [TMP HACK]",
+"Build Id" : "Prm_Sandbox_2Syntsov_SlimAgentHdm_1000pre",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "1001 HDM [Obsolete - see 2XX2]",
+"Build Id" : "Prm_Sandbox_2Syntsov_SlimAgentHdm_1001hdm",
+"ArtSize" : "0.000 : Mb"}
+]}
+,
+{ "Project Name" : "_BUILDS",
+"Project Id" : "Prm_Sandbox_2Syntsov_Appliance_Builds",
+"ArtSize" : "2989.645 : Mb",
+"SubProjects" : "None",
+"directBuilds" : [
+{ "Build Name" : "107 BUILD SlimAgent x64",
+"Build Id" : "Prm_Sandbox_2Syntsov_107buildSlimAgentX64",
+"ArtSize" : "25.134 : Mb"}
+,
+{ "Build Name" : "108 BUILD PEGR WebUI",
+"Build Id" : "Prm_Sandbox_2Syntsov_108buildPegrWebUI",
+"ArtSize" : "14.355 : Mb"}
+,
+{ "Build Name" : "109 BUILD SlimAgent Linux",
+"Build Id" : "Prm_Sandbox_2Syntsov_109buildSlimAgentLinux",
+"ArtSize" : "26.626 : Mb"}
+,
+{ "Build Name" : "192 BUILD Ubuntu Recovery ISO",
+"Build Id" : "Prm_Sandbox_2Syntsov_192buildUbuntuRecoveryIso",
+"ArtSize" : "1271.209 : Mb"}
+,
+{ "Build Name" : "202 DISTRIBUTIVE (Wix LI2 Full)",
+"Build Id" : "Prm_Sandbox_2Syntsov_202distributiveWixLi2Full",
+"ArtSize" : "211.160 : Mb"}
+,
+{ "Build Name" : "204 DISTRIBUTIVE Appliance",
+"Build Id" : "Prm_Sandbox_2Syntsov_204distributiveAppliance",
+"ArtSize" : "895.480 : Mb"}
+,
+{ "Build Name" : "983 PUBLISH SlimAgent_test",
+"Build Id" : "Prm_Sandbox_2Syntsov_983publishSlimAgentTest",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "BUILD_RCD_Linux",
+"Build Id" : "Prm_Sandbox_2Syntsov_BuildRcdLinux",
+"ArtSize" : "545.682 : Mb"}
+]}
+,
+{ "Project Name" : "_TESTS",
+"Project Id" : "Prm_Sandbox_2Syntsov_Obsolete_Tests",
+"ArtSize" : "13.909 : Mb",
+"SubProjects" : "None",
+"directBuilds" : [
+{ "Build Name" : "709.1 SDK STRESS TaskManager Database",
+"Build Id" : "Prm_Sandbox_2Syntsov_7091sdkStressTaskManagerDatabase",
+"ArtSize" : "13.909 : Mb"}
+]}
+],"directBuilds" : "None"
+}
+],"directBuilds" : [
+{ "Build Name" : "970 SERVICE Tests Executor [CUSTOM]",
+"Build Id" : "Prm_Sandbox_2Syntsov_970serviceTestsExecutorCustom",
+"ArtSize" : "0.000 : Mb"}
+,
+{ "Build Name" : "DEPLOY CGM Infrastructure",
+"Build Id" : "Prm_Sandbox_2Syntsov_DeployCgmInfrastructure",
+"ArtSize" : "0.197 : Mb"}
+,
+{ "Build Name" : "DEPLOY PBA Infrastructure",
+"Build Id" : "Prm_Sandbox_2Syntsov_DeployPbaInfrastructure",
+"ArtSize" : "0.347 : Mb"}
+,
+{ "Build Name" : "DEPLOY Slim Infrastructure",
+"Build Id" : "Prm_Sandbox_2Syntsov_DeploySlimInfrastructureExpanded",
+"ArtSize" : "0.165 : Mb"}
+,
+{ "Build Name" : "TEST",
+"Build Id" : "Prm_Sandbox_2Syntsov_Test",
+"ArtSize" : "0.000 : Mb"}
+]}

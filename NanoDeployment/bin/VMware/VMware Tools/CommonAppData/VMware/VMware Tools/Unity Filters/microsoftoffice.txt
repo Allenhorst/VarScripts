@@ -1,0 +1,82 @@
+# Unity window filter rules for various versions of Microsoft Office
+# Encoding is UTF-8
+
+# Most of these initial rules are related to Office 2003.
+BeginRule
+classname=MsoCommandBar
+action=map
+type=menu
+EndRule
+
+BeginRule
+classname=MsoCommandBarPopup
+action=map
+type=menu
+EndRule
+
+BeginRule
+classname=MsoCommandBarShadow
+action=block
+EndRule
+
+BeginRule
+classname=_sdm_msword
+action=map
+type=combobox
+EndRule
+
+BeginRule
+classname=_sdm_XL9
+action=map
+type=combobox
+EndRule
+
+BeginRule
+classname=_sdm_Mso96
+action=map
+type=combobox
+EndRule
+
+BeginRule
+classname=REListBox20W
+action=map
+type=combobox
+EndRule
+
+# MS Excel 2003 MDI Windows
+BeginRule
+classname=MS-SDIa
+action=block
+notapplicableto=UnityTouch
+EndRule
+
+# MS Powerpoint 2003/2007 MDI Windows and MS Excel 2007/2010 MDI Windows
+BeginRule
+classname=MS-SDIb
+action=block
+notapplicableto=UnityTouch
+EndRule
+
+# Office 2007 Ribbon
+BeginRule
+classname=MSO_DROPSHADOW_WINDOW_CLASS
+type=block
+EndRule
+
+BeginRule
+classname=Net UI Tool Window
+action=map
+type=menu
+EndRule
+
+BeginRule
+classname=Net UI Tool Window Layered
+action=map
+type=menu
+EndRule
+
+# Windows Ribbon
+BeginRule
+classname=SCENIC_DROPSHADOW_WINDOW_CLASS
+action=block
+EndRule

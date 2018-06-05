@@ -1,0 +1,86 @@
+
+;-------------------------------------------------------------------------
+; vmmemctl.inf
+;
+; Copyright (c) 1993-1999, Microsoft Corporation
+; Copyright (c) 1999-2017 VMware, Inc.  All rights reserved.
+;-------------------------------------------------------------------------
+
+[version]
+Signature="$Windows NT$"
+Class       = System
+ClassGUID   = {4d36e97d-e325-11ce-bfc1-08002be10318}
+Provider    = %VMwareProvider%
+DriverVer   = 09/20/2016, 7.4.2.0
+CatalogFile = vmmemctl.cat
+DriverPackageDisplayName = %loc.VMMemCtlServiceDisplayName%
+DriverPackageType = KernelService
+
+[DestinationDirs]
+DefaultDestDir = 12
+
+[SourceDisksNames]
+1 = %loc.Disk1%,,,""
+
+[SourceDisksFiles]
+vmmemctl.sys = 1
+
+;;
+;; Default install sections
+;;
+
+[DefaultInstall]
+OptionDesc          = %loc.VMMemCtlServiceDesc%
+CopyFiles           = VMMemCtl.DriverFiles
+
+[DefaultInstall.Services]
+AddService          = %VMMemCtlServiceName%,0x800,VMMemCtl.Service    ; SPSVCINST_STARTSERVICE
+
+;;
+;; Default uninstall sections
+;;
+
+[DefaultUninstall]
+DelFiles   = VMMemCtl.DriverFiles
+DelReg     = VMMemCtl.DelRegistry
+
+
+[DefaultUninstall.Services]
+DelService = %VMMemCtlServiceName%,0x204
+
+;
+; Services Section
+;
+
+[VMMemCtl.Service]
+DisplayName      = %loc.VMMemCtlServiceDisplayName%
+Description      = %loc.VMMemCtlServiceDesc%
+ServiceBinary    = %12%\vmmemctl.sys            ;%windir%\system32\drivers\vmmemctl.sys
+ServiceType      = 1                            ;SERVICE_KERNEL_DRIVER
+StartType        = 2                            ;SERVICE_AUTO_START
+ErrorControl     = 0                            ;SERVICE_ERROR_IGNORE
+LoadOrderGroup   = Extended Base
+AddReg           = VMMemCtl.AddRegistry
+
+;
+; Registry Modifications
+;
+
+[VMMemCtl.AddRegistry]
+
+[VMMemCtl.DelRegistry]
+
+;
+; Copy Files
+;
+
+[VMMemCtl.DriverFiles]
+vmmemctl.sys
+
+;;
+[Strings]
+loc.VMMemCtlServiceDesc        = "Driver to provide enhanced memory management of this virtual machine."
+loc.VMMemCtlServiceDisplayName = "Memory Control Driver"
+loc.Disk1                      = "VMMemCtl Source Media"
+VMwareProvider                 = "VMware, Inc."
+VMMemCtlServiceName            = "VMMemCtl"

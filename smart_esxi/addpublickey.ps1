@@ -1,11 +1,11 @@
 # add public key to all hosts via ssh, adding it to keys-root and keys-autotester
 
-$hosts ="srv1164.paragon-software.com,srv054.paragon-software.com,srv044.paragon-software.com,sb023.paragon-software.com"
+$hosts ="sb1500.paragon-software.com,sb1501.paragon-software.com,sb1505.paragon-software.com,sb1506.paragon-software.com,sb1507.paragon-software.com"
 $hostsList = $hosts.Split(",")	
 	Foreach ($chost in $hostsList) {
 		Write-Host 	 "Connecting to $chost" -ForegroundColor Green
 		
-		$password = "Ghbdtn123" | ConvertTo-SecureString -asPlainText -Force
+		$password = "Paragon13" | ConvertTo-SecureString -asPlainText -Force
 		$username = "root"
 		$credential = New-Object System.Management.Automation.PSCredential($username,$password)
 		New-SSHSession -ComputerName $chost -Credential $credential  -AcceptKey

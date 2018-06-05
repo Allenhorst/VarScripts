@@ -1,0 +1,1 @@
+[System.Net.Dns]::Resolve("172.30.66.81")

@@ -1,0 +1,8 @@
+# Unity window filter rules for Microsoft Visual Studio 2005
+# Encoding is UTF-8
+
+BeginRule
+classname=MsoCommandBarShadow
+action=block
+EndRule
+

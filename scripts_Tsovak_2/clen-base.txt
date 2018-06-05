@@ -1,0 +1,62 @@
+    reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows NT\Reliability" /v ShutdownReasonOn /t REG_DWORD /d 0 /f
+    reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows NT\Reliability" /v ShutdownReasonUI /t REG_DWORD /d 0 /f
+    reg add HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\ServerManager /v DoNotOpenServerManagerAtLogon /t REG_DWORD /d 1 /f
+    REG ADD "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Terminal Server" /v fDenyTSConnections /t REG_DWORD /d 0 /f
+    reg add HKLM\System\CurrentControlSet\Control\CrashControl\ /v AutoReboot /t REG_DWORD /d 0 /f
+	
+	
+wmic nicconfig call SetDNSSuffixSearchOrder (prm.test,paragon-software.com)
+wmic nicconfig where IPEnabled='true' Call SetDynamicDNSRegistration 1, 1
+wmic nicconfig where IPEnabled='true' Call SetDNSDomain prm.test
+reg add HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Tcpip6\Parameters /v DisabledComponents /t REG_DWORD /d 0xFFFFFFFF /f
+
+:: Configure autologon for Domain User
+
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon" /v DefaultUserName /t reg_sz /d Administrator /f
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon" /v DefaultPassword /t reg_sz /d Qwerty123 /f
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon" /v AltDefaultUserName /t reg_sz /d Administrator /f
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon" /v AltDefaultPassword /t reg_sz /d Qwerty123 /f
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon" /v AutoAdminLogon /d 1 /f
+
+
+net user Administrator Qwerty123 /add /EXPIRES:NEVER /y
+net user Administrator /passwordchg:no /y
+WMIC USERACCOUNT WHERE "Name='Administrator'" SET PasswordExpires=FALSE
+net localgroup Administrators Administrator /add /y
+
+:: Disable Windows Update
+sc stop wuauserv
+sc config wuauserv start=disabled
+
+
+:: killing slui task after start
+schtasks /Create /TN SluiKiller-task /TR "taskkill /IM slui.exe /T /F" /RU Administrator /RP Qwerty123 /SC ONLOGON /F
+:: Customizing console font
+rem reg add HKEY_CURRENT_USER\Console\ /v FaceName /t REG_SZ /d "Terminal" /f
+rem reg add HKEY_CURRENT_USER\Console\ /v FontSize /t REG_DWORD /d 589830 /f
+rem reg add HKEY_CURRENT_USER\Console\ /v FontWeight /t REG_DWORD /d 700 /f
+rem reg add HKEY_CURRENT_USER\Console\ /v FontFamily /t REG_DWORD /d 48 /f
+rem reg add HKEY_CURRENT_USER\Console\ /v WindowSize /t REG_DWORD /d 2293860 /f
+rem reg add HKEY_CURRENT_USER\Console\ /v ScreenBufferSize /t REG_DWORD /d 655294564 /f
+
+reg add HKEY_CURRENT_USER\Console\ /v QuickEdit /t REG_DWORD /d 1 /f
+reg add HKEY_CURRENT_USER\Console\ /v EnableColorSelection /t REG_DWORD /d 1 /f
+
+
+:: disable welcome
+reg add "HKEY_CURRENT_USER\Software\Microsoft\Windows NT\CurrentVersion\Setup\Welcome" /v srvwiz /t REG_DWORD /d 0 /f
+
+:: Background
+reg add "HKEY_CURRENT_USER\Control Panel\Colors" /v Background /t REG_SZ /d "0 0 0" /f
+reg add "HKEY_CURRENT_USER\Control Panel\Desktop" /v Wallpaper /t REG_SZ /d "(None)" /f
+
+:: Disable hide file extension
+reg add HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced /v HideFileExt /t REG_DWORD /d 0 /f
+reg add HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced /v Hidden /t REG_DWORD /d 1 /f
+reg add HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced /v ShowSuperHidden /t REG_DWORD /d 1 /f
+
+:: Disable Sreen Saver
+REG ADD "HKCU\Control Panel\Desktop" /v ScreenSaveActive /t REG_SZ /d 0 /f
+
+tzutil /s "Pacific Standard Time"
+Control.exe TIMEDATE.CPL,,/Z Pacific Standard Time

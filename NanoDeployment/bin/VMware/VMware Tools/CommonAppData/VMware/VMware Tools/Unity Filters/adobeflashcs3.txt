@@ -1,0 +1,79 @@
+# Unity window filter rules for Adobe Flash CS3
+# Encoding is UTF-8
+
+BeginRule
+classname=OWL.Dock
+company=Adobe Systems Incorporated.
+product=Adobe Flash CS3
+action=block
+EndRule
+
+BeginRule
+classname=OWL.ToolbarContainer
+company=Adobe Systems Incorporated.
+product=Adobe Flash CS3
+action=block
+EndRule
+
+BeginRule
+classname=OWL.WindowGroup
+company=Adobe Systems Incorporated.
+product=Adobe Flash CS3
+action=block
+EndRule
+
+BeginRule
+classname=OWL.Workspace
+company=Adobe Systems Incorporated.
+product=Adobe Flash CS3
+action=block
+EndRule
+
+BeginRule
+classname=SS_DialogCtrl
+company=Adobe Systems Incorporated.
+product=Adobe Flash CS3
+action=block
+EndRule
+
+BeginRule
+classname=SS_CWnd
+company=Adobe Systems Incorporated.
+product=Adobe Flash CS3
+action=block
+EndRule
+
+BeginRule
+classname=OWL.Palette
+company=Adobe Systems Incorporated.
+product=Adobe Flash CS3
+action=block
+EndRule
+
+BeginRule
+classname=OWL.ResizeGripper
+company=Adobe Systems Incorporated.
+product=Adobe Flash CS3
+action=block
+EndRule
+
+BeginRule
+classname=OWL.TabGroupCluster
+company=Adobe Systems Incorporated.
+product=Adobe Flash CS3
+action=block
+EndRule
+
+BeginRule
+classname=OWL.TabGroup
+company=Adobe Systems Incorporated.
+product=Adobe Flash CS3
+action=block
+EndRule
+
+BeginRule
+classname=SS_HorzSplitterWnd
+company=Adobe Systems Incorporated.
+product=Adobe Flash CS3
+action=block
+EndRule
